@@ -24,63 +24,29 @@
         <div class="hero-line"></div>
         <p class="hero-subtitle mt-4">&#161;Nuestra Boda!</p>
         <p class="hero-phrase">Te elijo hoy y por el resto de mi vida</p>
-        <a href="#home" class="btn mt-4 btn-lg" onclick="enableScroll()">Ver Invitaci&oacute;n</a>
+        <a href="#couple" class="btn mt-4 btn-lg" onclick="enableScroll()">Ver Invitaci&oacute;n</a>
       </main>
     </section>
 
     <!-- ===================== NAVBAR ===================== -->
     <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
       <div class="container">
-        <a class="navbar-brand" href="#">Carlos & Elida</a>
+        <a class="navbar-brand" href="#">Carlos &amp; Elida</a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="#home">Inicio</a>
             <a class="nav-link" href="#couple">Nosotros</a>
+            <a class="nav-link" href="#home">Invitaci&oacute;n</a>
             <a class="nav-link" href="#info">Evento</a>
             <a class="nav-link" href="#story">Historia</a>
             <a class="nav-link" href="#gallery">Galer&iacute;a</a>
-            <a class="nav-link" href="#rsvp">RSVP</a>
             <a class="nav-link" href="#gifts">Regalos</a>
           </div>
         </div>
       </div>
     </nav>
-
-    <!-- ===================== HOME: fecha + contador ===================== -->
-    <section id="home" class="home">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-11 text-center">
-            <p class="home-date-label">1 de junio de 2026</p>
-            <p class="home-faltan">Faltan</p>
-            <div class="countdown-wrapper mt-2">
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-days">00</span>
-                <span class="countdown-label">D&iacute;as</span>
-              </div>
-              <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-hours">00</span>
-                <span class="countdown-label">Horas</span>
-              </div>
-              <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-minutes">00</span>
-                <span class="countdown-label">Minutos</span>
-              </div>
-              <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-seconds">00</span>
-                <span class="countdown-label">Segundos</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ===================== COUPLE: novios + padres ===================== -->
     <section id="couple" class="couple-section">
@@ -93,10 +59,8 @@
             <div class="parents-divider mt-2"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
           </div>
 
-          <!-- Pareja: layout horizontal original -->
+          <!-- Pareja -->
           <div class="row couple w-100">
-
-            <!-- Novio: texto derecha | foto izquierda -->
             <div class="col-lg-6">
               <div class="row align-items-center justify-content-end">
                 <div class="col-8 text-end">
@@ -108,10 +72,7 @@
                 </div>
               </div>
             </div>
-
             <span class="heart"><i class="bi bi-heart-fill"></i></span>
-
-            <!-- Novia: foto izquierda | texto derecha -->
             <div class="col-lg-6">
               <div class="row align-items-center">
                 <div class="col-4">
@@ -122,7 +83,6 @@
                 </div>
               </div>
             </div>
-
           </div>
 
           <!-- Nuestros Padres -->
@@ -151,6 +111,105 @@
         </div>
       </div>
     </section>
+
+    <!-- ===================== HOME: invitacion + contador + boton ===================== -->
+    <section id="home" class="home">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-11 text-center">
+
+            <!-- Frase de invitacion -->
+            <p class="home-invite-tag">Con inmensa alegr&iacute;a</p>
+            <h2 class="home-invite-title">Tenemos el honor de invitarlos<br/>a celebrar nuestra boda</h2>
+            <div class="home-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
+
+            <!-- Fecha estilizada -->
+            <div class="home-date-block">
+              <span class="home-date-day">1</span>
+              <div class="home-date-right">
+                <span class="home-date-month">Junio</span>
+                <span class="home-date-year">2026</span>
+              </div>
+            </div>
+
+            <!-- Faltan + contador -->
+            <p class="home-faltan">Faltan</p>
+            <div class="countdown-wrapper mt-2">
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-days">00</span>
+                <span class="countdown-label">D&iacute;as</span>
+              </div>
+              <span class="countdown-separator">:</span>
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-hours">00</span>
+                <span class="countdown-label">Horas</span>
+              </div>
+              <span class="countdown-separator">:</span>
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-minutes">00</span>
+                <span class="countdown-label">Minutos</span>
+              </div>
+              <span class="countdown-separator">:</span>
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-seconds">00</span>
+                <span class="countdown-label">Segundos</span>
+              </div>
+            </div>
+
+            <!-- Boton Agendar Fecha -->
+            <button class="btn-agendar mt-5" data-bs-toggle="modal" data-bs-target="#modalRsvp">
+              <i class="bi bi-calendar2-heart"></i>
+              Agendar Fecha
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODAL RSVP ===================== -->
+    <div class="modal fade" id="modalRsvp" tabindex="-1" aria-labelledby="modalRsvpLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-rsvp">
+          <div class="modal-header border-0 pb-0">
+            <div class="w-100 text-center">
+              <p class="modal-rsvp-tag">Con todo nuestro amor</p>
+              <h5 class="modal-title modal-rsvp-title" id="modalRsvpLabel">Confirmaci&oacute;n de Asistencia</h5>
+              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            </div>
+            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <form method="POST"
+              action="https://script.google.com/macros/s/AKfycbwLO6QmRbU2CvTxuK3wDIglsfMPBR4TwaxOq0lBIIy-eEbuQa94s6nsuirZFau1gGbZ/exec"
+              id="my-form">
+              <div class="mb-3">
+                <label for="nama" class="form-label modal-label">Tu nombre completo</label>
+                <input type="text" class="form-control modal-input" id="nama" name="nama" placeholder="Ej. Juan P&eacute;rez" required />
+              </div>
+              <div class="mb-3">
+                <label for="jumlah" class="form-label modal-label">N&uacute;mero de personas</label>
+                <input type="number" class="form-control modal-input" id="jumlah" name="jumlah" min="1" max="5" value="1" required />
+              </div>
+              <div class="mb-4">
+                <label for="status" class="form-label modal-label">&#191;Confirmas tu asistencia?</label>
+                <select name="status" id="status" class="form-select modal-input" required>
+                  <option value="" selected disabled>Selecciona una opci&oacute;n</option>
+                  <option value="Asistirá">&#127881; Asistir&eacute;</option>
+                  <option value="No Asistirá">&#128546; No podr&eacute; asistir</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn-agendar w-100">
+                  <i class="bi bi-send-heart"></i> Enviar confirmaci&oacute;n
+                </button>
+                <p id="form-msg" class="mt-3" style="display:none;"></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ===================== INFO ===================== -->
     <section id="info" class="info">
@@ -243,47 +302,11 @@
             <p>Pr&oacute;ximamente compartiremos nuestros momentos especiales aqu&iacute;.</p>
           </div>
           <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-            <div class="col mt-3"><img src="https://picsum.photos/id/200/600/400" alt="Carlos & Elida 1" class="img-fluid w-100 rounded" /></div>
-            <div class="col mt-3"><img src="https://picsum.photos/id/5/600/400" alt="Carlos & Elida 2" class="img-fluid w-100 rounded" /></div>
-            <div class="col mt-3"><img src="https://picsum.photos/id/500/600/400" alt="Carlos & Elida 3" class="img-fluid w-100 rounded" /></div>
-            <div class="col mt-3"><img src="https://picsum.photos/id/900/600/400" alt="Carlos & Elida 4" class="img-fluid w-100 rounded" /></div>
+            <div class="col mt-3"><img src="https://picsum.photos/id/200/600/400" alt="Carlos &amp; Elida 1" class="img-fluid w-100 rounded" /></div>
+            <div class="col mt-3"><img src="https://picsum.photos/id/5/600/400" alt="Carlos &amp; Elida 2" class="img-fluid w-100 rounded" /></div>
+            <div class="col mt-3"><img src="https://picsum.photos/id/500/600/400" alt="Carlos &amp; Elida 3" class="img-fluid w-100 rounded" /></div>
+            <div class="col mt-3"><img src="https://picsum.photos/id/900/600/400" alt="Carlos &amp; Elida 4" class="img-fluid w-100 rounded" /></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== RSVP ===================== -->
-    <section id="rsvp" class="rsvp">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-10 text-center">
-            <h2>Confirmaci&oacute;n</h2>
-            <p>Por favor confirm&aacute; tu asistencia llenando el formulario.</p>
-          </div>
-          <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
-            action="https://script.google.com/macros/s/AKfycbwLO6QmRbU2CvTxuK3wDIglsfMPBR4TwaxOq0lBIIy-eEbuQa94s6nsuirZFau1gGbZ/exec"
-            id="my-form">
-            <div class="col-12">
-              <label for="nama" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Tu nombre completo" required />
-            </div>
-            <div class="col-12">
-              <label for="jumlah" class="form-label">N&uacute;mero de personas</label>
-              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" value="1" required />
-            </div>
-            <div class="col-12">
-              <label for="status" class="form-label">Confirmaci&oacute;n</label>
-              <select name="status" id="status" class="form-select" required>
-                <option value="" selected disabled>Seleccione una opci&oacute;n</option>
-                <option value="Asistirá">Asistir&eacute;</option>
-                <option value="No Asistirá">No podr&eacute; asistir</option>
-              </select>
-            </div>
-            <div class="col-12 mt-3 text-center">
-              <button type="submit" class="btn btn-primary px-5">Enviar</button>
-              <p id="form-msg" class="mt-3" style="display:none;"></p>
-            </div>
-          </form>
         </div>
       </div>
     </section>
@@ -312,7 +335,7 @@
     <footer>
       <div class="container">
         <div class="col text-center">
-          <small>&copy; 2026 Carlos & Elida &mdash; Todos los derechos reservados.</small><br />
+          <small>&copy; 2026 Carlos &amp; Elida &mdash; Todos los derechos reservados.</small><br />
           <small>Con amor para nuestros invitados &#10084;</small>
           <ul class="mt-3">
             <li><a href="#"><i class="bi bi-instagram"></i></a></li>
