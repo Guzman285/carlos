@@ -538,16 +538,73 @@ h1, h2, h3, h4, h5 { font-family: var(--font-title); }
 .parents-name { font-family: var(--font-title); font-size: 1.5rem; font-weight: 600; color: #333; margin-bottom: 0.2rem; line-height: 1.3; }
 
 /* ==========================================
-   INFO
+   INFO — fondo CLARO para alternar con home
    ========================================== */
-.info { position: relative; isolation: isolate; color: #e0f0ff; padding-top: 8rem; padding-bottom: 8rem; }
-.info::before { content: ''; position: absolute; inset: 0; background-image: var(--flora); background-size: cover; background-position: center; z-index: -2; }
-.info::after  { content: ''; position: absolute; inset: 0; background-color: rgba(15, 30, 60, 0.87); z-index: -1; }
-.info h2 { color: var(--primary-light); font-family: var(--font-title); font-size: 5rem; font-weight: 600; font-style: italic; }
-.info .alamat { font-size: 1rem; font-weight: 400; letter-spacing: 0.05rem; }
-.info .card { background-color: rgba(83, 127, 175, 0.18) !important; color: white !important; border: 1px solid var(--primary); backdrop-filter: blur(4px); }
-.info .card-header { border-bottom: 1px solid var(--primary); text-transform: uppercase; letter-spacing: 0.15rem; font-size: 0.85rem; font-weight: 700; color: var(--primary-light); font-family: var(--font-body); }
-.info .card-footer { border-top: 1px solid var(--silver); font-size: 0.85rem; font-weight: 400; color: var(--silver-light); }
+.info {
+  position: relative;
+  isolation: isolate;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.info::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.info::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-color: rgba(235, 241, 255, 0.91);
+  z-index: -1;
+}
+/* Textos oscuros sobre fondo claro */
+.info h2 {
+  color: var(--primary-dark);
+  font-family: var(--font-title);
+  font-size: 5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+.info .alamat {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #444;
+}
+/* Tarjetas con fondo blanco semitransparente */
+.info .card {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  color: #333 !important;
+  border: 1px solid rgba(83, 127, 175, 0.4);
+  backdrop-filter: blur(4px);
+}
+.info .card-header {
+  border-bottom: 1px solid rgba(83, 127, 175, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-family: var(--font-body);
+  background-color: rgba(83, 127, 175, 0.12) !important;
+}
+.info .card-body span { color: #444; }
+.info .card-body i { color: var(--primary); }
+.info .card-footer {
+  border-top: 1px solid rgba(83, 127, 175, 0.2);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #555;
+  background-color: transparent !important;
+}
+/* Boton Google Maps */
+.info .btn-light {
+  border: 1px solid rgba(83,127,175,0.4);
+  color: var(--primary-dark);
+}
 
 /* ==========================================
    HISTORIA
