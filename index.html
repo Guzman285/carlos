@@ -4,28 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Boda Carlos & Elida</title>
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Countdown CSS -->
     <link rel="stylesheet" href="countdown/circle.css" />
-    <script src="countdown/simplyCountdown.umd.js"></script>
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Hero -->
+
+    <!-- ===================== HERO ===================== -->
     <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
       <main>
-        <h4>Para:<span>Estimado/a invitado/a,</span></h4>
+        <h4>Para: <span>Estimado/a invitado/a,</span></h4>
         <h1>Carlos & Elida</h1>
         <p>Tienen el honor de invitarle a su boda</p>
         <div id="countdown" class="countdown simply-countdown-circle mt-4 mb-4"></div>
-        <a href="#home" class="btn mt-4" btn-lg onClick="enableScroll()">Ver Invitación</a>
+        <a href="#home" class="btn mt-4 btn-lg" onclick="enableScroll()">Ver Invitaci&oacute;n</a>
       </main>
     </section>
 
-    <!-- Navbar -->
+    <!-- ===================== NAVBAR ===================== -->
     <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
       <div class="container">
         <a class="navbar-brand" href="#">Carlos & Elida</a>
@@ -42,7 +52,7 @@
               <a class="nav-link" href="#home">Inicio</a>
               <a class="nav-link" href="#info">Evento</a>
               <a class="nav-link" href="#story">Historia</a>
-              <a class="nav-link" href="#gallery">Galería</a>
+              <a class="nav-link" href="#gallery">Galer&iacute;a</a>
               <a class="nav-link" href="#rsvp">RSVP</a>
               <a class="nav-link" href="#gifts">Regalos</a>
             </div>
@@ -51,14 +61,14 @@
       </div>
     </nav>
 
-    <!-- Home -->
+    <!-- ===================== HOME ===================== -->
     <section id="home" class="home">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 text-center">
             <h2>Boda</h2>
-            <h3>1 de junio de 2026 · Hotel La Hacienda, Panajachel</h3>
-            <p>Con la bendición de Dios y de nuestras familias, tenemos el honor de invitarle a compartir este día tan especial con nosotros.</p>
+            <h3>1 de junio de 2026 &middot; Hotel La Hacienda, Panajachel</h3>
+            <p>Con la bendici&oacute;n de Dios y de nuestras familias, tenemos el honor de invitarle a compartir este d&iacute;a tan especial con nosotros.</p>
           </div>
 
           <div class="row couple">
@@ -68,23 +78,25 @@
                 <div class="col-8 text-end">
                   <h3>Carlos Manuel</h3>
                   <p>Carlos Manuel Fuentes Lopez</p>
-                  <p>Piloto del Ejército de Guatemala</p>
+                  <p>Piloto del Ej&eacute;rcito de Guatemala</p>
                 </div>
                 <div class="col-4">
-                  <img src="img/pengantinPria.png" alt="Carlos Manuel" class="img-responsive rounded-circle">
+                  <img src="img/pengantinPria.png" alt="Carlos Manuel" class="img-responsive rounded-circle" />
                 </div>
               </div>
             </div>
+
             <span class="heart"><i class="bi bi-heart-fill"></i></span>
+
             <!-- Novia -->
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-4">
-                  <img src="img/pengantinWanita.png" alt="Elida Everilda" class="img-responsive rounded-circle">
+                  <img src="img/pengantinWanita.png" alt="Elida Everilda" class="img-responsive rounded-circle" />
                 </div>
                 <div class="col-8">
                   <h3>Elida Everilda</h3>
-                  <p>Elida Everilda del Cid de León</p>
+                  <p>Elida Everilda del Cid de Le&oacute;n</p>
                 </div>
               </div>
             </div>
@@ -93,28 +105,39 @@
       </div>
     </section>
 
-    <!-- Info -->
+    <!-- ===================== INFO ===================== -->
     <section id="info" class="info">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
-            <h2>Información del Evento</h2>
-            <p class="alamat">Lugar: <br>Hotel La Hacienda<br>Panajachel, Sololá, Guatemala</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <a href="https://maps.google.com/?q=Panajachel+Solola+Guatemala" target="_blank" class="btn btn-light btn-sm my-4">Abrir en Google Maps</a>
+            <h2>Informaci&oacute;n del Evento</h2>
+            <p class="alamat">
+              Lugar: <br />
+              Hotel La Hacienda<br />
+              Panajachel, Solol&aacute;, Guatemala
+            </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890"
+              width="100%" height="250" style="border:0;" allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <a href="https://maps.google.com/?q=Panajachel+Solola+Guatemala" target="_blank" class="btn btn-light btn-sm my-4">
+              <i class="bi bi-geo-alt-fill"></i> Abrir en Google Maps
+            </a>
           </div>
         </div>
+
         <div class="row justify-content-center mt-4">
-          <div class="col-md-5 col-10">
-            <div class="card text-center text-bg-light mb-5">
+          <div class="col-md-5 col-10 mb-4">
+            <div class="card text-center">
               <div class="card-header">Ceremonia</div>
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-md-6">
+                  <div class="col-6">
                     <i class="bi bi-clock d-block"></i>
                     <span>Por confirmar</span>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-6">
                     <i class="bi bi-calendar3 d-block"></i>
                     <span>Lunes, 1 de junio de 2026</span>
                   </div>
@@ -123,39 +146,39 @@
               <div class="card-footer">Hotel La Hacienda, Panajachel</div>
             </div>
           </div>
+
           <div class="col-md-5 col-10">
-            <div class="card text-center text-bg-light">
-              <div class="card-header">Recepción</div>
+            <div class="card text-center">
+              <div class="card-header">Recepci&oacute;n</div>
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-md-6">
+                  <div class="col-6">
                     <i class="bi bi-clock d-block"></i>
                     <span>Por confirmar</span>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-6">
                     <i class="bi bi-calendar3 d-block"></i>
                     <span>Lunes, 1 de junio de 2026</span>
                   </div>
                 </div>
               </div>
-              <div class="card-footer">Es un honor contar con su presencia y bendición.</div>
+              <div class="card-footer">Es un honor contar con su presencia y bendici&oacute;n.</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Historia -->
+    <!-- ===================== HISTORIA ===================== -->
     <section id="story" class="story">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
-            <span>Cómo nació nuestro amor</span>
+            <span>C&oacute;mo naci&oacute; nuestro amor</span>
             <h2>Nuestra Historia</h2>
             <p>Cada gran historia tiene un comienzo, un momento y un para siempre.</p>
           </div>
         </div>
-
         <div class="row">
           <div class="col">
             <ul class="timeline">
@@ -164,33 +187,31 @@
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h3>Primer Encuentro</h3>
-                    <span>Próximamente...</span>
+                    <span>Pr&oacute;ximamente...</span>
                   </div>
                   <div class="timeline-body">
-                    <p>El inicio de una historia que cambiaría nuestras vidas para siempre.</p>
+                    <p>El inicio de una historia que cambiar&iacute;a nuestras vidas para siempre.</p>
                   </div>
                 </div>
               </li>
-
               <li class="timeline-inverted">
                 <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/300/300);"></div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h3>Nuestro Noviazgo</h3>
-                    <span>Próximamente...</span>
+                    <span>Pr&oacute;ximamente...</span>
                   </div>
                   <div class="timeline-body">
-                    <p>Cada momento juntos nos confirmó que éramos el uno para el otro.</p>
+                    <p>Cada momento juntos nos confirm&oacute; que &eacute;ramos el uno para el otro.</p>
                   </div>
                 </div>
               </li>
-
               <li>
                 <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/301/301);"></div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h3>El Compromiso</h3>
-                    <span>Próximamente...</span>
+                    <span>Pr&oacute;ximamente...</span>
                   </div>
                   <div class="timeline-body">
                     <p>El momento en que prometimos estar juntos para siempre.</p>
@@ -203,90 +224,84 @@
       </div>
     </section>
 
-    <!-- Galería -->
+    <!-- ===================== GALERÍA ===================== -->
     <section id="gallery" class="gallery">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <span>Momentos que atesoramos</span>
-            <h2>Galería</h2>
-            <p>Próximamente compartiremos nuestros momentos especiales aquí.</p>
+            <h2>Galer&iacute;a</h2>
+            <p>Pr&oacute;ximamente compartiremos nuestros momentos especiales aqu&iacute;.</p>
           </div>
-
           <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
             <div class="col mt-3">
-              <img src="https://picsum.photos/id/200/1200/768" alt="Carlos & Elida 1" class="img-fluid w-100 rounded">
+              <img src="https://picsum.photos/id/200/600/400" alt="Carlos & Elida 1" class="img-fluid w-100 rounded" />
             </div>
             <div class="col mt-3">
-              <img src="https://picsum.photos/id/5/1200/768" alt="Carlos & Elida 2" class="img-fluid w-100 rounded">
+              <img src="https://picsum.photos/id/5/600/400" alt="Carlos & Elida 2" class="img-fluid w-100 rounded" />
             </div>
             <div class="col mt-3">
-              <img src="https://picsum.photos/id/500/1200/768" alt="Carlos & Elida 3" class="img-fluid w-100 rounded">
+              <img src="https://picsum.photos/id/500/600/400" alt="Carlos & Elida 3" class="img-fluid w-100 rounded" />
             </div>
             <div class="col mt-3">
-              <img src="https://picsum.photos/id/900/1200/768" alt="Carlos & Elida 4" class="img-fluid w-100 rounded">
+              <img src="https://picsum.photos/id/900/600/400" alt="Carlos & Elida 4" class="img-fluid w-100 rounded" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RSVP -->
+    <!-- ===================== RSVP ===================== -->
     <section id="rsvp" class="rsvp">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
-            <h2>Confirmación</h2>
-            <p>Por favor confirmá tu asistencia llenando el formulario.</p>
+            <h2>Confirmaci&oacute;n</h2>
+            <p>Por favor confirm&aacute; tu asistencia llenando el formulario.</p>
           </div>
-
           <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
-          action="https://script.google.com/macros/s/AKfycbzonA-VRMB8dyMizhVNdsWeHFaeTUrcex8kHIL4iKZfs0Kuymo-rhFMn3ORmPjxIFOQ/exec" id="my-form">
+            action="https://script.google.com/macros/s/AKfycbzonA-VRMB8dyMizhVNdsWeHFaeTUrcex8kHIL4iKZfs0Kuymo-rhFMn3ORmPjxIFOQ/exec"
+            id="my-form">
             <div class="col-12">
-              <div class="mb-3">
-                <label for="nama" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nama" name="nama">
-              </div>
+              <label for="nama" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nama" name="nama" />
             </div>
             <div class="col-12">
-              <div class="mb-3">
-                <label for="jumlah" class="form-label">Número de personas</label>
-                <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" value="1">
-              </div>
+              <label for="jumlah" class="form-label">N&uacute;mero de personas</label>
+              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" value="1" />
             </div>
             <div class="col-12">
-              <div class="mb-3">
-                <label for="status" class="form-label">Confirmación</label>
-                <select name="status" id="status" class="form-select">
-                  <option selected>Seleccione una opción</option>
-                  <option value="Asistirá">Asistiré</option>
-                  <option value="No Asistirá">No podré asistir</option>
-                </select>
-              </div>
+              <label for="status" class="form-label">Confirmaci&oacute;n</label>
+              <select name="status" id="status" class="form-select">
+                <option selected>Seleccione una opci&oacute;n</option>
+                <option value="Asistir&aacute;">Asistir&eacute;</option>
+                <option value="No Asistir&aacute;">No podr&eacute; asistir</option>
+              </select>
             </div>
-            <div class="col-12" style="margin-top: 30px">
-              <button class="btn btn-primary">Enviar</button>
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
           </form>
         </div>
+      </div>
     </section>
 
-    <!-- Regalos -->
+    <!-- ===================== REGALOS ===================== -->
     <section id="gifts" class="gifts">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <span>Su presencia es nuestro mejor regalo</span>
             <h2>Regalos</h2>
-            <p>Si desean hacernos un obsequio, pueden hacerlo a través de:</p>
+            <p>Si desean hacernos un obsequio, pueden hacerlo a trav&eacute;s de:</p>
           </div>
         </div>
         <div class="row justify-content-center text-center">
           <div class="col-md-6">
             <ul class="list-group">
               <li class="list-group-item">
-                <div class="fw-bold">Próximamente</div>
-                Información de cuenta bancaria
+                <div class="fw-bold">Pr&oacute;ximamente</div>
+                Informaci&oacute;n de cuenta bancaria
               </li>
             </ul>
           </div>
@@ -294,136 +309,41 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===================== FOOTER ===================== -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <small class="block">&copy;2026 Carlos & Elida. Todos los derechos reservados.</small>
-            <small class="block">Con amor para nuestros invitados ❤️</small>
-            <ul class="mt-3">
-              <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-            </ul>
-          </div>
+        <div class="col text-center">
+          <small>&copy; 2026 Carlos & Elida &mdash; Todos los derechos reservados.</small><br />
+          <small>Con amor para nuestros invitados &#10084;</small>
+          <ul class="mt-3">
+            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+          </ul>
         </div>
       </div>
     </footer>
 
-    <!-- Audio -->
+    <!-- ===================== AUDIO ===================== -->
     <div id="audio-container">
       <audio id="backSong" autoplay loop>
-        <source src="audio/cintaVina.mp3" type="audio/mp3">
+        <source src="audio/cintaVina.mp3" type="audio/mp3" />
       </audio>
-      <div class="audio-icon-wrapper" style="display: none;">
+      <div class="audio-icon-wrapper" style="display:none;">
         <i class="bi bi-disc"></i>
       </div>
     </div>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <!-- Lightbox -->
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        simplyCountdown('#countdown', {
-          year: 2026,
-          month: 6,
-          day: 1,
-          hours: 8,
-          minutes: 0,
-          seconds: 0,
-          words: {
-            days: { root: 'día', lambda: (root, n) => (n > 1 ? root + 's' : root) },
-            hours: { root: 'hora', lambda: (root, n) => (n > 1 ? root + 's' : root) },
-            minutes: { root: 'minuto', lambda: (root, n) => (n > 1 ? root + 's' : root) },
-            seconds: { root: 'segundo', lambda: (root, n) => (n > 1 ? root + 's' : root) },
-          },
-          plural: true,
-          inline: false,
-          enableUtc: false,
-          refresh: 1000,
-        });
-      });
-    </script>
+    <!-- Countdown JS -->
+    <script src="countdown/simplyCountdown.umd.js"></script>
 
-    <script>
-      const stickyTop = document.querySelector('.sticky-top');
-      const offcanvas = document.querySelector('.offcanvas');
-      offcanvas.addEventListener('show.bs.offcanvas', function() {
-        stickyTop.style.overflow = 'visible';
-      });
-      offcanvas.addEventListener('hidden.bs.offcanvas', function() {
-        stickyTop.style.overflow = 'hidden';
-      });
-    </script>
-
-    <script>
-      const rootElement = document.querySelector(':root');
-      const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-      const audioIcon = document.querySelector('.audio-icon-wrapper i');
-      const backSong = document.querySelector('#backSong');
-      let isPlaying = false;
-
-      function disableScroll() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-        window.onscroll = function() {
-          window.scrollTo(scrollTop, scrollLeft);
-        }
-        rootElement.style.scrollBehavior = 'auto';
-      }
-
-      function enableScroll() {
-        window.onscroll = function() { }
-        rootElement.style.scrollBehavior = 'smooth';
-        playAudio();
-      }
-
-      function playAudio() {
-        backSong.volume = 0.5;
-        backSong.play();
-        audioIconWrapper.style.display = 'flex';
-        isPlaying = true;
-      }
-
-      audioIconWrapper.onclick = function () {
-        if (isPlaying) {
-          backSong.pause();
-          audioIcon.classList.remove('bi-disc');
-          audioIcon.classList.add('bi-pause-circle');
-        } else {
-          backSong.play();
-          audioIcon.classList.add('bi-disc');
-          audioIcon.classList.remove('bi-pause-circle');
-        }
-        isPlaying = !isPlaying;
-      }
-      disableScroll();
-    </script>
-
-    <script>
-      window.addEventListener("load", function() {
-        const form = document.getElementById('my-form');
-        form.addEventListener("submit", function(e) {
-          e.preventDefault();
-          const data = new FormData(form);
-          const action = e.target.action;
-          fetch(action, { method: 'POST', body: data })
-          .then(() => {
-            alert("¡Confirmación enviada con éxito!");
-          });
-        });
-      });
-    </script>
-
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const nama = urlParams.get('n') || '';
-      const pronoun = urlParams.get('p') || '';
-      const namaContainer = document.querySelector('.hero h4 span');
-      namaContainer.innerText = `${pronoun} ${nama},`;
-      document.querySelector('#nama').value = nama;
-    </script>
+    <!-- JavaScript propio -->
+    <script src="js/main.js"></script>
 
   </body>
 </html>
