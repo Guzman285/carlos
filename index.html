@@ -48,7 +48,7 @@
       </div>
     </nav>
 
-    <!-- ===================== COUPLE: novios + padres ===================== -->
+    <!-- ===================== COUPLE ===================== -->
     <section id="couple" class="couple-section">
       <div class="container">
         <div class="row justify-content-center">
@@ -122,27 +122,14 @@
             </div>
             <p class="home-faltan">Faltan</p>
             <div class="countdown-wrapper mt-2">
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-days">00</span>
-                <span class="countdown-label">D&iacute;as</span>
-              </div>
+              <div class="countdown-box"><span class="countdown-number" id="cd-days">00</span><span class="countdown-label">D&iacute;as</span></div>
               <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-hours">00</span>
-                <span class="countdown-label">Horas</span>
-              </div>
+              <div class="countdown-box"><span class="countdown-number" id="cd-hours">00</span><span class="countdown-label">Horas</span></div>
               <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-minutes">00</span>
-                <span class="countdown-label">Minutos</span>
-              </div>
+              <div class="countdown-box"><span class="countdown-number" id="cd-minutes">00</span><span class="countdown-label">Minutos</span></div>
               <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-seconds">00</span>
-                <span class="countdown-label">Segundos</span>
-              </div>
+              <div class="countdown-box"><span class="countdown-number" id="cd-seconds">00</span><span class="countdown-label">Segundos</span></div>
             </div>
-            <!-- Boton estilo hero -->
             <div class="mt-5">
               <button class="home-btn-agendar" data-bs-toggle="modal" data-bs-target="#modalRsvp">
                 <i class="bi bi-calendar2-heart"></i> Agendar Fecha
@@ -166,9 +153,7 @@
             <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
           <div class="modal-body pt-2">
-            <form method="POST"
-              action="https://script.google.com/macros/s/AKfycbwLO6QmRbU2CvTxuK3wDIglsfMPBR4TwaxOq0lBIIy-eEbuQa94s6nsuirZFau1gGbZ/exec"
-              id="my-form">
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbwLO6QmRbU2CvTxuK3wDIglsfMPBR4TwaxOq0lBIIy-eEbuQa94s6nsuirZFau1gGbZ/exec" id="my-form">
               <div class="mb-3">
                 <label for="nama" class="form-label modal-label">Tu nombre completo</label>
                 <input type="text" class="form-control modal-input" id="nama" name="nama" placeholder="Ej. Juan P&eacute;rez" required />
@@ -187,8 +172,7 @@
               </div>
               <div class="mb-4">
                 <label for="mensaje" class="form-label modal-label">&#128140; D&eacute;janos un mensaje</label>
-                <textarea class="form-control modal-input" id="mensaje" name="mensaje" rows="3"
-                  placeholder="Escribe algo bonito para los novios..."></textarea>
+                <textarea class="form-control modal-input" id="mensaje" name="mensaje" rows="3" placeholder="Escribe algo bonito para los novios..."></textarea>
               </div>
               <div class="text-center">
                 <button type="submit" class="home-btn-agendar w-100">
@@ -205,18 +189,36 @@
     <!-- ===================== INFO ===================== -->
     <section id="info" class="info">
       <div class="container">
+
+        <!-- Encabezado -->
         <div class="row justify-content-center">
-          <div class="col-md-8 col-10 text-center">
+          <div class="col-md-8 col-10 text-center mb-5">
+            <p class="info-label">Les esperamos</p>
             <h2>Informaci&oacute;n del Evento</h2>
-            <p class="alamat">Lugar: <br />Hotel La Hacienda<br />Panajachel, Solol&aacute;, Guatemala</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890"
-              width="100%" height="250" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <a href="https://maps.google.com/?q=Panajachel+Solola+Guatemala" target="_blank" class="btn btn-light btn-sm my-4">
-              <i class="bi bi-geo-alt-fill"></i> Abrir en Google Maps
-            </a>
+            <div class="parents-divider mt-2"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
           </div>
         </div>
-        <div class="row justify-content-center mt-4">
+
+        <!-- Tarjeta de ubicacion elegante -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6 col-10">
+            <div class="info-location-card text-center">
+              <div class="info-location-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <p class="info-location-tag">Lugar de la celebraci&oacute;n</p>
+              <h3 class="info-location-name">Hotel La Hacienda</h3>
+              <p class="info-location-address">Panajachel, Solol&aacute;, Guatemala</p>
+              <div class="info-location-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
+              <button class="home-btn-agendar mt-2" data-bs-toggle="modal" data-bs-target="#modalMapa">
+                <i class="bi bi-map"></i> C&oacute;mo llegar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjetas Ceremonia / Recepcion -->
+        <div class="row justify-content-center">
           <div class="col-md-5 col-10 mb-4">
             <div class="card text-center">
               <div class="card-header">Ceremonia</div>
@@ -242,8 +244,38 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
+
+    <!-- ===================== MODAL MAPA ===================== -->
+    <div class="modal fade" id="modalMapa" tabindex="-1" aria-labelledby="modalMapaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-mapa">
+          <div class="modal-header border-0 pb-0">
+            <div class="w-100 text-center">
+              <p class="modal-rsvp-tag"><i class="bi bi-geo-alt-fill me-1"></i> Ubicaci&oacute;n</p>
+              <h5 class="modal-title modal-rsvp-title" id="modalMapaLabel">Hotel La Hacienda</h5>
+              <p class="modal-mapa-subtitle">Panajachel, Solol&aacute;, Guatemala</p>
+            </div>
+            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="modal-mapa-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890"
+                width="100%" height="360" style="border:0; display:block;"
+                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="text-center py-3">
+              <a href="https://maps.google.com/?q=Panajachel+Solola+Guatemala" target="_blank" class="home-btn-agendar">
+                <i class="bi bi-box-arrow-up-right"></i> Abrir en Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ===================== HISTORIA ===================== -->
     <section id="story" class="story">
