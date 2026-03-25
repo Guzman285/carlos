@@ -16,11 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
-    <!-- Countdown CSS -->
-    <link rel="stylesheet" href="countdown/circle.css" />
-
     <!-- Estilos propios -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/countdown-custom.css" />
   </head>
   <body>
 
@@ -30,7 +28,30 @@
         <h4>Para: <span>Estimado/a invitado/a,</span></h4>
         <h1>Carlos & Elida</h1>
         <p>Tienen el honor de invitarle a su boda</p>
-        <div id="countdown" class="countdown simply-countdown-circle mt-4 mb-4"></div>
+
+        <!-- Countdown estilo 4: cajas con borde plateado -->
+        <div class="countdown-wrapper">
+          <div class="countdown-box">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-label">D&iacute;as</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-box">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-box">
+            <span class="countdown-number" id="cd-minutes">00</span>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-box">
+            <span class="countdown-number" id="cd-seconds">00</span>
+            <span class="countdown-label">Segundos</span>
+          </div>
+        </div>
+
         <a href="#home" class="btn mt-4 btn-lg" onclick="enableScroll()">Ver Invitaci&oacute;n</a>
       </main>
     </section>
@@ -70,9 +91,7 @@
             <h3>1 de junio de 2026 &middot; Hotel La Hacienda, Panajachel</h3>
             <p>Con la bendici&oacute;n de Dios y de nuestras familias, tenemos el honor de invitarle a compartir este d&iacute;a tan especial con nosotros.</p>
           </div>
-
           <div class="row couple">
-            <!-- Novio -->
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-8 text-end">
@@ -85,10 +104,7 @@
                 </div>
               </div>
             </div>
-
             <span class="heart"><i class="bi bi-heart-fill"></i></span>
-
-            <!-- Novia -->
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-4">
@@ -111,55 +127,34 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <h2>Informaci&oacute;n del Evento</h2>
-            <p class="alamat">
-              Lugar: <br />
-              Hotel La Hacienda<br />
-              Panajachel, Solol&aacute;, Guatemala
-            </p>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890"
-              width="100%" height="250" style="border:0;" allowfullscreen loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <p class="alamat">Lugar: <br />Hotel La Hacienda<br />Panajachel, Solol&aacute;, Guatemala</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890"
+              width="100%" height="250" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <a href="https://maps.google.com/?q=Panajachel+Solola+Guatemala" target="_blank" class="btn btn-light btn-sm my-4">
               <i class="bi bi-geo-alt-fill"></i> Abrir en Google Maps
             </a>
           </div>
         </div>
-
         <div class="row justify-content-center mt-4">
           <div class="col-md-5 col-10 mb-4">
             <div class="card text-center">
               <div class="card-header">Ceremonia</div>
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-6">
-                    <i class="bi bi-clock d-block"></i>
-                    <span>Por confirmar</span>
-                  </div>
-                  <div class="col-6">
-                    <i class="bi bi-calendar3 d-block"></i>
-                    <span>Lunes, 1 de junio de 2026</span>
-                  </div>
+                  <div class="col-6"><i class="bi bi-clock d-block"></i><span>Por confirmar</span></div>
+                  <div class="col-6"><i class="bi bi-calendar3 d-block"></i><span>Lunes, 1 de junio de 2026</span></div>
                 </div>
               </div>
               <div class="card-footer">Hotel La Hacienda, Panajachel</div>
             </div>
           </div>
-
           <div class="col-md-5 col-10">
             <div class="card text-center">
               <div class="card-header">Recepci&oacute;n</div>
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-6">
-                    <i class="bi bi-clock d-block"></i>
-                    <span>Por confirmar</span>
-                  </div>
-                  <div class="col-6">
-                    <i class="bi bi-calendar3 d-block"></i>
-                    <span>Lunes, 1 de junio de 2026</span>
-                  </div>
+                  <div class="col-6"><i class="bi bi-clock d-block"></i><span>Por confirmar</span></div>
+                  <div class="col-6"><i class="bi bi-calendar3 d-block"></i><span>Lunes, 1 de junio de 2026</span></div>
                 </div>
               </div>
               <div class="card-footer">Es un honor contar con su presencia y bendici&oacute;n.</div>
@@ -179,48 +174,31 @@
             <p>Cada gran historia tiene un comienzo, un momento y un para siempre.</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <ul class="timeline">
-              <li>
-                <div class="timeline-image" style="background-image: url(img/prewed2.jpeg);"></div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h3>Primer Encuentro</h3>
-                    <span>Pr&oacute;ximamente...</span>
-                  </div>
-                  <div class="timeline-body">
-                    <p>El inicio de una historia que cambiar&iacute;a nuestras vidas para siempre.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/300/300);"></div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h3>Nuestro Noviazgo</h3>
-                    <span>Pr&oacute;ximamente...</span>
-                  </div>
-                  <div class="timeline-body">
-                    <p>Cada momento juntos nos confirm&oacute; que &eacute;ramos el uno para el otro.</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/301/301);"></div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h3>El Compromiso</h3>
-                    <span>Pr&oacute;ximamente...</span>
-                  </div>
-                  <div class="timeline-body">
-                    <p>El momento en que prometimos estar juntos para siempre.</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div class="row"><div class="col">
+          <ul class="timeline">
+            <li>
+              <div class="timeline-image" style="background-image: url(img/prewed2.jpeg);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading"><h3>Primer Encuentro</h3><span>Pr&oacute;ximamente...</span></div>
+                <div class="timeline-body"><p>El inicio de una historia que cambiar&iacute;a nuestras vidas para siempre.</p></div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/300/300);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading"><h3>Nuestro Noviazgo</h3><span>Pr&oacute;ximamente...</span></div>
+                <div class="timeline-body"><p>Cada momento juntos nos confirm&oacute; que &eacute;ramos el uno para el otro.</p></div>
+              </div>
+            </li>
+            <li>
+              <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/301/301);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading"><h3>El Compromiso</h3><span>Pr&oacute;ximamente...</span></div>
+                <div class="timeline-body"><p>El momento en que prometimos estar juntos para siempre.</p></div>
+              </div>
+            </li>
+          </ul>
+        </div></div>
       </div>
     </section>
 
@@ -291,10 +269,7 @@
         <div class="row justify-content-center text-center">
           <div class="col-md-6">
             <ul class="list-group">
-              <li class="list-group-item">
-                <div class="fw-bold">Pr&oacute;ximamente</div>
-                Informaci&oacute;n de cuenta bancaria
-              </li>
+              <li class="list-group-item"><div class="fw-bold">Pr&oacute;ximamente</div>Informaci&oacute;n de cuenta bancaria</li>
             </ul>
           </div>
         </div>
@@ -329,8 +304,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <!-- Lightbox -->
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
-    <!-- Countdown JS -->
-    <script src="countdown/simplyCountdown.umd.js"></script>
     <!-- JavaScript propio -->
     <script src="js/main.js"></script>
 

@@ -1,25 +1,41 @@
 /* ==========================================
    COUNTDOWN - Cuenta regresiva a la boda
+   Estilo 4: Cajas elegantes con borde plateado
    ========================================== */
 document.addEventListener('DOMContentLoaded', function () {
-  simplyCountdown('#countdown', {
-    year: 2026,
-    month: 6,
-    day: 1,
-    hours: 8,
-    minutes: 0,
-    seconds: 0,
-    words: {
-      days:    { root: 'día',    lambda: (root, n) => (n > 1 ? root + 's' : root) },
-      hours:   { root: 'hora',   lambda: (root, n) => (n > 1 ? root + 's' : root) },
-      minutes: { root: 'minuto', lambda: (root, n) => (n > 1 ? root + 's' : root) },
-      seconds: { root: 'segundo',lambda: (root, n) => (n > 1 ? root + 's' : root) },
-    },
-    plural: true,
-    inline: false,
-    enableUtc: false,
-    refresh: 1000,
-  });
+
+  const targetDate = new Date('2026-06-01T08:00:00');
+
+  const daysEl    = document.getElementById('cd-days');
+  const hoursEl   = document.getElementById('cd-hours');
+  const minutesEl = document.getElementById('cd-minutes');
+  const secondsEl = document.getElementById('cd-seconds');
+
+  function updateCountdown() {
+    const now  = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      daysEl.textContent    = '00';
+      hoursEl.textContent   = '00';
+      minutesEl.textContent = '00';
+      secondsEl.textContent = '00';
+      return;
+    }
+
+    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    daysEl.textContent    = String(days).padStart(2, '0');
+    hoursEl.textContent   = String(hours).padStart(2, '0');
+    minutesEl.textContent = String(minutes).padStart(2, '0');
+    secondsEl.textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 });
 
 /* ==========================================
@@ -112,7 +128,7 @@ window.addEventListener('load', function () {
 
 /* ==========================================
    URL PARAMS - Personalizar nombre del invitado
-   Ejemplo de uso: index.html?n=Juan&p=Sr.
+   Ejemplo: index.html?n=Juan&p=Sr.
    ========================================== */
 const urlParams    = new URLSearchParams(window.location.search);
 const nombreGuest  = urlParams.get('n') || '';

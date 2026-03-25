@@ -1,0 +1,105 @@
+/* ==========================================
+   COUNTDOWN PERSONALIZADO - Estilo 4
+   Cajas elegantes con borde plateado
+   ========================================== */
+
+.countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  border: 2px solid var(--silver);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 0 20px rgba(192,192,192,0.05);
+  transition: transform 0.3s ease;
+}
+
+.countdown-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-light);
+}
+
+/* Linea divisora central */
+.countdown-box::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--silver), transparent);
+  top: 50%;
+  left: 10%;
+}
+
+.countdown-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--silver-light);
+  line-height: 1;
+  margin-top: -8px;
+  text-shadow: 0 0 20px rgba(128, 172, 220, 0.5);
+}
+
+.countdown-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--silver);
+  margin-top: 6px;
+}
+
+/* Separador entre cajas */
+.countdown-separator {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--silver);
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+  align-self: center;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .countdown-box {
+    width: 75px;
+    height: 75px;
+  }
+  .countdown-number {
+    font-size: 2rem;
+  }
+  .countdown-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.1rem;
+  }
+  .countdown-separator {
+    font-size: 1.8rem;
+  }
+  .countdown-wrapper {
+    gap: 0.4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .countdown-box {
+    width: 65px;
+    height: 65px;
+  }
+  .countdown-number {
+    font-size: 1.7rem;
+  }
+}
