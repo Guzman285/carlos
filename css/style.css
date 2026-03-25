@@ -112,81 +112,24 @@ h1, h2, h3, h4, h5 {
 .mynavbar .navbar-toggler-icon {
   filter: invert(60%) sepia(40%) saturate(400%) hue-rotate(180deg);
 }
+.mynavbar .navbar-collapse {
+  background-color: rgba(10, 15, 26, 0.97);
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(83,127,175,0.3);
+}
+.mynavbar .navbar-collapse .nav-link {
+  color: var(--silver-light) !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.2rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(192,192,192,0.1);
+}
+.mynavbar .navbar-collapse .nav-link:hover {
+  color: var(--primary-light) !important;
+  padding-left: 0.5rem;
+}
 .sticky-top {
   overflow: hidden;
-}
-
-/* Offcanvas elegante */
-.mynavbar .offcanvas {
-  background-color: var(--bg-dark);
-  border-left: 1px solid var(--primary);
-  width: 280px !important;
-}
-.mynavbar .offcanvas-header {
-  border-bottom: 1px solid rgba(83, 127, 175, 0.3);
-  padding: 2rem 1.5rem 1.5rem;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.3rem;
-}
-.mynavbar .offcanvas-title {
-  font-family: var(--font-title);
-  font-size: 2.8rem;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--primary-light);
-  line-height: 1.1;
-}
-.mynavbar .offcanvas-header small {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: var(--silver);
-  display: block;
-}
-.mynavbar .btn-close {
-  filter: invert(1);
-  opacity: 0.5;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-.mynavbar .offcanvas-body {
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.mynavbar .offcanvas .navbar-nav {
-  gap: 0.3rem;
-}
-.mynavbar .offcanvas .nav-link {
-  color: var(--silver-light) !important;
-  font-size: 0.8rem;
-  letter-spacing: 0.25rem;
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid rgba(192, 192, 192, 0.1);
-  transition: all 0.2s ease;
-}
-.mynavbar .offcanvas .nav-link:hover {
-  color: var(--primary-light) !important;
-  background-color: rgba(83, 127, 175, 0.1);
-  padding-left: 1.5rem;
-}
-/* Fecha pequeña al fondo del offcanvas */
-.offcanvas-footer {
-  padding: 1.5rem;
-  text-align: center;
-  border-top: 1px solid rgba(83, 127, 175, 0.2);
-}
-.offcanvas-footer p {
-  font-family: var(--font-title);
-  font-style: italic;
-  color: var(--silver);
-  font-size: 1rem;
-  margin: 0;
 }
 
 /* ==========================================
@@ -212,25 +155,43 @@ h1, h2, h3, h4, h5 {
 .home h3 {
   font-family: var(--font-body);
   color: #444;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 1rem;
   letter-spacing: 0.05rem;
 }
 .home p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300;
   color: #555;
 }
 .home .couple {
   margin-top: 75px;
 }
-.home .couple h3 {
+
+/* Nombres de los esposos - mas grandes y elegantes */
+.home .couple .couple-name {
   font-family: var(--font-title);
-  font-size: 3rem;
+  font-size: 3.8rem;
   font-weight: 500;
   font-style: italic;
   color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.home .couple .couple-full {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 0.2rem;
+}
+.home .couple .couple-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #666;
+  font-style: italic;
 }
 .home .couple img {
   width: 100%;
@@ -561,7 +522,7 @@ footer li {
 }
 @media (max-width: 768px) {
   html { font-size: 65%; }
-  .mynavbar .nav-link { font-size: 1.5rem; text-align: center; }
+  .home .couple .couple-name { font-size: 3.2rem; }
   .timeline li .timeline-image { width: 110px; height: 110px; left: 0; top: 15px; }
   .timeline li .timeline-panel { width: 70%; transform: translateX(-8px); }
   .timeline li .timeline-panel::before { top: 30px; }
@@ -569,6 +530,7 @@ footer li {
 }
 @media (max-width: 576px) {
   html { font-size: 60%; }
+  .home .couple .couple-name { font-size: 3rem; }
   .timeline li .timeline-image { width: 115px; height: 115px; left: 0; top: 5px; }
   .timeline li .timeline-panel { width: 55%; transform: translateX(-20px); padding: 2%; }
 }
