@@ -283,38 +283,50 @@ h1, h2, h3, h4, h5 { font-family: var(--font-title); }
   color: var(--primary);
   margin-bottom: 0.3rem;
 }
-.couple-section-title {
-  font-family: var(--font-title);
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 600;
-  font-style: italic;
-  color: var(--primary-dark);
-  margin-bottom: 0.5rem;
+
+/* Tarjeta centrada de cada novio */
+.couple-card {
+  padding: 1rem 0 2rem;
 }
-.couple { margin-top: 0; }
+.couple-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid var(--primary-light);
+  box-shadow: 0 4px 20px rgba(83, 127, 175, 0.2);
+}
+
+/* Nombre italic grande */
 .couple .couple-name {
   font-family: var(--font-title);
-  font-size: 4rem;
+  font-size: 3.8rem;
   font-weight: 600;
   font-style: italic;
   color: var(--primary-dark);
   line-height: 1.1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
-.couple .couple-full {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 0.2rem;
-}
-.couple .couple-desc {
+
+/* Nombre completo en azul, sin negrita */
+.couple-full-name {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 400;
-  color: #555;
+  color: var(--primary);
+  letter-spacing: 0.04rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Descripción cargo/ocupación */
+.couple .couple-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #666;
   font-style: italic;
 }
+
+.couple { margin-top: 0; }
 .couple img { width: 100%; }
 .heart {
   width: 50px; height: 50px;
@@ -645,13 +657,14 @@ footer li { list-style: none; display: inline; margin: 0.5rem; }
 }
 @media (max-width: 768px) {
   html { font-size: 65%; }
-  .couple .couple-name { font-size: 3.5rem; }
+  .couple .couple-name { font-size: 3.2rem; }
+  .couple-img { width: 140px; height: 140px; }
   .timeline li .timeline-image { width: 110px; height: 110px; left: 0; top: 15px; }
   .timeline li .timeline-panel { width: 70%; transform: translateX(-8px); }
 }
 @media (max-width: 576px) {
   html { font-size: 60%; }
-  .couple .couple-name { font-size: 3.2rem; }
+  .couple-img { width: 120px; height: 120px; }
   .timeline li .timeline-image { width: 115px; height: 115px; left: 0; top: 5px; }
   .timeline li .timeline-panel { width: 55%; transform: translateX(-20px); padding: 2%; }
   .parents-card { padding: 1.2rem 1rem; }
