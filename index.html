@@ -189,8 +189,6 @@
     <!-- ===================== INFO ===================== -->
     <section id="info" class="info">
       <div class="container">
-
-        <!-- Encabezado -->
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center mb-5">
             <p class="info-label">Les esperamos</p>
@@ -198,14 +196,10 @@
             <div class="parents-divider mt-2"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
           </div>
         </div>
-
-        <!-- Tarjeta de ubicacion elegante -->
         <div class="row justify-content-center mb-5">
           <div class="col-md-6 col-10">
             <div class="info-location-card text-center">
-              <div class="info-location-icon">
-                <i class="bi bi-geo-alt"></i>
-              </div>
+              <div class="info-location-icon"><i class="bi bi-geo-alt"></i></div>
               <p class="info-location-tag">Lugar de la celebraci&oacute;n</p>
               <h3 class="info-location-name">Hotel La Hacienda</h3>
               <p class="info-location-address">Panajachel, Solol&aacute;, Guatemala</p>
@@ -216,8 +210,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Tarjetas Ceremonia / Recepcion -->
         <div class="row justify-content-center">
           <div class="col-md-5 col-10 mb-4">
             <div class="card text-center">
@@ -244,7 +236,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -262,10 +253,8 @@
           </div>
           <div class="modal-body p-0">
             <div class="modal-mapa-frame">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890"
-                width="100%" height="360" style="border:0; display:block;"
-                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15472.123456789!2d-91.1547!3d14.7408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e4b77d3f9c3c7%3A0x123456789abcdef!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1234567890"
+                width="100%" height="360" style="border:0; display:block;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="text-center py-3">
               <a href="https://maps.google.com/?q=Panajachel+Solola+Guatemala" target="_blank" class="home-btn-agendar">
@@ -315,24 +304,70 @@
       </div>
     </section>
 
-    <!-- ===================== GALERÍA ===================== -->
+    <!-- ===================== GALERÍA — Carrusel + Lightbox ===================== -->
     <section id="gallery" class="gallery">
       <div class="container">
-        <div class="row justify-content-center">
+
+        <!-- Encabezado -->
+        <div class="row justify-content-center mb-5">
           <div class="col-md-8 col-10 text-center">
             <span>Momentos que atesoramos</span>
             <h2>Galer&iacute;a</h2>
-            <p>Pr&oacute;ximamente compartiremos nuestros momentos especiales aqu&iacute;.</p>
-          </div>
-          <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-            <div class="col mt-3"><img src="https://picsum.photos/id/200/600/400" alt="Carlos &amp; Elida 1" class="img-fluid w-100 rounded" /></div>
-            <div class="col mt-3"><img src="https://picsum.photos/id/5/600/400" alt="Carlos &amp; Elida 2" class="img-fluid w-100 rounded" /></div>
-            <div class="col mt-3"><img src="https://picsum.photos/id/500/600/400" alt="Carlos &amp; Elida 3" class="img-fluid w-100 rounded" /></div>
-            <div class="col mt-3"><img src="https://picsum.photos/id/900/600/400" alt="Carlos &amp; Elida 4" class="img-fluid w-100 rounded" /></div>
+            <p>Presiona una foto para verla m&aacute;s grande.</p>
           </div>
         </div>
+
+        <!-- Carrusel Bootstrap -->
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10 col-12">
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+              <!-- Indicadores -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
+              </div>
+
+              <!-- Slides -->
+              <div class="carousel-inner gallery-carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://picsum.photos/id/200/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 1" data-lightbox="https://picsum.photos/id/200/900/600" />
+                </div>
+                <div class="carousel-item">
+                  <img src="https://picsum.photos/id/5/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 2" data-lightbox="https://picsum.photos/id/5/900/600" />
+                </div>
+                <div class="carousel-item">
+                  <img src="https://picsum.photos/id/500/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 3" data-lightbox="https://picsum.photos/id/500/900/600" />
+                </div>
+                <div class="carousel-item">
+                  <img src="https://picsum.photos/id/900/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 4" data-lightbox="https://picsum.photos/id/900/900/600" />
+                </div>
+              </div>
+
+              <!-- Controles -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+
+            </div><!-- /carousel -->
+          </div>
+        </div>
+
       </div>
     </section>
+
+    <!-- ===================== LIGHTBOX (foto expandida) ===================== -->
+    <div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Foto expandida">
+      <button class="gallery-lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+      <img src="" alt="Foto ampliada" id="lightboxImg" class="gallery-lightbox-img" />
+    </div>
 
     <!-- ===================== REGALOS ===================== -->
     <section id="gifts" class="gifts">
@@ -372,13 +407,34 @@
       <audio id="backSong" autoplay loop>
         <source src="audio/cintaVina.mp3" type="audio/mp3" />
       </audio>
-      <div class="audio-icon-wrapper" style="display:none;">
-        <i class="bi bi-disc"></i>
-      </div>
+      <div class="audio-icon-wrapper" style="display:none;"><i class="bi bi-disc"></i></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      // ===== LIGHTBOX =====
+      const lightbox   = document.getElementById('galleryLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
+
+      document.querySelectorAll('.gallery-slide-img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.dataset.lightbox;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => { lightboxImg.src = ''; }, 300);
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
   </body>
 </html>
