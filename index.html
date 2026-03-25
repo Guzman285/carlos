@@ -86,7 +86,6 @@
           </div>
 
           <div class="row couple">
-            <!-- Novio -->
             <div class="col-lg-6">
               <div class="row align-items-center">
                 <div class="col-8 text-end">
@@ -102,7 +101,6 @@
 
             <span class="heart"><i class="bi bi-heart-fill"></i></span>
 
-            <!-- Novia -->
             <div class="col-lg-6">
               <div class="row align-items-center">
                 <div class="col-4">
@@ -304,32 +302,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
     <script src="js/main.js"></script>
-
-    <!-- RSVP: envío AJAX para evitar redirección -->
-    <script>
-      document.getElementById('my-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var btn  = this.querySelector('button[type="submit"]');
-        var msg  = document.getElementById('form-msg');
-        btn.disabled = true;
-        btn.textContent = 'Enviando...';
-        fetch(this.action, { method: 'POST', body: new FormData(this) })
-          .then(function() {
-            msg.style.display = 'block';
-            msg.style.color   = '#80acdc';
-            msg.textContent   = '¡Gracias! Tu confirmación fue recibida. ♥';
-            btn.style.display = 'none';
-            document.getElementById('my-form').reset();
-          })
-          .catch(function() {
-            msg.style.display = 'block';
-            msg.style.color   = '#ff6b6b';
-            msg.textContent   = 'Hubo un error. Por favor intentá de nuevo.';
-            btn.disabled = false;
-            btn.textContent = 'Enviar';
-          });
-      });
-    </script>
 
   </body>
 </html>

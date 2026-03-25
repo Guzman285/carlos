@@ -1,6 +1,5 @@
 /* ==========================================
    COUNTDOWN - Cuenta regresiva a la boda
-   Estilo 4: Cajas elegantes con borde plateado
    ========================================== */
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -36,10 +35,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  /* ==========================================
+     RSVP - Envio unico sin duplicados
+     ========================================== */
+  const form = document.getElementById('my-form');
+  if (form) {
+    let enviando = false;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (enviando) return;  // bloquear doble envio
+      enviando = true;
+
+      var btn = form.querySelector('button[type="submit"]');
+      var msg = document.getElementById('form-msg');
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function () {
+          msg.style.display = 'block';
+          msg.style.color   = '#80acdc';
+          msg.textContent   = '\u00a1Gracias! Tu confirmaci\u00f3n fue recibida. \u2665';
+          btn.style.display = 'none';
+          form.reset();
+        })
+        .catch(function () {
+          msg.style.display = 'block';
+          msg.style.color   = '#ff6b6b';
+          msg.textContent   = 'Hubo un error. Por favor intent\u00e1 de nuevo.';
+          btn.disabled = false;
+          btn.textContent = 'Enviar';
+          enviando = false;
+        });
+    });
+  }
+
 });
 
 /* ==========================================
-   NAVBAR - Fix overflow al abrir offcanvas
+   NAVBAR - Fix overflow
    ========================================== */
 const stickyTop = document.querySelector('.sticky-top');
 const offcanvas = document.querySelector('.offcanvas');
@@ -54,7 +89,7 @@ if (offcanvas) {
 }
 
 /* ==========================================
-   SCROLL - Bloquear scroll hasta abrir invitación
+   SCROLL - Bloquear hasta abrir invitacion
    ========================================== */
 const rootElement      = document.querySelector(':root');
 const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
@@ -78,7 +113,7 @@ function enableScroll() {
 }
 
 /* ==========================================
-   AUDIO - Reproducir música de fondo
+   AUDIO - Musica de fondo
    ========================================== */
 function playAudio() {
   backSong.volume = 0.5;
@@ -103,28 +138,6 @@ if (audioIconWrapper) {
 }
 
 disableScroll();
-
-/* ==========================================
-   RSVP - Enviar formulario de confirmación
-   ========================================== */
-window.addEventListener('load', function () {
-  const form = document.getElementById('my-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const data   = new FormData(form);
-      const action = e.target.action;
-      fetch(action, { method: 'POST', body: data })
-        .then(() => {
-          alert('¡Confirmación enviada con éxito! Gracias.');
-          form.reset();
-        })
-        .catch(() => {
-          alert('Hubo un error. Por favor intentá de nuevo.');
-        });
-    });
-  }
-});
 
 /* ==========================================
    URL PARAMS - Personalizar nombre del invitado
