@@ -28,7 +28,6 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-title);
 }
 
-/* Patron base compartido por todas las secciones */
 .section-flora {
   position: relative;
   isolation: isolate;
@@ -94,19 +93,61 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 0.05rem;
   text-shadow: var(--shadow);
 }
-.hero a {
-  color: var(--primary);
-  background-color: #f0f8ff;
-  box-shadow: var(--shadow);
+
+/* Boton elegante Ver Invitacion */
+.hero a.btn {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 3rem;
   font-family: var(--font-body);
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--silver-light);
+  background: transparent;
+  border: 1px solid rgba(192, 192, 192, 0.6);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  animation: hero-btn-pulse 2.8s ease-in-out infinite;
 }
-.hero a:hover {
-  background-color: var(--primary);
-  color: #f0f8ff;
+/* Relleno que entra de izquierda a derecha al hover */
+.hero a.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(128, 172, 220, 0.25);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+.hero a.btn:hover::before  { transform: scaleX(1); }
+.hero a.btn:hover {
+  color: #ffffff;
+  border-color: var(--primary-light);
+}
+.hero a.btn span, .hero a.btn { z-index: 1; }
+
+/* Esquinas decorativas */
+.hero a.btn::after {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px solid rgba(192, 192, 192, 0.25);
+  pointer-events: none;
+  transition: border-color 0.4s ease;
+}
+.hero a.btn:hover::after { border-color: rgba(128, 172, 220, 0.45); }
+
+/* Pulso suave como latido */
+@keyframes hero-btn-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(128, 172, 220, 0.0); }
+  40%  { box-shadow: 0 0 0 8px rgba(128, 172, 220, 0.2); }
+  70%  { box-shadow: 0 0 0 14px rgba(128, 172, 220, 0.07); }
+  100% { box-shadow: 0 0 0 0 rgba(128, 172, 220, 0.0); }
 }
 
 /* ==========================================
