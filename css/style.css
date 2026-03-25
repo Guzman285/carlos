@@ -92,11 +92,7 @@ h1, h2, h3, h4, h5 {
   background-color: rgba(83, 127, 175, 0.25) !important;
   backdrop-filter: blur(4px);
 }
-.mynavbar .offcanvas {
-  height: 100vh;
-}
-.mynavbar .navbar-brand,
-.mynavbar .offcanvas-title {
+.mynavbar .navbar-brand {
   font-family: var(--font-title);
   font-size: 2.8rem;
   font-weight: 500;
@@ -113,8 +109,84 @@ h1, h2, h3, h4, h5 {
 .mynavbar .nav-link:hover {
   color: var(--silver) !important;
 }
+.mynavbar .navbar-toggler-icon {
+  filter: invert(60%) sepia(40%) saturate(400%) hue-rotate(180deg);
+}
 .sticky-top {
   overflow: hidden;
+}
+
+/* Offcanvas elegante */
+.mynavbar .offcanvas {
+  background-color: var(--bg-dark);
+  border-left: 1px solid var(--primary);
+  width: 280px !important;
+}
+.mynavbar .offcanvas-header {
+  border-bottom: 1px solid rgba(83, 127, 175, 0.3);
+  padding: 2rem 1.5rem 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.3rem;
+}
+.mynavbar .offcanvas-title {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--primary-light);
+  line-height: 1.1;
+}
+.mynavbar .offcanvas-header small {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--silver);
+  display: block;
+}
+.mynavbar .btn-close {
+  filter: invert(1);
+  opacity: 0.5;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.mynavbar .offcanvas-body {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mynavbar .offcanvas .navbar-nav {
+  gap: 0.3rem;
+}
+.mynavbar .offcanvas .nav-link {
+  color: var(--silver-light) !important;
+  font-size: 0.8rem;
+  letter-spacing: 0.25rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.1);
+  transition: all 0.2s ease;
+}
+.mynavbar .offcanvas .nav-link:hover {
+  color: var(--primary-light) !important;
+  background-color: rgba(83, 127, 175, 0.1);
+  padding-left: 1.5rem;
+}
+/* Fecha pequeña al fondo del offcanvas */
+.offcanvas-footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(83, 127, 175, 0.2);
+}
+.offcanvas-footer p {
+  font-family: var(--font-title);
+  font-style: italic;
+  color: var(--silver);
+  font-size: 1rem;
+  margin: 0;
 }
 
 /* ==========================================
@@ -480,7 +552,6 @@ footer li {
 }
 @media (max-width: 992px) {
   html { font-size: 75%; }
-  .simply-countdown-circle > .simply-section { padding: 70px; }
   .home .heart { display: none; }
   .timeline::before { left: 60px; }
   .timeline li .timeline-image { left: 15px; margin-left: 70px; width: 155px; height: 155px; }
@@ -490,7 +561,6 @@ footer li {
 }
 @media (max-width: 768px) {
   html { font-size: 65%; }
-  .simply-countdown-circle > .simply-section { padding: 30px; margin: 4px; }
   .mynavbar .nav-link { font-size: 1.5rem; text-align: center; }
   .timeline li .timeline-image { width: 110px; height: 110px; left: 0; top: 15px; }
   .timeline li .timeline-panel { width: 70%; transform: translateX(-8px); }
@@ -499,13 +569,11 @@ footer li {
 }
 @media (max-width: 576px) {
   html { font-size: 60%; }
-  .simply-countdown-circle > .simply-section { padding: 10px; margin: 2px; }
   .timeline li .timeline-image { width: 115px; height: 115px; left: 0; top: 5px; }
   .timeline li .timeline-panel { width: 55%; transform: translateX(-20px); padding: 2%; }
 }
 @media (max-width: 460px) {
   html { font-size: 55%; }
-  .simply-countdown-circle > .simply-section { padding: 6px; margin: 1px; }
   .timeline li .timeline-image { width: 90px; height: 90px; }
   .timeline li .timeline-panel { width: 60%; transform: translateX(-15px); padding: 1.5%; }
 }
