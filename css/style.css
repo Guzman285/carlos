@@ -12,6 +12,7 @@
   --overlay: rgba(10, 20, 40, 0.55);
   --font-title: 'Cormorant Garamond', serif;
   --font-body:  'Lato', sans-serif;
+  --flora: url(../img/floraPattern1.png);
 }
 
 /* ==========================================
@@ -27,25 +28,47 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-title);
 }
 
+/* Patron base compartido por todas las secciones */
+.section-flora {
+  position: relative;
+  isolation: isolate;
+}
+.section-flora::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
 /* ==========================================
    HERO
    ========================================== */
 .hero {
   position: relative;
   min-height: 100vh;
-  background-color: var(--overlay);
+  isolation: isolate;
 }
 .hero::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background-image: url(../img/prewed1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1;
+  z-index: -2;
   filter: grayscale(30%) brightness(0.7);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 20, 40, 0.45);
+  z-index: -1;
 }
 .hero h1 {
   font-family: var(--font-title);
@@ -114,7 +137,6 @@ h1, h2, h3, h4, h5 {
 .mynavbar .navbar-toggler-icon {
   filter: invert(60%) sepia(40%) saturate(400%) hue-rotate(180deg);
 }
-/* Menu desplegable en movil: azul semitransparente */
 .mynavbar .navbar-collapse {
   background-color: rgba(58, 95, 138, 0.88);
   backdrop-filter: blur(8px);
@@ -136,20 +158,34 @@ h1, h2, h3, h4, h5 {
   color: var(--silver-light) !important;
   padding-left: 0.5rem;
 }
-.sticky-top {
-  overflow: hidden;
-}
+.sticky-top { overflow: hidden; }
 
 /* ==========================================
-   HOME
+   HOME — overlay blanco cremoso
    ========================================== */
 .home {
-  background-image: url(../img/floraPattern1.png);
-  background-size: cover;
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   margin-top: -6rem;
   padding-top: 15rem;
   padding-bottom: 5rem;
+}
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.home::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(240, 245, 255, 0.82);
+  z-index: -1;
 }
 .home h2 {
   color: var(--primary);
@@ -173,11 +209,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 400;
   color: #444;
 }
-.home .couple {
-  margin-top: 75px;
-}
-
-/* Nombres esposos: mas peso, bien visibles */
+.home .couple { margin-top: 75px; }
 .home .couple .couple-name {
   font-family: var(--font-title);
   font-size: 4rem;
@@ -201,9 +233,7 @@ h1, h2, h3, h4, h5 {
   color: #555;
   font-style: italic;
 }
-.home .couple img {
-  width: 100%;
-}
+.home .couple img { width: 100%; }
 .home .heart {
   width: 50px; height: 50px;
   background-color: white;
@@ -214,19 +244,33 @@ h1, h2, h3, h4, h5 {
   left: 50%;
   transform: translateX(-50%) translateY(65px);
 }
-.home .heart i {
-  margin: auto;
-  color: var(--primary);
-}
+.home .heart i { margin: auto; color: var(--primary); }
 
 /* ==========================================
-   INFO
+   INFO — overlay azul oscuro
    ========================================== */
 .info {
-  background-color: var(--bg-dark);
+  position: relative;
+  isolation: isolate;
   color: #e0f0ff;
   padding-top: 10rem;
   padding-bottom: 8rem;
+}
+.info::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.info::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 30, 60, 0.87);
+  z-index: -1;
 }
 .info h2 {
   color: var(--primary-light);
@@ -235,15 +279,12 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
   font-style: italic;
 }
-.info .alamat {
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.05rem;
-}
+.info .alamat { font-size: 1rem; font-weight: 400; letter-spacing: 0.05rem; }
 .info .card {
-  background-color: rgba(83, 127, 175, 0.15) !important;
+  background-color: rgba(83, 127, 175, 0.18) !important;
   color: white !important;
   border: 1px solid var(--primary);
+  backdrop-filter: blur(4px);
 }
 .info .card-header {
   border-bottom: 1px solid var(--primary);
@@ -262,11 +303,29 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================
-   HISTORIA / STORY
+   HISTORIA — overlay blanco lavanda suave
    ========================================== */
 .story {
+  position: relative;
+  isolation: isolate;
   padding-top: 10rem;
   padding-bottom: 8rem;
+}
+.story::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.story::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(230, 235, 248, 0.88);
+  z-index: -1;
 }
 .story h2 {
   color: var(--primary);
@@ -327,7 +386,7 @@ h1, h2, h3, h4, h5 {
   padding: 2rem;
   position: relative;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.9);
 }
 .timeline li .timeline-panel::before {
   content: '';
@@ -344,7 +403,7 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
+  border-left: 14px solid rgba(255,255,255,0.9);
   border-right: 0;
   border-bottom: 14px solid transparent;
   top: 81px; right: -13px;
@@ -375,15 +434,32 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================
-   GALERÍA
+   GALERIA — overlay azul plateado claro
    ========================================== */
 .gallery {
+  position: relative;
+  isolation: isolate;
   padding-top: 10rem;
   padding-bottom: 8rem;
-  background-color: var(--silver-light);
+}
+.gallery::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.gallery::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(200, 215, 235, 0.85);
+  z-index: -1;
 }
 .gallery h2 {
-  color: var(--primary);
+  color: var(--primary-dark);
   font-family: var(--font-title);
   font-size: 5rem;
   font-weight: 600;
@@ -391,7 +467,7 @@ h1, h2, h3, h4, h5 {
 }
 .gallery span {
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--primary-dark);
   font-size: 0.8rem;
   letter-spacing: 0.2rem;
   display: block;
@@ -399,15 +475,32 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-body);
   font-weight: 700;
 }
-.gallery p { font-size: 1rem; font-weight: 400; }
+.gallery p { font-size: 1rem; font-weight: 400; color: #333; }
 
 /* ==========================================
-   RSVP
+   RSVP — overlay azul marino medio
    ========================================== */
 .rsvp {
+  position: relative;
+  isolation: isolate;
   padding-top: 10rem;
   padding-bottom: 8rem;
-  background-color: var(--bg-dark);
+}
+.rsvp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.rsvp::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(30, 55, 100, 0.88);
+  z-index: -1;
 }
 .rsvp h2 {
   font-family: var(--font-title);
@@ -441,11 +534,29 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================
-   REGALOS
+   REGALOS — overlay blanco perla suave
    ========================================== */
 .gifts {
+  position: relative;
+  isolation: isolate;
   padding-top: 10rem;
   padding-bottom: 8rem;
+}
+.gifts::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.gifts::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(245, 248, 255, 0.85);
+  z-index: -1;
 }
 .gifts h2 {
   color: var(--primary);
@@ -464,7 +575,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-body);
   font-weight: 700;
 }
-.gifts p { font-size: 1rem; font-weight: 400; }
+.gifts p { font-size: 1rem; font-weight: 400; color: #444; }
 .gifts .list-group-item { border-color: var(--primary-light); }
 .gifts .list-group-item .fw-bold { color: var(--primary); font-family: var(--font-title); font-size: 1.3rem; font-weight: 600; }
 
@@ -493,7 +604,7 @@ footer li {
 }
 
 /* ==========================================
-   AUDIO (ícono flotante)
+   AUDIO (icono flotante)
    ========================================== */
 .audio-icon-wrapper {
   width: 4rem; height: 4rem;
