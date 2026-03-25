@@ -10,6 +10,8 @@
   --bg-dark: #0a0f1a;
   --shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   --overlay: rgba(10, 20, 40, 0.55);
+  --font-title: 'Cormorant Garamond', serif;
+  --font-body:  'Lato', sans-serif;
 }
 
 /* ==========================================
@@ -17,8 +19,12 @@
    ========================================== */
 body {
   font-size: 1.2rem;
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--font-body);
+  font-weight: 300;
   min-height: 4000px;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-title);
 }
 
 /* ==========================================
@@ -42,21 +48,37 @@ body {
   filter: grayscale(30%) brightness(0.7);
 }
 .hero h1 {
-  font-family: 'Sacramento', cursive;
-  font-size: 6rem;
+  font-family: var(--font-title);
+  font-size: 7rem;
+  font-weight: 300;
+  font-style: italic;
   margin-top: 30px;
   color: var(--silver-light);
   text-shadow: var(--shadow);
+  letter-spacing: 0.1rem;
 }
-.hero h4, .hero p {
+.hero h4 {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
   text-shadow: var(--shadow);
 }
-.hero h4 { font-size: 1.6rem; }
-.hero p  { font-size: 1.4rem; }
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  text-shadow: var(--shadow);
+}
 .hero a {
   color: var(--primary);
   background-color: #f0f8ff;
   box-shadow: var(--shadow);
+  font-family: var(--font-body);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 .hero a:hover {
   background-color: var(--primary);
@@ -75,13 +97,17 @@ body {
 }
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
-  font-family: 'Sacramento', cursive;
-  font-size: 3.2rem;
-  font-weight: bold;
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-weight: 500;
+  font-style: italic;
   color: var(--primary-light);
 }
 .mynavbar .nav-link {
+  font-family: var(--font-body);
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.85rem;
   color: var(--primary) !important;
 }
 .mynavbar .nav-link:hover {
@@ -104,27 +130,34 @@ body {
 }
 .home h2 {
   color: var(--primary);
-  font-family: 'Sacramento', cursive;
-  font-size: 5rem;
-  font-weight: bold;
+  font-family: var(--font-title);
+  font-size: 5.5rem;
+  font-weight: 300;
+  font-style: italic;
   margin-top: -6rem;
+  letter-spacing: 0.05rem;
 }
 .home h3 {
+  font-family: var(--font-body);
   color: #444;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
   margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
 }
 .home p {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 300;
   color: #555;
 }
 .home .couple {
   margin-top: 75px;
 }
 .home .couple h3 {
-  font-family: 'Sacramento', cursive;
+  font-family: var(--font-title);
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 500;
+  font-style: italic;
   color: var(--primary);
 }
 .home .couple img {
@@ -156,11 +189,16 @@ body {
 }
 .info h2 {
   color: var(--primary-light);
-  font-family: 'Sacramento', cursive;
+  font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: bold;
+  font-weight: 300;
+  font-style: italic;
 }
-.info .alamat { font-size: 1.1rem; }
+.info .alamat {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
 .info .card {
   background-color: rgba(83, 127, 175, 0.15) !important;
   color: white !important;
@@ -169,12 +207,14 @@ body {
 .info .card-header {
   border-bottom: 1px solid var(--primary);
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
+  font-size: 0.85rem;
   color: var(--primary-light);
+  font-family: var(--font-body);
 }
 .info .card-footer {
   border-top: 1px solid var(--silver);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 300;
   color: var(--silver-light);
 }
@@ -188,17 +228,19 @@ body {
 }
 .story h2 {
   color: var(--primary);
-  font-family: 'Sacramento', cursive;
+  font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: bold;
+  font-weight: 300;
+  font-style: italic;
 }
 .story > .container > .row > .col-md-8 > span {
   text-transform: uppercase;
   color: var(--primary);
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
   display: block;
   margin-bottom: 1rem;
+  font-family: var(--font-body);
 }
 .story p { font-size: 1rem; font-weight: 300; }
 
@@ -273,8 +315,20 @@ body {
   border-left-width: 0; border-right-width: 14px;
   left: -13px; right: auto;
 }
-.timeline-heading h3 { color: var(--primary); font-family: 'Sacramento', cursive; font-size: 2rem; }
-.timeline-heading span { color: var(--primary-dark); font-size: 0.9rem; }
+.timeline-heading h3 {
+  color: var(--primary);
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+}
+.timeline-heading span {
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
 
 /* ==========================================
    GALERÍA
@@ -286,17 +340,19 @@ body {
 }
 .gallery h2 {
   color: var(--primary);
-  font-family: 'Sacramento', cursive;
+  font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: bold;
+  font-weight: 300;
+  font-style: italic;
 }
 .gallery span {
   text-transform: uppercase;
   color: var(--primary);
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
   display: block;
   margin-bottom: 1rem;
+  font-family: var(--font-body);
 }
 .gallery p { font-size: 1rem; font-weight: 300; }
 
@@ -309,16 +365,27 @@ body {
   background-color: var(--bg-dark);
 }
 .rsvp h2 {
-  font-family: 'Sacramento', cursive;
+  font-family: var(--font-title);
   font-size: 4.5rem;
+  font-style: italic;
+  font-weight: 300;
   color: var(--primary-light) !important;
 }
-.rsvp p    { color: var(--silver-light); }
-.rsvp label { color: var(--silver-light); }
+.rsvp p    { color: var(--silver-light); font-weight: 300; }
+.rsvp label {
+  color: var(--silver-light);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+}
 .rsvp button {
   background-color: var(--primary);
   color: white;
   border: 1px solid var(--primary);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 .rsvp button:hover {
   background-color: var(--silver);
@@ -335,21 +402,23 @@ body {
 }
 .gifts h2 {
   color: var(--primary);
-  font-family: 'Sacramento', cursive;
+  font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: bold;
+  font-weight: 300;
+  font-style: italic;
 }
 .gifts span {
   text-transform: uppercase;
   color: var(--primary);
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
   display: block;
   margin-bottom: 1rem;
+  font-family: var(--font-body);
 }
 .gifts p { font-size: 1rem; font-weight: 300; }
 .gifts .list-group-item { border-color: var(--primary-light); }
-.gifts .list-group-item .fw-bold { color: var(--primary); }
+.gifts .list-group-item .fw-bold { color: var(--primary); font-family: var(--font-title); font-size: 1.3rem; }
 
 /* ==========================================
    FOOTER
@@ -358,10 +427,14 @@ footer {
   padding: 3rem;
   background-color: var(--primary-dark);
   color: var(--silver-light);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
 }
 footer a {
   color: var(--silver);
-  font-weight: bold;
+  font-weight: 400;
   text-decoration: none;
 }
 footer a:hover { color: white; }
