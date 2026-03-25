@@ -1,6 +1,5 @@
 /* ==========================================
-   COUNTDOWN PERSONALIZADO - Estilo 4
-   Cajas elegantes con borde plateado
+   COUNTDOWN PERSONALIZADO
    ========================================== */
 
 .countdown-wrapper {
@@ -19,13 +18,12 @@
   justify-content: center;
   width: 110px;
   height: 110px;
-  border: 2px solid var(--silver);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(192, 192, 192, 0.45);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(4px);
   position: relative;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 0 20px rgba(192,192,192,0.05);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .countdown-box:hover {
@@ -33,73 +31,57 @@
   border-color: var(--primary-light);
 }
 
-/* Linea divisora central */
+/* Línea central decorativa */
 .countdown-box::after {
   content: '';
   position: absolute;
-  width: 80%;
+  width: 70%;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--silver), transparent);
+  background: linear-gradient(to right, transparent, rgba(192,192,192,0.35), transparent);
   top: 50%;
-  left: 10%;
+  left: 15%;
 }
 
+/* Números: blancos puros, bien visibles */
 .countdown-number {
   font-family: 'Cormorant Garamond', serif;
   font-size: 3rem;
   font-weight: 600;
-  color: var(--silver-light);
+  color: #ffffff;
   line-height: 1;
   margin-top: -8px;
-  text-shadow: 0 0 20px rgba(128, 172, 220, 0.5);
+  text-shadow: 0 0 18px rgba(128, 172, 220, 0.7);
 }
 
+/* Etiquetas: plata clara */
 .countdown-label {
   font-family: 'Lato', sans-serif;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  color: var(--silver);
+  color: var(--primary-light);
   margin-top: 6px;
 }
 
-/* Separador entre cajas */
+/* Separador : */
 .countdown-separator {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
-  color: var(--silver);
-  opacity: 0.6;
+  color: #ffffff;
+  opacity: 0.5;
   margin-bottom: 1.5rem;
   align-self: center;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
-  .countdown-box {
-    width: 75px;
-    height: 75px;
-  }
-  .countdown-number {
-    font-size: 2rem;
-  }
-  .countdown-label {
-    font-size: 0.55rem;
-    letter-spacing: 0.1rem;
-  }
-  .countdown-separator {
-    font-size: 1.8rem;
-  }
-  .countdown-wrapper {
-    gap: 0.4rem;
-  }
+  .countdown-box { width: 75px; height: 75px; }
+  .countdown-number { font-size: 2rem; }
+  .countdown-label { font-size: 0.55rem; letter-spacing: 0.1rem; }
+  .countdown-separator { font-size: 1.8rem; }
+  .countdown-wrapper { gap: 0.4rem; }
 }
-
 @media (max-width: 380px) {
-  .countdown-box {
-    width: 65px;
-    height: 65px;
-  }
-  .countdown-number {
-    font-size: 1.7rem;
-  }
+  .countdown-box { width: 65px; height: 65px; }
+  .countdown-number { font-size: 1.7rem; }
 }

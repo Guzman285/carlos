@@ -4,19 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Boda Carlos & Elida</title>
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-
-    <!-- Google Fonts: Cormorant Garamond + Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-
-    <!-- Estilos propios -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/countdown-custom.css" />
   </head>
@@ -25,25 +17,14 @@
     <!-- ===================== HERO ===================== -->
     <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
       <main>
-
-        <!-- Línea decorativa superior -->
         <div class="hero-line"></div>
-
-        <!-- Nombres grandes -->
         <h1 class="hero-name">Carlos</h1>
         <p class="hero-ampersand">&amp;</p>
         <h1 class="hero-name hero-name--right">Elida</h1>
-
-        <!-- Línea decorativa inferior -->
         <div class="hero-line"></div>
-
-        <!-- Subtítulo -->
         <p class="hero-subtitle mt-4">&#161;Nuestra Boda!</p>
         <p class="hero-phrase">Te elijo hoy y por el resto de mi vida</p>
-
-        <!-- Botón -->
         <a href="#home" class="btn mt-4 btn-lg" onclick="enableScroll()">Ver Invitaci&oacute;n</a>
-
       </main>
     </section>
 
@@ -57,6 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#home">Inicio</a>
+            <a class="nav-link" href="#couple">Nosotros</a>
             <a class="nav-link" href="#info">Evento</a>
             <a class="nav-link" href="#story">Historia</a>
             <a class="nav-link" href="#gallery">Galer&iacute;a</a>
@@ -67,17 +49,14 @@
       </div>
     </nav>
 
-    <!-- ===================== HOME ===================== -->
+    <!-- ===================== HOME: solo fecha + contador ===================== -->
     <section id="home" class="home">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-8 text-center">
-            <h2>Boda</h2>
-            <h3>1 de junio de 2026 &middot; Hotel La Hacienda, Panajachel</h3>
-            <p>Con la bendici&oacute;n de Dios y de nuestras familias, tenemos el honor de invitarle a compartir este d&iacute;a tan especial con nosotros.</p>
-
-            <!-- Contador movido aquí -->
-            <div class="countdown-wrapper mt-4 mb-2">
+          <div class="col-md-8 col-11 text-center">
+            <p class="home-date-label">1 de junio de 2026</p>
+            <p class="home-faltan">Faltan</p>
+            <div class="countdown-wrapper mt-2">
               <div class="countdown-box">
                 <span class="countdown-number" id="cd-days">00</span>
                 <span class="countdown-label">D&iacute;as</span>
@@ -99,11 +78,25 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COUPLE: novios + padres ===================== -->
+    <section id="couple" class="couple-section">
+      <div class="container">
+        <div class="row justify-content-center">
 
           <!-- Pareja -->
-          <div class="row couple">
+          <div class="col-12 text-center mb-5">
+            <p class="couple-section-label">Los novios</p>
+            <h2 class="couple-section-title">Carlos & Elida</h2>
+            <div class="parents-divider"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+          </div>
+
+          <div class="row couple w-100">
             <div class="col-lg-6">
-              <div class="row align-items-center">
+              <div class="row align-items-center justify-content-end">
                 <div class="col-8 text-end">
                   <h3 class="couple-name">Carlos Manuel</h3>
                   <p class="couple-full">Carlos Manuel Fuentes Lopez</p>
@@ -114,9 +107,7 @@
                 </div>
               </div>
             </div>
-
             <span class="heart"><i class="bi bi-heart-fill"></i></span>
-
             <div class="col-lg-6">
               <div class="row align-items-center">
                 <div class="col-4">
@@ -131,7 +122,7 @@
           </div>
 
           <!-- Nuestros Padres -->
-          <div class="row parents mt-5 pt-4">
+          <div class="row parents mt-5 pt-4 w-100">
             <div class="col-12 text-center mb-4">
               <p class="parents-label">Con la bendici&oacute;n de</p>
               <h3 class="parents-title">Nuestros Padres</h3>
@@ -327,7 +318,6 @@
       </div>
     </footer>
 
-    <!-- ===================== AUDIO ===================== -->
     <div id="audio-container">
       <audio id="backSong" autoplay loop>
         <source src="audio/cintaVina.mp3" type="audio/mp3" />
@@ -337,10 +327,8 @@
       </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
     <script src="js/main.js"></script>
-
   </body>
 </html>
