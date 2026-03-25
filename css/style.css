@@ -20,7 +20,7 @@
 body {
   font-size: 1.2rem;
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   min-height: 4000px;
 }
 h1, h2, h3, h4, h5 {
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5 {
 .hero h1 {
   font-family: var(--font-title);
   font-size: 7rem;
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
   margin-top: 30px;
   color: var(--silver-light);
@@ -60,14 +60,14 @@ h1, h2, h3, h4, h5 {
 .hero h4 {
   font-family: var(--font-body);
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   text-shadow: var(--shadow);
 }
 .hero p {
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.05rem;
   text-shadow: var(--shadow);
 }
@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   font-size: 0.9rem;
+  font-weight: 700;
 }
 .hero a:hover {
   background-color: var(--primary);
@@ -95,7 +96,7 @@ h1, h2, h3, h4, h5 {
 .mynavbar .navbar-brand {
   font-family: var(--font-title);
   font-size: 2.8rem;
-  font-weight: 500;
+  font-weight: 600;
   font-style: italic;
   color: var(--primary-light);
 }
@@ -104,6 +105,7 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: 0.85rem;
+  font-weight: 700;
   color: var(--primary) !important;
 }
 .mynavbar .nav-link:hover {
@@ -112,20 +114,26 @@ h1, h2, h3, h4, h5 {
 .mynavbar .navbar-toggler-icon {
   filter: invert(60%) sepia(40%) saturate(400%) hue-rotate(180deg);
 }
+/* Menu desplegable en movil: azul semitransparente */
 .mynavbar .navbar-collapse {
-  background-color: rgba(10, 15, 26, 0.97);
-  padding: 1rem 1.5rem;
-  border-top: 1px solid rgba(83,127,175,0.3);
+  background-color: rgba(58, 95, 138, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1.5rem 1rem;
+  border-top: 1px solid rgba(128, 172, 220, 0.4);
 }
 .mynavbar .navbar-collapse .nav-link {
-  color: var(--silver-light) !important;
+  color: #ffffff !important;
   font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.2rem;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid rgba(192,192,192,0.1);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.mynavbar .navbar-collapse .nav-link:last-child {
+  border-bottom: none;
 }
 .mynavbar .navbar-collapse .nav-link:hover {
-  color: var(--primary-light) !important;
+  color: var(--silver-light) !important;
   padding-left: 0.5rem;
 }
 .sticky-top {
@@ -147,50 +155,50 @@ h1, h2, h3, h4, h5 {
   color: var(--primary);
   font-family: var(--font-title);
   font-size: 5.5rem;
-  font-weight: 300;
+  font-weight: 600;
   font-style: italic;
   margin-top: -6rem;
   letter-spacing: 0.05rem;
 }
 .home h3 {
   font-family: var(--font-body);
-  color: #444;
+  color: #333;
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: 0.05rem;
 }
 .home p {
   font-size: 1.1rem;
-  font-weight: 300;
-  color: #555;
+  font-weight: 400;
+  color: #444;
 }
 .home .couple {
   margin-top: 75px;
 }
 
-/* Nombres de los esposos - mas grandes y elegantes */
+/* Nombres esposos: mas peso, bien visibles */
 .home .couple .couple-name {
   font-family: var(--font-title);
-  font-size: 3.8rem;
-  font-weight: 500;
+  font-size: 4rem;
+  font-weight: 600;
   font-style: italic;
-  color: var(--primary);
+  color: var(--primary-dark);
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
 .home .couple .couple-full {
   font-family: var(--font-body);
   font-size: 1.1rem;
-  font-weight: 400;
-  color: #444;
+  font-weight: 700;
+  color: #333;
   margin-bottom: 0.2rem;
 }
 .home .couple .couple-desc {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: #666;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
   font-style: italic;
 }
 .home .couple img {
@@ -224,12 +232,12 @@ h1, h2, h3, h4, h5 {
   color: var(--primary-light);
   font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 600;
   font-style: italic;
 }
 .info .alamat {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.05rem;
 }
 .info .card {
@@ -242,13 +250,14 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 0.85rem;
+  font-weight: 700;
   color: var(--primary-light);
   font-family: var(--font-body);
 }
 .info .card-footer {
   border-top: 1px solid var(--silver);
   font-size: 0.85rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--silver-light);
 }
 
@@ -263,7 +272,7 @@ h1, h2, h3, h4, h5 {
   color: var(--primary);
   font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 600;
   font-style: italic;
 }
 .story > .container > .row > .col-md-8 > span {
@@ -274,8 +283,9 @@ h1, h2, h3, h4, h5 {
   display: block;
   margin-bottom: 1rem;
   font-family: var(--font-body);
+  font-weight: 700;
 }
-.story p { font-size: 1rem; font-weight: 300; }
+.story p { font-size: 1rem; font-weight: 400; }
 
 /* Timeline */
 .timeline {
@@ -353,7 +363,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-title);
   font-size: 2rem;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
 }
 .timeline-heading span {
   color: var(--primary-dark);
@@ -361,6 +371,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  font-weight: 700;
 }
 
 /* ==========================================
@@ -375,7 +386,7 @@ h1, h2, h3, h4, h5 {
   color: var(--primary);
   font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 600;
   font-style: italic;
 }
 .gallery span {
@@ -386,8 +397,9 @@ h1, h2, h3, h4, h5 {
   display: block;
   margin-bottom: 1rem;
   font-family: var(--font-body);
+  font-weight: 700;
 }
-.gallery p { font-size: 1rem; font-weight: 300; }
+.gallery p { font-size: 1rem; font-weight: 400; }
 
 /* ==========================================
    RSVP
@@ -401,16 +413,17 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-title);
   font-size: 4.5rem;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 600;
   color: var(--primary-light) !important;
 }
-.rsvp p    { color: var(--silver-light); font-weight: 300; }
+.rsvp p    { color: var(--silver-light); font-weight: 400; }
 .rsvp label {
   color: var(--silver-light);
   font-family: var(--font-body);
   text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 0.1rem;
+  font-weight: 700;
 }
 .rsvp button {
   background-color: var(--primary);
@@ -419,6 +432,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  font-weight: 700;
 }
 .rsvp button:hover {
   background-color: var(--silver);
@@ -437,7 +451,7 @@ h1, h2, h3, h4, h5 {
   color: var(--primary);
   font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 600;
   font-style: italic;
 }
 .gifts span {
@@ -448,10 +462,11 @@ h1, h2, h3, h4, h5 {
   display: block;
   margin-bottom: 1rem;
   font-family: var(--font-body);
+  font-weight: 700;
 }
-.gifts p { font-size: 1rem; font-weight: 300; }
+.gifts p { font-size: 1rem; font-weight: 400; }
 .gifts .list-group-item { border-color: var(--primary-light); }
-.gifts .list-group-item .fw-bold { color: var(--primary); font-family: var(--font-title); font-size: 1.3rem; }
+.gifts .list-group-item .fw-bold { color: var(--primary); font-family: var(--font-title); font-size: 1.3rem; font-weight: 600; }
 
 /* ==========================================
    FOOTER
@@ -461,13 +476,13 @@ footer {
   background-color: var(--primary-dark);
   color: var(--silver-light);
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
 }
 footer a {
   color: var(--silver);
-  font-weight: 400;
+  font-weight: 700;
   text-decoration: none;
 }
 footer a:hover { color: white; }
@@ -522,7 +537,7 @@ footer li {
 }
 @media (max-width: 768px) {
   html { font-size: 65%; }
-  .home .couple .couple-name { font-size: 3.2rem; }
+  .home .couple .couple-name { font-size: 3.5rem; }
   .timeline li .timeline-image { width: 110px; height: 110px; left: 0; top: 15px; }
   .timeline li .timeline-panel { width: 70%; transform: translateX(-8px); }
   .timeline li .timeline-panel::before { top: 30px; }
@@ -530,7 +545,7 @@ footer li {
 }
 @media (max-width: 576px) {
   html { font-size: 60%; }
-  .home .couple .couple-name { font-size: 3rem; }
+  .home .couple .couple-name { font-size: 3.2rem; }
   .timeline li .timeline-image { width: 115px; height: 115px; left: 0; top: 5px; }
   .timeline li .timeline-panel { width: 55%; transform: translateX(-20px); padding: 2%; }
 }
