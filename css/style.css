@@ -680,7 +680,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-title); }
   border-radius: 12px;
   padding: 2.5rem 2rem;
   text-align: center;
-  background: rgba(10,25,60, 0);
+  background: rgba(10,25,60, 0.45);
   backdrop-filter: blur(8px);
   cursor: pointer;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -716,12 +716,12 @@ h1, h2, h3, h4, h5 { font-family: var(--font-title); }
 .dresscode-card-tag {
   font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.35rem;
-  color: var(--primary); margin-bottom: 0.2rem;
+  color: var(--primary-light); margin-bottom: 0.2rem;
 }
 .dresscode-card-name {
   font-family: var(--font-title); font-size: 3.2rem;
   font-style: italic; font-weight: 600;
-  color: var(--primary-dark); margin-bottom: 0;
+  color: #ffffff; margin-bottom: 0;
 }
 .dc-orientacion-row {
   display: flex; align-items: center; gap: 1rem;
@@ -795,7 +795,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-title); }
 .cuenta-bi i       { color: #6aacf0; }
 .cuenta-info { flex: 1; text-align: left; }
 .cuenta-banco { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2rem; color: var(--primary-light); margin: 0 0 0.15rem; }
-.cuenta-numero { font-family: 'Courier New', monospace; font-size: 1rem; font-weight: 700; color: #ffffff; letter-spacing: 0.1rem; margin: 0; }
+.cuenta-numero { font-family: 'Courier New', monospace; font-size: 1rem; font-weight: 700; color: var(--primary); letter-spacing: 0.1rem; margin: 0; }
 .cuenta-copy-btn { background: transparent; border: 1px solid rgba(128,172,220,0.3); border-radius: 6px; color: var(--silver); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: border-color 0.2s, color 0.2s, background 0.2s; }
 .cuenta-copy-btn:hover { border-color: var(--primary-light); color: var(--primary-light); background: rgba(128,172,220,0.1); }
 
