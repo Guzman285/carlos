@@ -10,15 +10,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const minutesEl = document.getElementById('cd-minutes');
   const secondsEl = document.getElementById('cd-seconds');
 
+  function setWithFlip(el, value) {
+    if (el.textContent !== value) {
+      el.classList.remove('flip');
+      void el.offsetWidth; // fuerza reflow para reiniciar animación
+      el.classList.add('flip');
+      el.textContent = value;
+    }
+  }
+
   function updateCountdown() {
     const now  = new Date();
     const diff = targetDate - now;
 
     if (diff <= 0) {
-      daysEl.textContent    = '00';
-      hoursEl.textContent   = '00';
-      minutesEl.textContent = '00';
-      secondsEl.textContent = '00';
+      setWithFlip(daysEl,    '00');
+      setWithFlip(hoursEl,   '00');
+      setWithFlip(minutesEl, '00');
+      setWithFlip(secondsEl, '00');
       return;
     }
 
@@ -27,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    daysEl.textContent    = String(days).padStart(2, '0');
-    hoursEl.textContent   = String(hours).padStart(2, '0');
-    minutesEl.textContent = String(minutes).padStart(2, '0');
-    secondsEl.textContent = String(seconds).padStart(2, '0');
+    setWithFlip(daysEl,    String(days).padStart(2, '0'));
+    setWithFlip(hoursEl,   String(hours).padStart(2, '0'));
+    setWithFlip(minutesEl, String(minutes).padStart(2, '0'));
+    setWithFlip(secondsEl, String(seconds).padStart(2, '0'));
   }
 
   updateCountdown();
@@ -44,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let enviando = false;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (enviando) return;  // bloquear doble envio
+      if (enviando) return;
       enviando = true;
 
       var btn = form.querySelector('button[type="submit"]');
@@ -71,22 +80,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ==========================================
+     SCROLL REVEAL - Fade up al entrar en pantalla
+     ========================================== */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ==========================================
+     NAVBAR ACTIVO - Resalta sección visible
+     ========================================== */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => navObserver.observe(s));
+
 });
-
-/* ==========================================
-   NAVBAR - Fix overflow
-   ========================================== */
-const stickyTop = document.querySelector('.sticky-top');
-const offcanvas = document.querySelector('.offcanvas');
-
-if (offcanvas) {
-  offcanvas.addEventListener('show.bs.offcanvas', function () {
-    stickyTop.style.overflow = 'visible';
-  });
-  offcanvas.addEventListener('hidden.bs.offcanvas', function () {
-    stickyTop.style.overflow = 'hidden';
-  });
-}
 
 /* ==========================================
    SCROLL - Bloquear hasta abrir invitacion
