@@ -1,23 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Boda Carlos & Elida</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/countdown-custom.css" />
+
+    <!-- SEO y vista previa WhatsApp / redes -->
+    <meta property="og:title" content="¡Carlos &amp; Elida se casan! 💍" />
+    <meta
+      property="og:description"
+      content="Lunes 1 de junio de 2026 · Hotel La Hacienda, Panajachel, Sololá"
+    />
+    <meta
+      property="og:image"
+      content="https://guzman285.github.io/carlos/img/prewed1.jpg"
+    />
+    <meta property="og:url" content="https://guzman285.github.io/carlos/" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#3a5f8a" />
+
+    <!-- Vista previa para WhatsApp específicamente -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="¡Carlos &amp; Elida se casan! 💍" />
+    <meta
+      name="twitter:description"
+      content="Lunes 1 de junio de 2026 · Hotel La Hacienda, Panajachel, Sololá"
+    />
+    <meta
+      name="twitter:image"
+      content="https://guzman285.github.io/carlos/img/prewed1.jpg"
+    />
   </head>
   <body>
-
     <!-- ===================== HERO ===================== -->
-    <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
-      <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
-      <main style="position:relative;z-index:1;">
+    <section
+      id="hero"
+      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
+    >
+      <canvas
+        id="heroCanvas"
+        style="
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 0;
+        "
+      ></canvas>
+      <main style="position: relative; z-index: 1">
         <div class="hero-line"></div>
         <h1 class="hero-name">Carlos</h1>
         <p class="hero-ampersand">&amp;</p>
@@ -25,7 +74,9 @@
         <div class="hero-line"></div>
         <p class="hero-subtitle mt-4">&#161;Nuestra Boda!</p>
         <p class="hero-phrase">Te elijo hoy y por el resto de mi vida</p>
-        <a href="#couple" class="btn mt-4 btn-lg" onclick="enableScroll()">Ver Invitaci&oacute;n</a>
+        <a href="#couple" class="btn mt-4 btn-lg" onclick="enableScroll()"
+          >Ver Invitaci&oacute;n</a
+        >
       </main>
     </section>
 
@@ -33,7 +84,15 @@
     <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
       <div class="container">
         <a class="navbar-brand" href="#">Carlos &amp; Elida</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -56,17 +115,25 @@
         <div class="row justify-content-center">
           <div class="col-12 text-center mb-5">
             <p class="couple-section-label">Los novios</p>
-            <div class="parents-divider mt-2"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            <div class="parents-divider mt-2">
+              <span></span><i class="bi bi-heart-fill"></i><span></span>
+            </div>
           </div>
           <div class="row couple w-100">
             <div class="col-lg-6">
               <div class="row align-items-center justify-content-end">
                 <div class="col-8 text-end">
                   <h3 class="couple-name">Carlos Manuel Fuentes Lopez</h3>
-                  <p class="couple-desc">Piloto del Ej&eacute;rcito de Guatemala</p>
+                  <p class="couple-desc">
+                    Piloto del Ej&eacute;rcito de Guatemala
+                  </p>
                 </div>
                 <div class="col-4">
-                  <img src="img/pengantinPria.png" alt="Carlos Manuel" class="img-responsive rounded-circle couple-photo" />
+                  <img
+                    src="img/pengantinPria.png"
+                    alt="Carlos Manuel"
+                    class="img-responsive rounded-circle couple-photo"
+                  />
                 </div>
               </div>
             </div>
@@ -74,10 +141,16 @@
             <div class="col-lg-6">
               <div class="row align-items-center">
                 <div class="col-4">
-                  <img src="img/pengantinWanita.png" alt="Elida Everilda" class="img-responsive rounded-circle couple-photo" />
+                  <img
+                    src="img/pengantinWanita.png"
+                    alt="Elida Everilda"
+                    class="img-responsive rounded-circle couple-photo"
+                  />
                 </div>
                 <div class="col-8">
-                  <h3 class="couple-name">Elida Everilda del Cid de Le&oacute;n</h3>
+                  <h3 class="couple-name">
+                    Elida Everilda del Cid de Le&oacute;n
+                  </h3>
                 </div>
               </div>
             </div>
@@ -86,7 +159,9 @@
             <div class="col-12 text-center mb-4">
               <p class="parents-label">Con la bendici&oacute;n de</p>
               <h3 class="parents-title">Nuestros Padres</h3>
-              <div class="parents-divider"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+              <div class="parents-divider">
+                <span></span><i class="bi bi-heart-fill"></i><span></span>
+              </div>
             </div>
             <div class="col-md-5 col-10 mx-auto mb-4">
               <div class="parents-card">
@@ -113,8 +188,12 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-11 text-center">
             <p class="home-invite-tag">Con inmensa alegr&iacute;a</p>
-            <h2 class="home-invite-title">Tenemos el honor de invitarlos<br/>a celebrar nuestra boda</h2>
-            <div class="home-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
+            <h2 class="home-invite-title">
+              Tenemos el honor de invitarlos<br />a celebrar nuestra boda
+            </h2>
+            <div class="home-divider">
+              <span></span><i class="bi bi-stars"></i><span></span>
+            </div>
 
             <!-- CALENDARIO ELEGANTE -->
             <div class="cal-widget mx-auto mb-4">
@@ -126,14 +205,23 @@
               </div>
               <div class="cal-body">
                 <div class="cal-days-row">
-                  <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>S&aacute;</span><span>Do</span>
+                  <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span
+                  ><span>Vi</span><span>S&aacute;</span><span>Do</span>
                 </div>
                 <div class="cal-grid">
-                  <span class="cal-empty"></span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-                  <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                  <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-                  <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
-                  <span>29</span><span>30</span><span class="cal-empty"></span><span class="cal-empty"></span><span class="cal-empty"></span><span class="cal-empty"></span><span class="cal-marked">1<i class="bi bi-heart-fill"></i></span>
+                  <span class="cal-empty"></span><span>2</span><span>3</span
+                  ><span>4</span><span>5</span><span>6</span><span>7</span>
+                  <span>8</span><span>9</span><span>10</span><span>11</span
+                  ><span>12</span><span>13</span><span>14</span> <span>15</span
+                  ><span>16</span><span>17</span><span>18</span><span>19</span
+                  ><span>20</span><span>21</span> <span>22</span><span>23</span
+                  ><span>24</span><span>25</span><span>26</span><span>27</span
+                  ><span>28</span> <span>29</span><span>30</span
+                  ><span class="cal-empty"></span><span class="cal-empty"></span
+                  ><span class="cal-empty"></span><span class="cal-empty"></span
+                  ><span class="cal-marked"
+                    >1<i class="bi bi-heart-fill"></i
+                  ></span>
                 </div>
               </div>
               <div class="cal-footer">
@@ -143,16 +231,32 @@
 
             <p class="home-faltan">Faltan</p>
             <div class="countdown-wrapper mt-2">
-              <div class="countdown-box"><span class="countdown-number" id="cd-days">00</span><span class="countdown-label">D&iacute;as</span></div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-days">00</span
+                ><span class="countdown-label">D&iacute;as</span>
+              </div>
               <span class="countdown-separator">:</span>
-              <div class="countdown-box"><span class="countdown-number" id="cd-hours">00</span><span class="countdown-label">Horas</span></div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-hours">00</span
+                ><span class="countdown-label">Horas</span>
+              </div>
               <span class="countdown-separator">:</span>
-              <div class="countdown-box"><span class="countdown-number" id="cd-minutes">00</span><span class="countdown-label">Minutos</span></div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-minutes">00</span
+                ><span class="countdown-label">Minutos</span>
+              </div>
               <span class="countdown-separator">:</span>
-              <div class="countdown-box"><span class="countdown-number" id="cd-seconds">00</span><span class="countdown-label">Segundos</span></div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="cd-seconds">00</span
+                ><span class="countdown-label">Segundos</span>
+              </div>
             </div>
             <div class="mt-5">
-              <button class="home-btn-agendar" data-bs-toggle="modal" data-bs-target="#modalRsvp">
+              <button
+                class="home-btn-agendar"
+                data-bs-toggle="modal"
+                data-bs-target="#modalRsvp"
+              >
                 <i class="bi bi-calendar2-heart"></i> Agendar Fecha
               </button>
             </div>
@@ -162,44 +266,102 @@
     </section>
 
     <!-- ===================== MODAL RSVP ===================== -->
-    <div class="modal fade" id="modalRsvp" tabindex="-1" aria-labelledby="modalRsvpLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalRsvp"
+      tabindex="-1"
+      aria-labelledby="modalRsvpLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-rsvp">
           <div class="modal-header border-0 pb-0">
             <div class="w-100 text-center">
               <p class="modal-rsvp-tag">Con todo nuestro amor</p>
-              <h5 class="modal-title modal-rsvp-title" id="modalRsvpLabel">Confirmaci&oacute;n de Asistencia</h5>
-              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+              <h5 class="modal-title modal-rsvp-title" id="modalRsvpLabel">
+                Confirmaci&oacute;n de Asistencia
+              </h5>
+              <div class="parents-divider mt-2 mb-0">
+                <span></span><i class="bi bi-heart-fill"></i><span></span>
+              </div>
             </div>
-            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-modal"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body pt-2">
-            <form method="POST" action="https://script.google.com/macros/s/AKfycbwLO6QmRbU2CvTxuK3wDIglsfMPBR4TwaxOq0lBIIy-eEbuQa94s6nsuirZFau1gGbZ/exec" id="my-form">
+            <form
+              method="POST"
+              action="https://script.google.com/macros/s/AKfycbwLO6QmRbU2CvTxuK3wDIglsfMPBR4TwaxOq0lBIIy-eEbuQa94s6nsuirZFau1gGbZ/exec"
+              id="my-form"
+            >
               <div class="mb-3">
-                <label for="nama" class="form-label modal-label">Tu nombre completo</label>
-                <input type="text" class="form-control modal-input" id="nama" name="nama" placeholder="Ej. Juan P&eacute;rez" required />
+                <label for="nama" class="form-label modal-label"
+                  >Tu nombre completo</label
+                >
+                <input
+                  type="text"
+                  class="form-control modal-input"
+                  id="nama"
+                  name="nama"
+                  placeholder="Ej. Juan P&eacute;rez"
+                  required
+                />
               </div>
               <div class="mb-3">
-                <label for="jumlah" class="form-label modal-label">N&uacute;mero de personas</label>
-                <input type="number" class="form-control modal-input" id="jumlah" name="jumlah" min="1" max="5" value="1" required />
+                <label for="jumlah" class="form-label modal-label"
+                  >N&uacute;mero de personas</label
+                >
+                <input
+                  type="number"
+                  class="form-control modal-input"
+                  id="jumlah"
+                  name="jumlah"
+                  min="1"
+                  max="5"
+                  value="1"
+                  required
+                />
               </div>
               <div class="mb-3">
-                <label for="status" class="form-label modal-label">&#191;Confirmas tu asistencia?</label>
-                <select name="status" id="status" class="form-select modal-input" required>
-                  <option value="" selected disabled>Selecciona una opci&oacute;n</option>
+                <label for="status" class="form-label modal-label"
+                  >&#191;Confirmas tu asistencia?</label
+                >
+                <select
+                  name="status"
+                  id="status"
+                  class="form-select modal-input"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Selecciona una opci&oacute;n
+                  </option>
                   <option value="Asistirá">&#127881; Asistir&eacute;</option>
-                  <option value="No Asistirá">&#128546; No podr&eacute; asistir</option>
+                  <option value="No Asistirá">
+                    &#128546; No podr&eacute; asistir
+                  </option>
                 </select>
               </div>
               <div class="mb-4">
-                <label for="mensaje" class="form-label modal-label">&#128140; D&eacute;janos un mensaje</label>
-                <textarea class="form-control modal-input" id="mensaje" name="mensaje" rows="3" placeholder="Escribe algo bonito para los novios..."></textarea>
+                <label for="mensaje" class="form-label modal-label"
+                  >&#128140; D&eacute;janos un mensaje</label
+                >
+                <textarea
+                  class="form-control modal-input"
+                  id="mensaje"
+                  name="mensaje"
+                  rows="3"
+                  placeholder="Escribe algo bonito para los novios..."
+                ></textarea>
               </div>
               <div class="text-center">
                 <button type="submit" class="home-btn-agendar w-100">
                   <i class="bi bi-send-heart"></i> Enviar confirmaci&oacute;n
                 </button>
-                <p id="form-msg" class="mt-3" style="display:none;"></p>
+                <p id="form-msg" class="mt-3" style="display: none"></p>
               </div>
             </form>
           </div>
@@ -214,18 +376,30 @@
           <div class="col-md-8 col-10 text-center mb-5">
             <p class="info-label">Les esperamos</p>
             <h2>Informaci&oacute;n del Evento</h2>
-            <div class="parents-divider mt-2"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            <div class="parents-divider mt-2">
+              <span></span><i class="bi bi-heart-fill"></i><span></span>
+            </div>
           </div>
         </div>
         <div class="row justify-content-center mb-5">
           <div class="col-md-6 col-10">
             <div class="info-location-card text-center">
-              <div class="info-location-icon"><i class="bi bi-geo-alt"></i></div>
+              <div class="info-location-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
               <p class="info-location-tag">Lugar de la celebraci&oacute;n</p>
               <h3 class="info-location-name">Hotel La Hacienda</h3>
-              <p class="info-location-address">Panajachel, Solol&aacute;, Guatemala</p>
-              <div class="info-location-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
-              <button class="home-btn-agendar mt-2" data-bs-toggle="modal" data-bs-target="#modalMapa">
+              <p class="info-location-address">
+                Panajachel, Solol&aacute;, Guatemala
+              </p>
+              <div class="info-location-divider">
+                <span></span><i class="bi bi-stars"></i><span></span>
+              </div>
+              <button
+                class="home-btn-agendar mt-2"
+                data-bs-toggle="modal"
+                data-bs-target="#modalMapa"
+              >
                 <i class="bi bi-map"></i> C&oacute;mo llegar
               </button>
             </div>
@@ -237,8 +411,14 @@
               <div class="card-header">Ceremonia</div>
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-6"><i class="bi bi-clock d-block"></i><span>Por confirmar</span></div>
-                  <div class="col-6"><i class="bi bi-calendar3 d-block"></i><span>Lunes, 1 de junio de 2026</span></div>
+                  <div class="col-6">
+                    <i class="bi bi-clock d-block"></i
+                    ><span>Por confirmar</span>
+                  </div>
+                  <div class="col-6">
+                    <i class="bi bi-calendar3 d-block"></i
+                    ><span>Lunes, 1 de junio de 2026</span>
+                  </div>
                 </div>
               </div>
               <div class="card-footer">Hotel La Hacienda, Panajachel</div>
@@ -249,11 +429,19 @@
               <div class="card-header">Recepci&oacute;n</div>
               <div class="card-body">
                 <div class="row justify-content-center">
-                  <div class="col-6"><i class="bi bi-clock d-block"></i><span>Por confirmar</span></div>
-                  <div class="col-6"><i class="bi bi-calendar3 d-block"></i><span>Lunes, 1 de junio de 2026</span></div>
+                  <div class="col-6">
+                    <i class="bi bi-clock d-block"></i
+                    ><span>Por confirmar</span>
+                  </div>
+                  <div class="col-6">
+                    <i class="bi bi-calendar3 d-block"></i
+                    ><span>Lunes, 1 de junio de 2026</span>
+                  </div>
                 </div>
               </div>
-              <div class="card-footer">Es un honor contar con su presencia y bendici&oacute;n.</div>
+              <div class="card-footer">
+                Es un honor contar con su presencia y bendici&oacute;n.
+              </div>
             </div>
           </div>
         </div>
@@ -261,24 +449,52 @@
     </section>
 
     <!-- ===================== MODAL MAPA ===================== -->
-    <div class="modal fade" id="modalMapa" tabindex="-1" aria-labelledby="modalMapaLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalMapa"
+      tabindex="-1"
+      aria-labelledby="modalMapaLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-mapa">
           <div class="modal-header border-0 pb-0">
             <div class="w-100 text-center">
-              <p class="modal-rsvp-tag"><i class="bi bi-geo-alt-fill me-1"></i> Ubicaci&oacute;n</p>
-              <h5 class="modal-title modal-rsvp-title" id="modalMapaLabel">Hotel La Hacienda</h5>
-              <p class="modal-mapa-subtitle">Panajachel, Solol&aacute;, Guatemala</p>
+              <p class="modal-rsvp-tag">
+                <i class="bi bi-geo-alt-fill me-1"></i> Ubicaci&oacute;n
+              </p>
+              <h5 class="modal-title modal-rsvp-title" id="modalMapaLabel">
+                Hotel La Hacienda
+              </h5>
+              <p class="modal-mapa-subtitle">
+                Panajachel, Solol&aacute;, Guatemala
+              </p>
             </div>
-            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-modal"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body p-0">
             <div class="modal-mapa-frame">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15466.08!2d-91.1572!3d14.7411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e499d71e7bd4f%3A0x1d1234567abcdef0!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1711000000000"
-                width="100%" height="360" style="border:0; display:block;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15466.08!2d-91.1572!3d14.7411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e499d71e7bd4f%3A0x1d1234567abcdef0!2sPanajachel%2C%20Solol%C3%A1%2C%20Guatemala!5e0!3m2!1ses!2sgt!4v1711000000000"
+                width="100%"
+                height="360"
+                style="border: 0; display: block"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
             <div class="text-center py-3">
-              <a href="https://maps.google.com/?q=Panajachel+Solola+Guatemala" target="_blank" class="home-btn-agendar">
+              <a
+                href="https://maps.google.com/?q=Panajachel+Solola+Guatemala"
+                target="_blank"
+                class="home-btn-agendar"
+              >
                 <i class="bi bi-box-arrow-up-right"></i> Abrir en Google Maps
               </a>
             </div>
@@ -294,34 +510,75 @@
           <div class="col-md-8 col-10 text-center">
             <span>C&oacute;mo naci&oacute; nuestro amor</span>
             <h2>Nuestra Historia</h2>
-            <p>Cada gran historia tiene un comienzo, un momento y un para siempre.</p>
+            <p>
+              Cada gran historia tiene un comienzo, un momento y un para
+              siempre.
+            </p>
           </div>
         </div>
-        <div class="row"><div class="col">
-          <ul class="timeline">
-            <li>
-              <div class="timeline-image" style="background-image: url(img/prewed2.jpeg);"></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading"><h3>Primer Encuentro</h3><span>Pr&oacute;ximamente...</span></div>
-                <div class="timeline-body"><p>El inicio de una historia que cambiar&iacute;a nuestras vidas para siempre.</p></div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/300/300);"></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading"><h3>Nuestro Noviazgo</h3><span>Pr&oacute;ximamente...</span></div>
-                <div class="timeline-body"><p>Cada momento juntos nos confirm&oacute; que &eacute;ramos el uno para el otro.</p></div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-image" style="background-image: url(https://picsum.photos/id/1/301/301);"></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading"><h3>El Compromiso</h3><span>Pr&oacute;ximamente...</span></div>
-                <div class="timeline-body"><p>El momento en que prometimos estar juntos para siempre.</p></div>
-              </div>
-            </li>
-          </ul>
-        </div></div>
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(img/prewed2.jpeg)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Primer Encuentro</h3>
+                    <span>Pr&oacute;ximamente...</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      El inicio de una historia que cambiar&iacute;a nuestras
+                      vidas para siempre.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div
+                  class="timeline-image"
+                  style="
+                    background-image: url(https://picsum.photos/id/1/300/300);
+                  "
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Nuestro Noviazgo</h3>
+                    <span>Pr&oacute;ximamente...</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Cada momento juntos nos confirm&oacute; que &eacute;ramos
+                      el uno para el otro.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="timeline-image"
+                  style="
+                    background-image: url(https://picsum.photos/id/1/301/301);
+                  "
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>El Compromiso</h3>
+                    <span>Pr&oacute;ximamente...</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      El momento en que prometimos estar juntos para siempre.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -337,33 +594,92 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10 col-12">
-            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div
+              id="galleryCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="4000"
+            >
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
+                <button
+                  type="button"
+                  data-bs-target="#galleryCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#galleryCarousel"
+                  data-bs-slide-to="1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#galleryCarousel"
+                  data-bs-slide-to="2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#galleryCarousel"
+                  data-bs-slide-to="3"
+                ></button>
               </div>
               <div class="carousel-inner gallery-carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://picsum.photos/id/200/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 1" data-lightbox="https://picsum.photos/id/200/900/600" />
+                  <img
+                    src="https://picsum.photos/id/200/900/600"
+                    class="d-block w-100 gallery-slide-img"
+                    alt="Foto 1"
+                    data-lightbox="https://picsum.photos/id/200/900/600"
+                  />
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/id/5/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 2" data-lightbox="https://picsum.photos/id/5/900/600" />
+                  <img
+                    src="https://picsum.photos/id/5/900/600"
+                    class="d-block w-100 gallery-slide-img"
+                    alt="Foto 2"
+                    data-lightbox="https://picsum.photos/id/5/900/600"
+                  />
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/id/500/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 3" data-lightbox="https://picsum.photos/id/500/900/600" />
+                  <img
+                    src="https://picsum.photos/id/500/900/600"
+                    class="d-block w-100 gallery-slide-img"
+                    alt="Foto 3"
+                    data-lightbox="https://picsum.photos/id/500/900/600"
+                  />
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/id/900/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 4" data-lightbox="https://picsum.photos/id/900/900/600" />
+                  <img
+                    src="https://picsum.photos/id/900/900/600"
+                    class="d-block w-100 gallery-slide-img"
+                    alt="Foto 4"
+                    data-lightbox="https://picsum.photos/id/900/900/600"
+                  />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="visually-hidden">Anterior</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="visually-hidden">Siguiente</span>
               </button>
             </div>
@@ -373,9 +689,26 @@
     </section>
 
     <!-- LIGHTBOX -->
-    <div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Foto expandida">
-      <button class="gallery-lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
-      <img src="" alt="Foto ampliada" id="lightboxImg" class="gallery-lightbox-img" />
+    <div
+      id="galleryLightbox"
+      class="gallery-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Foto expandida"
+    >
+      <button
+        class="gallery-lightbox-close"
+        id="lightboxClose"
+        aria-label="Cerrar"
+      >
+        &times;
+      </button>
+      <img
+        src=""
+        alt="Foto ampliada"
+        id="lightboxImg"
+        class="gallery-lightbox-img"
+      />
     </div>
 
     <!-- ===================== DRESS CODE ===================== -->
@@ -383,29 +716,59 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center mb-2">
-            <span class="dresscode-tag">Vista elegante, si&eacute;ntete libre</span>
+            <span class="dresscode-tag"
+              >Vista elegante, si&eacute;ntete libre</span
+            >
             <h2 class="dresscode-title">Dress Code</h2>
-            <p class="dresscode-desc">Queremos que te veas incre&iacute;ble y que est&eacute;s c&oacute;modo/a para disfrutar cada momento de esta noche tan especial.</p>
-            <div class="parents-divider mt-3 mb-5"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            <p class="dresscode-desc">
+              Queremos que te veas incre&iacute;ble y que est&eacute;s
+              c&oacute;modo/a para disfrutar cada momento de esta noche tan
+              especial.
+            </p>
+            <div class="parents-divider mt-3 mb-5">
+              <span></span><i class="bi bi-heart-fill"></i><span></span>
+            </div>
           </div>
         </div>
         <div class="row justify-content-center g-4">
           <div class="col-md-5 col-10">
-            <div class="dresscode-card" data-bs-toggle="modal" data-bs-target="#modalOrientacion" role="button">
-              <div class="dresscode-card-icon"><i class="bi bi-suit-heart"></i></div>
+            <div
+              class="dresscode-card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalOrientacion"
+              role="button"
+            >
+              <div class="dresscode-card-icon">
+                <i class="bi bi-suit-heart"></i>
+              </div>
               <p class="dresscode-card-tag">&iquest;Qu&eacute; ponerse?</p>
               <h3 class="dresscode-card-name">Orientaci&oacute;n</h3>
-              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
-              <button class="home-btn-agendar mt-3"><i class="bi bi-eye"></i> Ver orientaci&oacute;n</button>
+              <div class="gifts-card-divider">
+                <span></span><i class="bi bi-stars"></i><span></span>
+              </div>
+              <button class="home-btn-agendar mt-3">
+                <i class="bi bi-eye"></i> Ver orientaci&oacute;n
+              </button>
             </div>
           </div>
           <div class="col-md-5 col-10">
-            <div class="dresscode-card" data-bs-toggle="modal" data-bs-target="#modalTips" role="button">
-              <div class="dresscode-card-icon dresscode-card-icon--tips"><i class="bi bi-lightbulb"></i></div>
+            <div
+              class="dresscode-card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalTips"
+              role="button"
+            >
+              <div class="dresscode-card-icon dresscode-card-icon--tips">
+                <i class="bi bi-lightbulb"></i>
+              </div>
               <p class="dresscode-card-tag">Para tener en cuenta</p>
               <h3 class="dresscode-card-name">Tips</h3>
-              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
-              <button class="home-btn-agendar mt-3"><i class="bi bi-list-check"></i> Ver tips</button>
+              <div class="gifts-card-divider">
+                <span></span><i class="bi bi-stars"></i><span></span>
+              </div>
+              <button class="home-btn-agendar mt-3">
+                <i class="bi bi-list-check"></i> Ver tips
+              </button>
             </div>
           </div>
         </div>
@@ -413,27 +776,51 @@
     </section>
 
     <!-- ===================== MODAL ORIENTACIÓN ===================== -->
-    <div class="modal fade" id="modalOrientacion" tabindex="-1" aria-labelledby="modalOrientacionLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalOrientacion"
+      tabindex="-1"
+      aria-labelledby="modalOrientacionLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-rsvp">
           <div class="modal-header border-0 pb-0">
             <div class="w-100 text-center">
-              <p class="modal-rsvp-tag"><i class="bi bi-suit-heart me-1"></i> Dress Code</p>
-              <h5 class="modal-title modal-rsvp-title" id="modalOrientacionLabel">Orientaci&oacute;n</h5>
-              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+              <p class="modal-rsvp-tag">
+                <i class="bi bi-suit-heart me-1"></i> Dress Code
+              </p>
+              <h5
+                class="modal-title modal-rsvp-title"
+                id="modalOrientacionLabel"
+              >
+                Orientaci&oacute;n
+              </h5>
+              <div class="parents-divider mt-2 mb-0">
+                <span></span><i class="bi bi-heart-fill"></i><span></span>
+              </div>
             </div>
-            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-modal"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body pt-3 pb-4">
             <div class="dc-orientacion-row">
-              <div class="dc-orientacion-icon dc-icon-men"><i class="bi bi-gender-male"></i></div>
+              <div class="dc-orientacion-icon dc-icon-men">
+                <i class="bi bi-gender-male"></i>
+              </div>
               <div class="dc-orientacion-info">
                 <p class="dc-orientacion-titulo">Hombres</p>
                 <p class="dc-orientacion-desc">Ropa casual elegante</p>
               </div>
             </div>
             <div class="dc-orientacion-row">
-              <div class="dc-orientacion-icon dc-icon-women"><i class="bi bi-gender-female"></i></div>
+              <div class="dc-orientacion-icon dc-icon-women">
+                <i class="bi bi-gender-female"></i>
+              </div>
               <div class="dc-orientacion-info">
                 <p class="dc-orientacion-titulo">Mujeres</p>
                 <p class="dc-orientacion-desc">Ropa casual elegante</p>
@@ -449,38 +836,76 @@
     </div>
 
     <!-- ===================== MODAL TIPS ===================== -->
-    <div class="modal fade" id="modalTips" tabindex="-1" aria-labelledby="modalTipsLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalTips"
+      tabindex="-1"
+      aria-labelledby="modalTipsLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-rsvp">
           <div class="modal-header border-0 pb-0">
             <div class="w-100 text-center">
-              <p class="modal-rsvp-tag"><i class="bi bi-lightbulb me-1"></i> Para disfrutar al m&aacute;ximo</p>
-              <h5 class="modal-title modal-rsvp-title" id="modalTipsLabel">Tips</h5>
-              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+              <p class="modal-rsvp-tag">
+                <i class="bi bi-lightbulb me-1"></i> Para disfrutar al
+                m&aacute;ximo
+              </p>
+              <h5 class="modal-title modal-rsvp-title" id="modalTipsLabel">
+                Tips
+              </h5>
+              <div class="parents-divider mt-2 mb-0">
+                <span></span><i class="bi bi-heart-fill"></i><span></span>
+              </div>
             </div>
-            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-modal"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body pt-3 pb-4">
             <ul class="dc-tips-list">
               <li>
                 <span class="dc-tip-icon"><i class="bi bi-clock"></i></span>
-                <span class="dc-tip-text">Por favor, ser puntuales. &iexcl;Los esperamos a tiempo!</span>
+                <span class="dc-tip-text"
+                  >Por favor, ser puntuales. &iexcl;Los esperamos a
+                  tiempo!</span
+                >
               </li>
               <li>
                 <span class="dc-tip-icon"><i class="bi bi-people"></i></span>
-                <span class="dc-tip-text">Para que todos puedan disfrutar plenamente, hemos decidido que sea un evento exclusivo para adultos. &iexcl;Gracias por su comprensi&oacute;n!</span>
+                <span class="dc-tip-text"
+                  >Para que todos puedan disfrutar plenamente, hemos decidido
+                  que sea un evento exclusivo para adultos. &iexcl;Gracias por
+                  su comprensi&oacute;n!</span
+                >
               </li>
               <li>
-                <span class="dc-tip-icon"><i class="bi bi-calendar-check"></i></span>
-                <span class="dc-tip-text">Confirmar asistencia a la brevedad, antes del <strong>20 de mayo</strong>.</span>
+                <span class="dc-tip-icon"
+                  ><i class="bi bi-calendar-check"></i
+                ></span>
+                <span class="dc-tip-text"
+                  >Confirmar asistencia a la brevedad, antes del
+                  <strong>20 de mayo</strong>.</span
+                >
               </li>
               <li>
                 <span class="dc-tip-icon"><i class="bi bi-wind"></i></span>
-                <span class="dc-tip-text">Llevar un su&eacute;ter para disfrutar del exterior con toda comodidad.</span>
+                <span class="dc-tip-text"
+                  >Llevar un su&eacute;ter para disfrutar del exterior con toda
+                  comodidad.</span
+                >
               </li>
               <li>
-                <span class="dc-tip-icon"><i class="bi bi-music-note-beamed"></i></span>
-                <span class="dc-tip-text">&iexcl;Olvidarse de todo y venir a disfrutar! Esta noche es para celebrar.</span>
+                <span class="dc-tip-icon"
+                  ><i class="bi bi-music-note-beamed"></i
+                ></span>
+                <span class="dc-tip-text"
+                  >&iexcl;Olvidarse de todo y venir a disfrutar! Esta noche es
+                  para celebrar.</span
+                >
               </li>
             </ul>
           </div>
@@ -495,29 +920,50 @@
           <div class="col-md-8 col-10 text-center mb-2">
             <span>Su presencia es nuestro mejor regalo</span>
             <h2>Regalos</h2>
-            <p>Si desean hacernos un obsequio, con todo el amor lo recibimos.<br/>Pueden hacerlo a trav&eacute;s de transferencia bancaria.</p>
-            <div class="parents-divider mt-3 mb-5"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            <p>
+              Si desean hacernos un obsequio, con todo el amor lo recibimos.<br />Pueden
+              hacerlo a trav&eacute;s de transferencia bancaria.
+            </p>
+            <div class="parents-divider mt-3 mb-5">
+              <span></span><i class="bi bi-heart-fill"></i><span></span>
+            </div>
           </div>
         </div>
         <div class="row justify-content-center g-4">
           <div class="col-md-5 col-10">
             <div class="gifts-card">
-              <div class="gifts-card-avatar"><i class="bi bi-person-fill"></i></div>
+              <div class="gifts-card-avatar">
+                <i class="bi bi-person-fill"></i>
+              </div>
               <p class="gifts-card-tag">El Novio</p>
               <h3 class="gifts-card-name">Carlos</h3>
-              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
-              <button class="home-btn-agendar mt-3" data-bs-toggle="modal" data-bs-target="#modalCuentaCarlos">
+              <div class="gifts-card-divider">
+                <span></span><i class="bi bi-stars"></i><span></span>
+              </div>
+              <button
+                class="home-btn-agendar mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#modalCuentaCarlos"
+              >
                 <i class="bi bi-credit-card"></i> Ver Cuentas
               </button>
             </div>
           </div>
           <div class="col-md-5 col-10">
             <div class="gifts-card">
-              <div class="gifts-card-avatar gifts-card-avatar--bride"><i class="bi bi-person-fill"></i></div>
+              <div class="gifts-card-avatar gifts-card-avatar--bride">
+                <i class="bi bi-person-fill"></i>
+              </div>
               <p class="gifts-card-tag">La Novia</p>
               <h3 class="gifts-card-name">Elida</h3>
-              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
-              <button class="home-btn-agendar mt-3" data-bs-toggle="modal" data-bs-target="#modalCuentaElida">
+              <div class="gifts-card-divider">
+                <span></span><i class="bi bi-stars"></i><span></span>
+              </div>
+              <button
+                class="home-btn-agendar mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#modalCuentaElida"
+              >
                 <i class="bi bi-credit-card"></i> Ver Cuentas
               </button>
             </div>
@@ -527,35 +973,67 @@
     </section>
 
     <!-- ===================== MODAL CUENTAS CARLOS ===================== -->
-    <div class="modal fade" id="modalCuentaCarlos" tabindex="-1" aria-labelledby="modalCuentaCarlosLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalCuentaCarlos"
+      tabindex="-1"
+      aria-labelledby="modalCuentaCarlosLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-rsvp">
           <div class="modal-header border-0 pb-0">
             <div class="w-100 text-center">
-              <p class="modal-rsvp-tag"><i class="bi bi-gift me-1"></i> Cuentas Bancarias</p>
-              <h5 class="modal-title modal-rsvp-title" id="modalCuentaCarlosLabel">Carlos</h5>
-              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+              <p class="modal-rsvp-tag">
+                <i class="bi bi-gift me-1"></i> Cuentas Bancarias
+              </p>
+              <h5
+                class="modal-title modal-rsvp-title"
+                id="modalCuentaCarlosLabel"
+              >
+                Carlos
+              </h5>
+              <div class="parents-divider mt-2 mb-0">
+                <span></span><i class="bi bi-heart-fill"></i><span></span>
+              </div>
             </div>
-            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-modal"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body pt-3 pb-4">
             <div class="cuenta-row">
-              <div class="cuenta-banco-logo cuenta-banrural"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-banco-logo cuenta-banrural">
+                <i class="bi bi-bank"></i>
+              </div>
               <div class="cuenta-info">
                 <p class="cuenta-banco">Banrural</p>
                 <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
               </div>
-              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+              <button
+                class="cuenta-copy-btn"
+                onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')"
+                title="Copiar"
+              >
                 <i class="bi bi-copy"></i>
               </button>
             </div>
             <div class="cuenta-row">
-              <div class="cuenta-banco-logo cuenta-bantrab"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-banco-logo cuenta-bantrab">
+                <i class="bi bi-bank"></i>
+              </div>
               <div class="cuenta-info">
                 <p class="cuenta-banco">Bantrab</p>
                 <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
               </div>
-              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+              <button
+                class="cuenta-copy-btn"
+                onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')"
+                title="Copiar"
+              >
                 <i class="bi bi-copy"></i>
               </button>
             </div>
@@ -565,35 +1043,67 @@
     </div>
 
     <!-- ===================== MODAL CUENTAS ELIDA ===================== -->
-    <div class="modal fade" id="modalCuentaElida" tabindex="-1" aria-labelledby="modalCuentaElidaLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalCuentaElida"
+      tabindex="-1"
+      aria-labelledby="modalCuentaElidaLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-rsvp">
           <div class="modal-header border-0 pb-0">
             <div class="w-100 text-center">
-              <p class="modal-rsvp-tag"><i class="bi bi-gift me-1"></i> Cuentas Bancarias</p>
-              <h5 class="modal-title modal-rsvp-title" id="modalCuentaElidaLabel">Elida</h5>
-              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+              <p class="modal-rsvp-tag">
+                <i class="bi bi-gift me-1"></i> Cuentas Bancarias
+              </p>
+              <h5
+                class="modal-title modal-rsvp-title"
+                id="modalCuentaElidaLabel"
+              >
+                Elida
+              </h5>
+              <div class="parents-divider mt-2 mb-0">
+                <span></span><i class="bi bi-heart-fill"></i><span></span>
+              </div>
             </div>
-            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-modal"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body pt-3 pb-4">
             <div class="cuenta-row">
-              <div class="cuenta-banco-logo cuenta-banrural"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-banco-logo cuenta-banrural">
+                <i class="bi bi-bank"></i>
+              </div>
               <div class="cuenta-info">
                 <p class="cuenta-banco">Banrural</p>
                 <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
               </div>
-              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+              <button
+                class="cuenta-copy-btn"
+                onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')"
+                title="Copiar"
+              >
                 <i class="bi bi-copy"></i>
               </button>
             </div>
             <div class="cuenta-row">
-              <div class="cuenta-banco-logo cuenta-bi"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-banco-logo cuenta-bi">
+                <i class="bi bi-bank"></i>
+              </div>
               <div class="cuenta-info">
                 <p class="cuenta-banco">B.I.</p>
                 <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
               </div>
-              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+              <button
+                class="cuenta-copy-btn"
+                onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')"
+                title="Copiar"
+              >
                 <i class="bi bi-copy"></i>
               </button>
             </div>
@@ -607,12 +1117,21 @@
       <div class="container">
         <div class="col text-center">
           <p class="footer-names">Carlos &amp; Elida</p>
-          <div class="footer-divider"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
-          <small>&copy; 2026 Carlos &amp; Elida &mdash; Todos los derechos reservados.</small><br />
+          <div class="footer-divider">
+            <span></span><i class="bi bi-heart-fill"></i><span></span>
+          </div>
+          <small
+            >&copy; 2026 Carlos &amp; Elida &mdash; Todos los derechos
+            reservados.</small
+          ><br />
           <small>Con amor para nuestros invitados &#10084;</small>
           <ul class="mt-3">
-            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -622,54 +1141,66 @@
       <audio id="backSong" autoplay loop>
         <source src="audio/LaMatraca.mp3" type="audio/mp3" />
       </audio>
-      <div class="audio-icon-wrapper" style="display:none;"><i class="bi bi-disc"></i></div>
+      <div class="audio-icon-wrapper" style="display: none">
+        <i class="bi bi-disc"></i>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/main.js"></script>
     <script>
       // LIGHTBOX
-      const lightbox     = document.getElementById('galleryLightbox');
-      const lightboxImg  = document.getElementById('lightboxImg');
-      const lightboxClose = document.getElementById('lightboxClose');
-      document.querySelectorAll('.gallery-slide-img').forEach(img => {
-        img.addEventListener('click', () => {
+      const lightbox = document.getElementById("galleryLightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxClose = document.getElementById("lightboxClose");
+      document.querySelectorAll(".gallery-slide-img").forEach((img) => {
+        img.addEventListener("click", () => {
           lightboxImg.src = img.dataset.lightbox;
-          lightbox.classList.add('active');
-          document.body.style.overflow = 'hidden';
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden";
         });
       });
       function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-        setTimeout(() => { lightboxImg.src = ''; }, 300);
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+        setTimeout(() => {
+          lightboxImg.src = "";
+        }, 300);
       }
-      lightboxClose.addEventListener('click', closeLightbox);
-      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
 
       // COPIAR CUENTA
       function copiarCuenta(btn, numero) {
-        navigator.clipboard.writeText(numero).then(function() {
-          var icon = btn.querySelector('i');
-          icon.classList.remove('bi-copy');
-          icon.classList.add('bi-check2');
-          btn.style.color = '#80acdc';
-          setTimeout(function() {
-            icon.classList.remove('bi-check2');
-            icon.classList.add('bi-copy');
-            btn.style.color = '';
+        navigator.clipboard.writeText(numero).then(function () {
+          var icon = btn.querySelector("i");
+          icon.classList.remove("bi-copy");
+          icon.classList.add("bi-check2");
+          btn.style.color = "#80acdc";
+          setTimeout(function () {
+            icon.classList.remove("bi-check2");
+            icon.classList.add("bi-copy");
+            btn.style.color = "";
           }, 2000);
         });
       }
 
       // PARTÍCULAS HERO
-      (function() {
-        const canvas = document.getElementById('heroCanvas');
-        const ctx = canvas.getContext('2d');
+      (function () {
+        const canvas = document.getElementById("heroCanvas");
+        const ctx = canvas.getContext("2d");
         let particles = [];
         function resize() {
-          canvas.width  = canvas.offsetWidth;
+          canvas.width = canvas.offsetWidth;
           canvas.height = canvas.offsetHeight;
         }
         function createParticles() {
@@ -682,20 +1213,20 @@
               r: Math.random() * 1.5 + 0.3,
               alpha: Math.random() * 0.5 + 0.1,
               dx: (Math.random() - 0.5) * 0.3,
-              dy: (Math.random() - 0.5) * 0.3
+              dy: (Math.random() - 0.5) * 0.3,
             });
           }
         }
         function draw() {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          particles.forEach(p => {
+          particles.forEach((p) => {
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(192,210,255,${p.alpha})`;
             ctx.fill();
             p.x += p.dx;
             p.y += p.dy;
-            if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
+            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
             if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
           });
           requestAnimationFrame(draw);
@@ -703,7 +1234,10 @@
         resize();
         createParticles();
         draw();
-        window.addEventListener('resize', () => { resize(); createParticles(); });
+        window.addEventListener("resize", () => {
+          resize();
+          createParticles();
+        });
       })();
     </script>
   </body>
