@@ -713,8 +713,8 @@ h1, h2, h3, h4, h5 { font-family: var(--font-title); }
 .cuenta-banrural i { color: #4dbd74; }
 .cuenta-bantrab  { background: rgba(200,120,0,0.2); border: 1px solid rgba(220,150,0,0.3); }
 .cuenta-bantrab i  { color: #e8a020; }
-.cuenta-bi       { background: rgba(180,30,30,0.2); border: 1px solid rgba(220,60,60,0.3); }
-.cuenta-bi i       { color: #e06060; }
+.cuenta-bi       { background: rgba(30,80,180,0.2); border: 1px solid rgba(60,120,220,0.35); }
+.cuenta-bi i       { color: #6aacf0; }
 .cuenta-info { flex: 1; text-align: left; }
 .cuenta-banco {
   font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
