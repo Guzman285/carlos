@@ -387,9 +387,7 @@
             <div class="parents-divider mt-3 mb-5"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
           </div>
         </div>
-
         <div class="row justify-content-center g-4">
-
           <!-- Tarjeta Carlos -->
           <div class="col-md-5 col-10">
             <div class="gifts-card">
@@ -402,7 +400,6 @@
               </button>
             </div>
           </div>
-
           <!-- Tarjeta Elida -->
           <div class="col-md-5 col-10">
             <div class="gifts-card">
@@ -415,7 +412,6 @@
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -491,6 +487,139 @@
                 <i class="bi bi-copy"></i>
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== DRESS CODE ===================== -->
+    <section id="dresscode" class="dresscode">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center mb-2">
+            <span class="dresscode-tag">Vista elegante, siéntete libre</span>
+            <h2 class="dresscode-title">Dress Code</h2>
+            <p class="dresscode-desc">Queremos que te veas increíble y que estés cómodo/a para disfrutar cada momento de esta noche tan especial.</p>
+            <div class="parents-divider mt-3 mb-5"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+          </div>
+        </div>
+        <div class="row justify-content-center g-4">
+
+          <!-- Botón Orientación -->
+          <div class="col-md-5 col-10">
+            <div class="dresscode-card" data-bs-toggle="modal" data-bs-target="#modalOrientacion" role="button">
+              <div class="dresscode-card-icon">
+                <i class="bi bi-suit-heart"></i>
+              </div>
+              <p class="dresscode-card-tag">¿Qué ponerse?</p>
+              <h3 class="dresscode-card-name">Orientaci&oacute;n</h3>
+              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
+              <button class="home-btn-agendar mt-3">
+                <i class="bi bi-eye"></i> Ver orientaci&oacute;n
+              </button>
+            </div>
+          </div>
+
+          <!-- Botón Tips -->
+          <div class="col-md-5 col-10">
+            <div class="dresscode-card" data-bs-toggle="modal" data-bs-target="#modalTips" role="button">
+              <div class="dresscode-card-icon dresscode-card-icon--tips">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <p class="dresscode-card-tag">Para tener en cuenta</p>
+              <h3 class="dresscode-card-name">Tips</h3>
+              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
+              <button class="home-btn-agendar mt-3">
+                <i class="bi bi-list-check"></i> Ver tips
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODAL ORIENTACIÓN ===================== -->
+    <div class="modal fade" id="modalOrientacion" tabindex="-1" aria-labelledby="modalOrientacionLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-rsvp">
+          <div class="modal-header border-0 pb-0">
+            <div class="w-100 text-center">
+              <p class="modal-rsvp-tag"><i class="bi bi-suit-heart me-1"></i> Dress Code</p>
+              <h5 class="modal-title modal-rsvp-title" id="modalOrientacionLabel">Orientaci&oacute;n</h5>
+              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            </div>
+            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body pt-3 pb-4">
+
+            <!-- Hombres -->
+            <div class="dc-orientacion-row">
+              <div class="dc-orientacion-icon dc-icon-men">
+                <i class="bi bi-gender-male"></i>
+              </div>
+              <div class="dc-orientacion-info">
+                <p class="dc-orientacion-titulo">Hombres</p>
+                <p class="dc-orientacion-desc">Ropa casual elegante</p>
+              </div>
+            </div>
+
+            <!-- Mujeres -->
+            <div class="dc-orientacion-row">
+              <div class="dc-orientacion-icon dc-icon-women">
+                <i class="bi bi-gender-female"></i>
+              </div>
+              <div class="dc-orientacion-info">
+                <p class="dc-orientacion-titulo">Mujeres</p>
+                <p class="dc-orientacion-desc">Ropa casual elegante</p>
+              </div>
+            </div>
+
+            <p class="dc-orientacion-note mt-3">
+              <i class="bi bi-info-circle me-1"></i>
+              Próximamente agregaremos ejemplos visuales para inspirarte.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== MODAL TIPS ===================== -->
+    <div class="modal fade" id="modalTips" tabindex="-1" aria-labelledby="modalTipsLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-rsvp">
+          <div class="modal-header border-0 pb-0">
+            <div class="w-100 text-center">
+              <p class="modal-rsvp-tag"><i class="bi bi-lightbulb me-1"></i> Para disfrutar al máximo</p>
+              <h5 class="modal-title modal-rsvp-title" id="modalTipsLabel">Tips</h5>
+              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            </div>
+            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body pt-3 pb-4">
+            <ul class="dc-tips-list">
+              <li>
+                <span class="dc-tip-icon"><i class="bi bi-clock"></i></span>
+                <span class="dc-tip-text">Por favor, ser puntuales. ¡Los esperamos a tiempo!</span>
+              </li>
+              <li>
+                <span class="dc-tip-icon"><i class="bi bi-people"></i></span>
+                <span class="dc-tip-text">Para que todos puedan disfrutar plenamente, hemos decidido que sea un evento exclusivo para adultos. ¡Gracias por su comprensión!</span>
+              </li>
+              <li>
+                <span class="dc-tip-icon"><i class="bi bi-calendar-check"></i></span>
+                <span class="dc-tip-text">Confirmar asistencia a la brevedad, antes del <strong>20 de mayo</strong>.</span>
+              </li>
+              <li>
+                <span class="dc-tip-icon"><i class="bi bi-wind"></i></span>
+                <span class="dc-tip-text">Llevar un suéter para disfrutar del exterior con toda comodidad.</span>
+              </li>
+              <li>
+                <span class="dc-tip-icon"><i class="bi bi-music-note-beamed"></i></span>
+                <span class="dc-tip-text">¡Olvidarse de todo y venir a disfrutar! Esta noche es para celebrar.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
