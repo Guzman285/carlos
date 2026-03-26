@@ -127,15 +127,10 @@
                   <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>S&aacute;</span><span>Do</span>
                 </div>
                 <div class="cal-grid">
-                  <!-- semana 1 -->
                   <span class="cal-empty"></span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-                  <!-- semana 2 -->
                   <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                  <!-- semana 3 -->
                   <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-                  <!-- semana 4 -->
                   <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
-                  <!-- semana 5 -->
                   <span>29</span><span>30</span><span class="cal-empty"></span><span class="cal-empty"></span><span class="cal-empty"></span><span class="cal-empty"></span><span class="cal-marked">1<i class="bi bi-heart-fill"></i></span>
                 </div>
               </div>
@@ -143,7 +138,6 @@
                 <i class="bi bi-stars me-1"></i> Lunes 1 de Junio, 2026
               </div>
             </div>
-            <!-- /CALENDARIO -->
 
             <p class="home-faltan">Faltan</p>
             <div class="countdown-wrapper mt-2">
@@ -386,21 +380,121 @@
     <section id="gifts" class="gifts">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-8 col-10 text-center">
+          <div class="col-md-8 col-10 text-center mb-2">
             <span>Su presencia es nuestro mejor regalo</span>
             <h2>Regalos</h2>
-            <p>Si desean hacernos un obsequio, pueden hacerlo a trav&eacute;s de:</p>
+            <p>Si desean hacernos un obsequio, con todo el amor lo recibimos.<br/>Pueden hacerlo a trav&eacute;s de transferencia bancaria.</p>
+            <div class="parents-divider mt-3 mb-5"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
           </div>
         </div>
-        <div class="row justify-content-center text-center">
-          <div class="col-md-6">
-            <ul class="list-group">
-              <li class="list-group-item"><div class="fw-bold">Pr&oacute;ximamente</div>Informaci&oacute;n de cuenta bancaria</li>
-            </ul>
+
+        <div class="row justify-content-center g-4">
+
+          <!-- Tarjeta Carlos -->
+          <div class="col-md-5 col-10">
+            <div class="gifts-card">
+              <div class="gifts-card-avatar"><i class="bi bi-person-fill"></i></div>
+              <p class="gifts-card-tag">El Novio</p>
+              <h3 class="gifts-card-name">Carlos</h3>
+              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
+              <button class="home-btn-agendar mt-3" data-bs-toggle="modal" data-bs-target="#modalCuentaCarlos">
+                <i class="bi bi-credit-card"></i> Ver Cuentas
+              </button>
+            </div>
           </div>
+
+          <!-- Tarjeta Elida -->
+          <div class="col-md-5 col-10">
+            <div class="gifts-card">
+              <div class="gifts-card-avatar gifts-card-avatar--bride"><i class="bi bi-person-fill"></i></div>
+              <p class="gifts-card-tag">La Novia</p>
+              <h3 class="gifts-card-name">Elida</h3>
+              <div class="gifts-card-divider"><span></span><i class="bi bi-stars"></i><span></span></div>
+              <button class="home-btn-agendar mt-3" data-bs-toggle="modal" data-bs-target="#modalCuentaElida">
+                <i class="bi bi-credit-card"></i> Ver Cuentas
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- ===================== MODAL CUENTAS CARLOS ===================== -->
+    <div class="modal fade" id="modalCuentaCarlos" tabindex="-1" aria-labelledby="modalCuentaCarlosLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-rsvp">
+          <div class="modal-header border-0 pb-0">
+            <div class="w-100 text-center">
+              <p class="modal-rsvp-tag"><i class="bi bi-gift me-1"></i> Cuentas Bancarias</p>
+              <h5 class="modal-title modal-rsvp-title" id="modalCuentaCarlosLabel">Carlos</h5>
+              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            </div>
+            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body pt-3 pb-4">
+            <div class="cuenta-row">
+              <div class="cuenta-banco-logo cuenta-banrural"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-info">
+                <p class="cuenta-banco">Banrural</p>
+                <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
+              </div>
+              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="cuenta-row">
+              <div class="cuenta-banco-logo cuenta-bantrab"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-info">
+                <p class="cuenta-banco">Bantrab</p>
+                <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
+              </div>
+              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== MODAL CUENTAS ELIDA ===================== -->
+    <div class="modal fade" id="modalCuentaElida" tabindex="-1" aria-labelledby="modalCuentaElidaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-rsvp">
+          <div class="modal-header border-0 pb-0">
+            <div class="w-100 text-center">
+              <p class="modal-rsvp-tag"><i class="bi bi-gift me-1"></i> Cuentas Bancarias</p>
+              <h5 class="modal-title modal-rsvp-title" id="modalCuentaElidaLabel">Elida</h5>
+              <div class="parents-divider mt-2 mb-0"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+            </div>
+            <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body pt-3 pb-4">
+            <div class="cuenta-row">
+              <div class="cuenta-banco-logo cuenta-banrural"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-info">
+                <p class="cuenta-banco">Banrural</p>
+                <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
+              </div>
+              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="cuenta-row">
+              <div class="cuenta-banco-logo cuenta-bi"><i class="bi bi-bank"></i></div>
+              <div class="cuenta-info">
+                <p class="cuenta-banco">B.I.</p>
+                <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
+              </div>
+              <button class="cuenta-copy-btn" onclick="copiarCuenta(this, 'xxxx-xxxx-xxxx')" title="Copiar">
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ===================== FOOTER ===================== -->
     <footer>
@@ -444,6 +538,20 @@
       lightboxClose.addEventListener('click', closeLightbox);
       lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+      function copiarCuenta(btn, numero) {
+        navigator.clipboard.writeText(numero).then(function() {
+          var icon = btn.querySelector('i');
+          icon.classList.remove('bi-copy');
+          icon.classList.add('bi-check2');
+          btn.style.color = '#80acdc';
+          setTimeout(function() {
+            icon.classList.remove('bi-check2');
+            icon.classList.add('bi-copy');
+            btn.style.color = '';
+          }, 2000);
+        });
+      }
     </script>
   </body>
 </html>
