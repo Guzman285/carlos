@@ -24,7 +24,10 @@
     <link rel="stylesheet" href="css/countdown-custom.css" />
 
     <!-- SEO y vista previa WhatsApp / redes -->
-    <meta property="og:title" content="&#161;Carlos &amp; Elida se casan! &#128141;" />
+    <meta
+      property="og:title"
+      content="&#161;Carlos &amp; Elida se casan! &#128141;"
+    />
     <meta
       property="og:description"
       content="Lunes 1 de junio de 2026 &middot; Hotel La Hacienda, Panajachel, Solol&aacute;"
@@ -39,7 +42,10 @@
 
     <!-- Vista previa para WhatsApp específicamente -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="&#161;Carlos &amp; Elida se casan! &#128141;" />
+    <meta
+      name="twitter:title"
+      content="&#161;Carlos &amp; Elida se casan! &#128141;"
+    />
     <meta
       name="twitter:description"
       content="Lunes 1 de junio de 2026 &middot; Hotel La Hacienda, Panajachel, Solol&aacute;"
@@ -317,7 +323,9 @@
                   <option value="" selected disabled>
                     Selecciona una opci&oacute;n
                   </option>
-                  <option value="Asistir&aacute;">&#127881; Asistir&eacute;</option>
+                  <option value="Asistir&aacute;">
+                    &#127881; Asistir&eacute;
+                  </option>
                   <option value="No Asistir&aacute;">
                     &#128546; No podr&eacute; asistir
                   </option>
@@ -910,7 +918,11 @@
         <div class="row justify-content-center g-4">
           <div class="col-md-5 col-10">
             <div class="gifts-card">
-              <img src="img/carlos.jpeg" alt="Carlos" class="gifts-card-photo" />
+              <img
+                src="img/carlos.jpeg"
+                alt="Carlos"
+                class="gifts-card-photo"
+              />
               <p class="gifts-card-tag">El Novio</p>
               <h3 class="gifts-card-name">Carlos</h3>
               <div class="gifts-card-divider">
@@ -927,7 +939,11 @@
           </div>
           <div class="col-md-5 col-10">
             <div class="gifts-card">
-              <img src="img/carlos2.jpeg" alt="Elida" class="gifts-card-photo" />
+              <img
+                src="img/carlos2.jpeg"
+                alt="Elida"
+                class="gifts-card-photo"
+              />
               <p class="gifts-card-tag">La Novia</p>
               <h3 class="gifts-card-name">Elida</h3>
               <div class="gifts-card-divider">
@@ -1086,6 +1102,34 @@
       </div>
     </div>
 
+    <!-- ===================== NUESTRA CANCIÓN ===================== -->
+    <section class="song-section reveal">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-10 text-center">
+            <span class="song-tag">Nuestra melodía</span>
+            <h2 class="song-title">Escucha Nuestra Canción</h2>
+            <div class="parents-divider mt-2 mb-4">
+              <span></span><i class="bi bi-heart-fill"></i><span></span>
+            </div>
+            <div class="song-player">
+              <div class="song-disc" id="songDisc">
+                <i class="bi bi-disc"></i>
+              </div>
+              <p class="song-name">La Matraca</p>
+              <button
+                class="home-btn-agendar mt-3"
+                id="songBtn"
+                onclick="toggleSong()"
+              >
+                <i class="bi bi-play-fill" id="songIcon"></i> Reproducir
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== FOOTER ===================== -->
     <footer>
       <div class="container">
@@ -1115,9 +1159,6 @@
       <audio id="backSong" loop>
         <source src="audio/LaMatraca.mp3" type="audio/mp3" />
       </audio>
-      <div class="audio-icon-wrapper" style="display: none">
-        <i class="bi bi-disc"></i>
-      </div>
     </div>
 
     <script
@@ -1213,6 +1254,22 @@
           createParticles();
         });
       })();
+      // CANCIÓN
+    const song = document.getElementById('backSong');
+    const songDisc = document.getElementById('songDisc');
+    const songBtn = document.getElementById('songBtn');
+
+    function toggleSong() {
+      if (song.paused) {
+        song.play();
+        songDisc.classList.add('playing');
+        songBtn.innerHTML = '<i class="bi bi-pause-fill"></i> Pausar';
+      } else {
+        song.pause();
+        songDisc.classList.remove('playing');
+        songBtn.innerHTML = '<i class="bi bi-play-fill"></i> Reproducir';
+      }
+    }
     </script>
   </body>
 </html>

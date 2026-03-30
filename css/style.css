@@ -1868,6 +1868,74 @@ footer li {
 }
 
 /* ==========================================
+   SECCIÓN CANCIÓN
+   ========================================== */
+.song-section {
+  position: relative;
+  isolation: isolate;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.song-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--flora);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.song-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(8, 18, 45, 0.88);
+  z-index: -1;
+}
+.song-tag {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: var(--primary-light);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.song-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-style: italic;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(128, 172, 220, 0.3);
+}
+.song-player {
+  border: 1px solid rgba(128, 172, 220, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  background: rgba(10, 25, 60, 0.45);
+  backdrop-filter: blur(8px);
+}
+.song-disc {
+  font-size: 5rem;
+  color: var(--primary-light);
+  opacity: 0.85;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+.song-disc.playing {
+  animation: girar 4s linear infinite;
+}
+.song-name {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--silver-light);
+  margin-bottom: 0;
+}
+
+/* ==========================================
    RESPONSIVE
    ========================================== */
 @media (max-width: 992px) {
