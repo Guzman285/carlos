@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function setWithFlip(el, value) {
     if (el.textContent !== value) {
       el.classList.remove('flip');
-      void el.offsetWidth; // fuerza reflow para reiniciar animación
+      void el.offsetWidth;
       el.classList.add('flip');
       el.textContent = value;
     }
@@ -113,38 +113,29 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ==========================================
-   SCROLL - Bloquear hasta abrir invitacion
+   AUDIO - Musica de fondo (auto al cargar)
    ========================================== */
-const rootElement      = document.querySelector(':root');
 const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
 const audioIcon        = document.querySelector('.audio-icon-wrapper i');
 const backSong         = document.querySelector('#backSong');
 let isPlaying = false;
 
-function disableScroll() {
-  const scrollTop  = window.pageYOffset  || document.documentElement.scrollTop;
-  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-  window.onscroll = function () {
-    window.scrollTo(scrollTop, scrollLeft);
-  };
-  rootElement.style.scrollBehavior = 'auto';
-}
-
-function enableScroll() {
-  window.onscroll = function () {};
-  rootElement.style.scrollBehavior = 'smooth';
-  playAudio();
-}
-
-/* ==========================================
-   AUDIO - Musica de fondo
-   ========================================== */
 function playAudio() {
   backSong.volume = 0.5;
-  backSong.play();
-  audioIconWrapper.style.display = 'flex';
-  isPlaying = true;
+  backSong.play().then(() => {
+    audioIconWrapper.style.display = 'flex';
+    isPlaying = true;
+  }).catch(() => {
+    // El navegador bloqueó el autoplay; mostrar icono igual
+    audioIconWrapper.style.display = 'flex';
+  });
 }
+
+// Habilitar scroll y audio automáticamente al cargar la página
+document.addEventListener('DOMContentLoaded', function () {
+  document.documentElement.style.scrollBehavior = 'smooth';
+  playAudio();
+});
 
 if (audioIconWrapper) {
   audioIconWrapper.onclick = function () {
@@ -160,8 +151,6 @@ if (audioIconWrapper) {
     isPlaying = !isPlaying;
   };
 }
-
-disableScroll();
 
 /* ==========================================
    URL PARAMS - Personalizar nombre del invitado
