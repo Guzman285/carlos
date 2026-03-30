@@ -49,30 +49,30 @@ h5 {
 }
 
 /* ==========================================
-   HERO
+   HERO — fondo fijo (parallax)
    ========================================== */
 .hero {
   position: relative;
   min-height: 100vh;
   isolation: isolate;
+  background-image: url(../img/carlos2.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+/* Overlay oscuro encima de la foto fija */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(../img/carlos2.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -2;
-  filter: grayscale(0%) brightness(0.75);
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
   background-color: rgba(10, 20, 40, 0.45);
-  z-index: -1;
+  z-index: 0;
+}
+/* El contenido del hero debe quedar por encima del overlay */
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 .hero-line {
   width: 100%;
@@ -1999,5 +1999,16 @@ footer li {
     width: 55%;
     transform: translateX(-15px);
     padding: 0.6%;
+  }
+}
+
+/* ==========================================
+   PARALLAX — desactivar en móvil
+   (background-attachment: fixed no funciona
+    bien en iOS Safari)
+   ========================================== */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
   }
 }
