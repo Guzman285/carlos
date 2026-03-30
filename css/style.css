@@ -60,12 +60,12 @@ h5 {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(../img/prewed1.jpg);
+  background-image: url(../img/carlos2.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: -2;
-  filter: grayscale(30%) brightness(0.7);
+  filter: grayscale(0%) brightness(0.75);
 }
 .hero::after {
   content: "";
