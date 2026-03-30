@@ -12,7 +12,6 @@
   --font-title: "Cormorant Garamond", serif;
   --font-body: "Lato", sans-serif;
   --flora: url(../img/floraPattern1.png);
-  --overlay-dark: rgba(5, 5, 5, 0.80);
 }
 
 /* ==========================================
@@ -59,18 +58,6 @@ h1, h2, h3, h4, h5 {
   background-size: cover;
   background-position: center;
   z-index: -2;
-}
-.biblia-section::after,
-.song-section::after,
-.countdown-section::after,
-.evento-section::after,
-.gallery-section::after,
-.gifts-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--overlay-dark);
-  z-index: -1;
 }
 
 /* ==========================================
@@ -765,13 +752,6 @@ footer::before {
   background-image: var(--flora);
   background-size: cover;
   background-position: center;
-  z-index: -2;
-}
-footer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(5, 5, 5, 0.88);
   z-index: -1;
 }
 footer a { color: var(--silver); font-weight: 700; text-decoration: none; }
