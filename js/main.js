@@ -46,41 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
   setInterval(updateCountdown, 1000);
 
   /* ==========================================
-     RSVP - Envio unico sin duplicados
-     ========================================== */
-  const form = document.getElementById('my-form');
-  if (form) {
-    let enviando = false;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (enviando) return;
-      enviando = true;
-
-      var btn = form.querySelector('button[type="submit"]');
-      var msg = document.getElementById('form-msg');
-      btn.disabled = true;
-      btn.textContent = 'Enviando...';
-
-      fetch(form.action, { method: 'POST', body: new FormData(form) })
-        .then(function () {
-          msg.style.display = 'block';
-          msg.style.color   = '#80acdc';
-          msg.textContent   = '\u00a1Gracias! Tu confirmaci\u00f3n fue recibida. \u2665';
-          btn.style.display = 'none';
-          form.reset();
-        })
-        .catch(function () {
-          msg.style.display = 'block';
-          msg.style.color   = '#ff6b6b';
-          msg.textContent   = 'Hubo un error. Por favor intent\u00e1 de nuevo.';
-          btn.disabled = false;
-          btn.textContent = 'Enviar';
-          enviando = false;
-        });
-    });
-  }
-
-  /* ==========================================
      SCROLL REVEAL - Fade up al entrar en pantalla
      ========================================== */
   const revealEls = document.querySelectorAll('.reveal');
@@ -110,62 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.4 });
   sections.forEach(s => navObserver.observe(s));
 
-});
-
-/* ==========================================
-   AUDIO - Musica de fondo (auto al cargar)
-   ========================================== */
-const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-const audioIcon        = document.querySelector('.audio-icon-wrapper i');
-const backSong         = document.querySelector('#backSong');
-let isPlaying = false;
-
-function playAudio() {
-  backSong.volume = 0.5;
-  backSong.play().then(() => {
-    audioIconWrapper.style.display = 'flex';
-    isPlaying = true;
-  }).catch(() => {
-    // El navegador bloqueó el autoplay; mostrar icono igual
-    audioIconWrapper.style.display = 'flex';
-  });
-}
-
-// Habilitar scroll y audio automáticamente al cargar la página
-document.addEventListener('DOMContentLoaded', function () {
+  /* ==========================================
+     SCROLL SMOOTH
+     ========================================== */
   document.documentElement.style.scrollBehavior = 'smooth';
-  playAudio();
+
 });
-
-if (audioIconWrapper) {
-  audioIconWrapper.onclick = function () {
-    if (isPlaying) {
-      backSong.pause();
-      audioIcon.classList.remove('bi-disc');
-      audioIcon.classList.add('bi-pause-circle');
-    } else {
-      backSong.play();
-      audioIcon.classList.add('bi-disc');
-      audioIcon.classList.remove('bi-pause-circle');
-    }
-    isPlaying = !isPlaying;
-  };
-}
-
-/* ==========================================
-   URL PARAMS - Personalizar nombre del invitado
-   Ejemplo: index.html?n=Juan&p=Sr.
-   ========================================== */
-const urlParams    = new URLSearchParams(window.location.search);
-const nombreGuest  = urlParams.get('n') || '';
-const pronounGuest = urlParams.get('p') || '';
-
-const namaContainer = document.querySelector('.hero h4 span');
-if (namaContainer && nombreGuest) {
-  namaContainer.innerText = `${pronounGuest} ${nombreGuest},`;
-}
-
-const inputNama = document.querySelector('#nama');
-if (inputNama) {
-  inputNama.value = nombreGuest;
-}
