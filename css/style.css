@@ -179,69 +179,6 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================
-   NAVBAR
-   ========================================== */
-.mynavbar {
-  background: transparent !important;
-  backdrop-filter: none;
-}
-.mynavbar .navbar-brand {
-  font-family: var(--font-title);
-  font-size: 2.8rem;
-  font-weight: 600;
-  font-style: italic;
-  color: var(--primary-light);
-}
-.mynavbar .nav-link {
-  font-family: var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #ffffff !important;
-  transition: color 0.3s ease;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-.mynavbar .nav-link:hover { color: var(--gold) !important; }
-.mynavbar .nav-link.active {
-  color: var(--gold) !important;
-  border-bottom: 1px solid var(--gold);
-}
-.mynavbar .navbar-toggler {
-  border: none;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-.mynavbar .navbar-toggler-icon {
-  filter: invert(1);
-}
-.mynavbar .navbar-collapse {
-  background: transparent !important;
-  backdrop-filter: none;
-  padding: 0.5rem 1.5rem 1rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
-.mynavbar .navbar-collapse .nav-link {
-  color: #ffffff !important;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-.mynavbar .navbar-collapse .nav-link:last-child { border-bottom: none; }
-.mynavbar .navbar-collapse .nav-link:hover {
-  color: var(--gold) !important;
-  padding-left: 0.5rem;
-}
-.mynavbar .navbar-collapse .nav-link.active {
-  color: var(--gold) !important;
-  border-bottom: 1px solid rgba(201,168,76,0.4);
-}
-.sticky-top { overflow: hidden; }
-
-/* ==========================================
    DIVISOR GENERAL
    ========================================== */
 .biblia-divider {
