@@ -32,12 +32,10 @@ body {
   background-attachment: scroll;
   color: var(--text-dark);
 }
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-title);
-}
+h1, h2, h3, h4, h5 { font-family: var(--font-title); }
 
 /* ==========================================
-   FONDO GLOBAL — floraPattern sin overlay
+   FONDO GLOBAL
    ========================================== */
 .biblia-section,
 .song-section,
@@ -241,32 +239,105 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
   color: var(--text-dark);
 }
-.song-player {
+
+/* Nuevo reproductor */
+.song-player-card {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
   border: 1px solid rgba(107,143,113,0.4);
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
-  background: rgba(245,240,232,0.7);
+  border-radius: 14px;
+  padding: 1.8rem 2rem;
+  background: rgba(245,240,232,0.82);
   backdrop-filter: blur(6px);
+  box-shadow: 0 2px 16px rgba(44,36,22,0.08);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
 }
-.song-disc {
-  font-size: 5rem;
-  color: var(--sage);
-  opacity: 0.85;
-  margin-bottom: 1rem;
-  display: inline-block;
-  transition: color 0.3s;
+.song-player-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--sage-light), transparent);
 }
-.song-disc.playing {
-  animation: girar 4s linear infinite;
-  color: var(--gold);
-  opacity: 1;
+.song-play-btn {
+  flex-shrink: 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--sage-dark);
+  border: none;
+  color: var(--cream);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(74,107,80,0.3);
 }
-.song-name {
+.song-play-btn:hover {
+  background: var(--sage);
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(74,107,80,0.4);
+}
+.song-play-btn.playing {
+  background: var(--gold);
+  box-shadow: 0 4px 14px rgba(184,146,74,0.35);
+}
+.song-play-btn.playing:hover {
+  background: var(--gold-light);
+}
+.song-play-btn i { pointer-events: none; }
+
+.song-info { flex: 1; min-width: 0; }
+.song-info-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--sage-dark);
+  margin: 0 0 0.2rem;
+}
+.song-info-title {
   font-family: var(--font-title);
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-style: italic;
-  color: var(--text-mid);
-  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.song-info-status {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--sage);
+  letter-spacing: 0.1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.song-info-status .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.song-info-status.active .dot {
+  opacity: 1;
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; }
 }
 
 /* ==========================================
@@ -302,11 +373,7 @@ h1, h2, h3, h4, h5 {
 /* ==========================================
    FOTO DIVISORIA
    ========================================== */
-.photo-divider {
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
+.photo-divider { width: 100%; overflow: hidden; line-height: 0; }
 .photo-divider-img {
   width: 100%;
   height: 60vh;
@@ -358,9 +425,7 @@ h1, h2, h3, h4, h5 {
   border-radius: 50%;
   background: rgba(107,143,113,0.15);
   border: 1px solid rgba(107,143,113,0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
 .evento-icon i { font-size: 1.4rem; color: var(--sage-dark); }
@@ -486,9 +551,7 @@ h1, h2, h3, h4, h5 {
 }
 .carousel-indicators .active { background-color: var(--sage); }
 .carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(0.3) sepia(1) saturate(0.5);
-}
+.carousel-control-next-icon { filter: invert(0.3) sepia(1) saturate(0.5); }
 
 /* LIGHTBOX */
 .gallery-lightbox {
@@ -660,53 +723,8 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================
-   FOOTER
-   ========================================== */
-footer {
-  position: relative;
-  isolation: isolate;
-  padding: 3rem;
-  color: var(--text-dark);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  text-align: center;
-}
-footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--flora);
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
-footer a { color: var(--brown); font-weight: 700; text-decoration: none; }
-footer a:hover { color: var(--sage-dark); }
-.footer-names {
-  font-family: var(--font-title);
-  font-size: 3.5rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--text-dark);
-  margin-bottom: 0.3rem;
-}
-.footer-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.footer-divider span { display: block; width: 60px; height: 1px; background-color: var(--gold); }
-.footer-divider i { color: var(--gold); font-size: 0.7rem; }
-
-/* ==========================================
    ANIMACIONES
    ========================================== */
-@keyframes girar {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
 .countdown-number { display: inline-block; }
 .countdown-number.flip { animation: flip-number 0.35s ease; }
 @keyframes flip-number {
@@ -726,6 +744,7 @@ footer a:hover { color: var(--sage-dark); }
   html { font-size: 65%; }
   .gallery-slide-img { height: 260px; }
   .photo-divider-img { height: 45vh; }
+  .song-player-card { gap: 1.2rem; padding: 1.4rem 1.4rem; }
 }
 @media (max-width: 576px) {
   html { font-size: 60%; }
@@ -733,4 +752,6 @@ footer a:hover { color: var(--sage-dark); }
   .photo-divider-img { height: 35vh; }
   .home-btn-agendar,
   .home-btn-waze { padding: 0.9rem 1.8rem; letter-spacing: 0.2rem; }
+  .song-play-btn { width: 52px; height: 52px; font-size: 1.2rem; }
+  .song-info-title { font-size: 1.5rem; }
 }

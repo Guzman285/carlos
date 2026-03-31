@@ -86,14 +86,18 @@
             <div class="biblia-divider mt-2 mb-4">
               <span></span><i class="bi bi-heart-fill"></i><span></span>
             </div>
-            <div class="song-player">
-              <div class="song-disc" id="songDisc">
-                <i class="bi bi-disc"></i>
-              </div>
-              <p class="song-name">La Matraca</p>
-              <button class="home-btn-agendar mt-3" id="songBtn" onclick="toggleSong()">
-                <i class="bi bi-play-fill"></i> Reproducir
+            <div class="song-player-card">
+              <button class="song-play-btn" id="songBtn" onclick="toggleSong()" aria-label="Reproducir / Pausar">
+                <i class="bi bi-play-fill" id="songIcon"></i>
               </button>
+              <div class="song-info">
+                <p class="song-info-label">Nuestra canci&oacute;n</p>
+                <p class="song-info-title">La Matraca</p>
+                <p class="song-info-status" id="songStatus">
+                  <span class="dot"></span>
+                  <span id="songStatusText">Presiona para reproducir</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -155,7 +159,6 @@
             <div class="biblia-divider mt-2 mb-5">
               <span></span><i class="bi bi-heart-fill"></i><span></span>
             </div>
-
             <div class="evento-card">
               <div class="evento-row">
                 <div class="evento-icon"><i class="bi bi-geo-alt-fill"></i></div>
@@ -186,7 +189,6 @@
                 </div>
               </div>
             </div>
-
             <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
               <a href="https://maps.google.com/?q=Finca+Guatemala" target="_blank" class="home-btn-agendar">
                 <i class="bi bi-map"></i> Google Maps
@@ -355,17 +357,24 @@
 
       // CANCIÓN
       const song = document.getElementById('backSong');
-      const songDisc = document.getElementById('songDisc');
       const songBtn = document.getElementById('songBtn');
+      const songIcon = document.getElementById('songIcon');
+      const songStatus = document.getElementById('songStatus');
+      const songStatusText = document.getElementById('songStatusText');
+
       function toggleSong() {
         if (song.paused) {
           song.play();
-          songDisc.classList.add('playing');
-          songBtn.innerHTML = '<i class="bi bi-pause-fill"></i> Pausar';
+          songIcon.classList.replace('bi-play-fill', 'bi-pause-fill');
+          songBtn.classList.add('playing');
+          songStatus.classList.add('active');
+          songStatusText.textContent = 'Reproduciendo...';
         } else {
           song.pause();
-          songDisc.classList.remove('playing');
-          songBtn.innerHTML = '<i class="bi bi-play-fill"></i> Reproducir';
+          songIcon.classList.replace('bi-pause-fill', 'bi-play-fill');
+          songBtn.classList.remove('playing');
+          songStatus.classList.remove('active');
+          songStatusText.textContent = 'Presiona para reproducir';
         }
       }
 
