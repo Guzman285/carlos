@@ -233,6 +233,7 @@ section {
   padding-top: clamp(0.7rem,2vw,1.2rem); font-weight: 300;
 }
 
+/* FOTO BREAK — degradado reducido a 45px */
 .photo-break {
   height: clamp(280px,42vw,480px); overflow: hidden; position: relative;
 }
@@ -244,7 +245,9 @@ section {
 .photo-break:hover img { transform: scale(1.04); }
 .photo-break::before,
 .photo-break::after {
-  content: ''; position: absolute; left: 0; right: 0; height: 90px; z-index: 2; pointer-events: none;
+  content: ''; position: absolute; left: 0; right: 0;
+  height: 45px;   /* <-- reducido de 90px a 45px */
+  z-index: 2; pointer-events: none;
 }
 .photo-break::before { top: 0;    background: linear-gradient(to bottom, var(--cream), transparent); }
 .photo-break::after  { bottom: 0; background: linear-gradient(to top,    var(--cream), transparent); }
