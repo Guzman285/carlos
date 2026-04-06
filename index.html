@@ -1,423 +1,706 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Boda Carlos & Elida</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/countdown-custom.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carlos &amp; Elida · 1 Junio 2026</title>
 
-    <meta property="og:title" content="&#161;Carlos &amp; Elida se casan! &#128141;" />
-    <meta property="og:description" content="Lunes 1 de junio de 2026 &middot; Finca, Guatemala" />
-    <meta property="og:image" content="https://guzman285.github.io/carlos/img/carlos2.jpeg" />
-    <meta property="og:url" content="https://guzman285.github.io/carlos/" />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#4a6b50" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="&#161;Carlos &amp; Elida se casan! &#128141;" />
-    <meta name="twitter:description" content="Lunes 1 de junio de 2026 &middot; Finca, Guatemala" />
-    <meta name="twitter:image" content="https://guzman285.github.io/carlos/img/carlos2.jpeg" />
-  </head>
-  <body>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-    <!-- ===================== 1. INICIO (HERO) ===================== -->
-    <div id="hero-bg"></div>
-    <section
-      id="hero"
-      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
-    >
-      <canvas
-        id="heroCanvas"
-        style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"
-      ></canvas>
-      <main style="position:relative;z-index:1;">
-        <div class="hero-line"></div>
-        <h1 class="hero-name">Carlos</h1>
-        <p class="hero-ampersand">&amp;</p>
-        <h1 class="hero-name hero-name--right">Elida</h1>
-        <div class="hero-line"></div>
-        <p class="hero-subtitle mt-4">&#161;Nuestra Boda!</p>
-        <p class="hero-phrase">Te elijo hoy y por el resto de mi vida</p>
-      </main>
-    </section>
+  <!-- OG -->
+  <meta property="og:title" content="¡Carlos &amp; Elida se casan! 💍" />
+  <meta property="og:description" content="Lunes 1 de junio de 2026 · Finca, Guatemala" />
+  <meta property="og:image" content="https://guzman285.github.io/carlos/img/carlos2.jpeg" />
+  <meta property="og:url" content="https://guzman285.github.io/carlos/" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#b89a6a" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- ===================== 2. TEXTO BÍBLICO ===================== -->
-    <section id="biblia" class="biblia-section reveal">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 col-11 text-center">
-            <p class="biblia-tag">Palabra de Dios</p>
-            <div class="biblia-divider">
-              <span></span><i class="bi bi-heart-fill"></i><span></span>
-            </div>
-            <blockquote class="biblia-quote">
-              &ldquo;Por tanto, lo que Dios junt&oacute;,<br />
-              no lo separe el hombre.&rdquo;
-            </blockquote>
-            <p class="biblia-ref">Marcos 10:9</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<style>
+/* ── TOKENS ───────────────────────────────────── */
+:root {
+  --gold:        #c9a84c;
+  --gold-light:  #e8d5a3;
+  --gold-dark:   #8a6a2e;
+  --blush:       #f0e8df;
+  --cream:       #faf7f2;
+  --ivory:       #fffdf9;
+  --dark:        #2c2418;
+  --muted:       #7a6a56;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', sans-serif;
+  --transition:  all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
 
-    <!-- ===================== 3. CANCIÓN ===================== -->
-    <section id="cancion" class="song-section reveal">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-10 text-center">
-            <p class="song-tag">Nuestra melod&iacute;a</p>
-            <h2 class="song-title">Escucha Nuestra Canci&oacute;n</h2>
-            <div class="biblia-divider mt-2 mb-4">
-              <span></span><i class="bi bi-heart-fill"></i><span></span>
-            </div>
-            <div class="song-player-card">
-              <button class="song-play-btn" id="songBtn" onclick="toggleSong()" aria-label="Reproducir / Pausar">
-                <i class="bi bi-play-fill" id="songIcon"></i>
-              </button>
-              <div class="song-info">
-                <p class="song-info-label">Nuestra canci&oacute;n</p>
-                <p class="song-info-title">La Matraca</p>
-                <p class="song-info-status" id="songStatus">
-                  <span class="dot"></span>
-                  <span id="songStatusText">Presiona para reproducir</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* ── BASE ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
 
-    <!-- ===================== 4. CUENTA REGRESIVA ===================== -->
-    <section id="countdown" class="countdown-section reveal">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-11 text-center">
-            <p class="cd-tag">El tiempo corre, el amor no</p>
-            <h2 class="cd-title">Nuestro D&iacute;a Se Acerca</h2>
-            <p class="cd-subtitle">
-              Cada segundo que pasa nos acerca m&aacute;s<br />
-              al momento m&aacute;s hermoso de nuestras vidas
-            </p>
-            <div class="biblia-divider mt-2 mb-5">
-              <span></span><i class="bi bi-heart-fill"></i><span></span>
-            </div>
-            <div class="countdown-wrapper">
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-days">00</span>
-                <span class="countdown-label">D&iacute;as</span>
-              </div>
-              <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-hours">00</span>
-                <span class="countdown-label">Horas</span>
-              </div>
-              <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-minutes">00</span>
-                <span class="countdown-label">Minutos</span>
-              </div>
-              <span class="countdown-separator">:</span>
-              <div class="countdown-box">
-                <span class="countdown-number" id="cd-seconds">00</span>
-                <span class="countdown-label">Segundos</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* ── HERO ─────────────────────────────────────── */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--dark);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('img/carlos.jpeg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.45;
+  transform: scale(1.05);
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+@keyframes kenburns {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.12) translateX(-2%); }
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(44,36,24,0.35) 0%,
+    rgba(44,36,24,0.15) 40%,
+    rgba(44,36,24,0.6)  100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 2rem 1.5rem;
+  animation: fadeUp 1.6s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1.5rem;
+}
+.hero-names {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 11rem);
+  font-weight: 300;
+  line-height: 0.92;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.hero-names em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.hero-amp {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+  margin: 0.3rem 0;
+  font-weight: 300;
+}
+.hero-date {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-top: 2rem;
+  font-weight: 300;
+}
+.hero-divider {
+  display: flex; align-items: center; gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem auto 0;
+  max-width: 280px;
+}
+.hero-divider span {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+.hero-divider span:last-child {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+.hero-divider i { color: var(--gold); font-size: 0.9rem; }
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  z-index: 2; color: rgba(255,255,255,0.5);
+  font-size: 1.4rem; animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(8px); }
+}
 
-    <!-- ===================== 5. FOTO CARLOS ===================== -->
-    <div class="photo-divider">
-      <img src="img/carlos.jpeg" alt="Carlos y Elida" class="photo-divider-img" />
+/* ── ORNAMENT LINE ────────────────────────────── */
+.ornament {
+  display: flex; align-items: center; gap: 1rem;
+  justify-content: center;
+  margin: 0 auto 2.5rem;
+  max-width: 320px;
+}
+.ornament span {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+.ornament span:last-child {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+.ornament i { color: var(--gold); font-size: 1rem; }
+
+/* ── SECTION SHARED ───────────────────────────── */
+section { padding: clamp(4rem,9vw,7rem) 1.5rem; }
+.section-tag {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block; margin-bottom: 1rem;
+  font-weight: 400;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem,6vw,4.2rem);
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--gold-dark); }
+.section-sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+}
+
+/* ── BIBLIA ───────────────────────────────────── */
+#biblia {
+  background: var(--ivory);
+  text-align: center;
+}
+.biblia-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem,3.5vw,2rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1.55;
+  max-width: 500px;
+  margin: 0 auto 1rem;
+}
+.biblia-ref {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* ── CANCION ──────────────────────────────────── */
+#cancion {
+  background: var(--dark);
+  text-align: center;
+}
+#cancion .section-title { color: #fff; }
+#cancion .section-tag   { color: var(--gold-light); }
+.song-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  margin-top: 0.5rem;
+  backdrop-filter: blur(8px);
+}
+.song-play-btn {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: var(--dark);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.song-play-btn:hover { background: var(--gold-light); transform: scale(1.08); }
+.song-play-btn.playing { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+  50%      { box-shadow: 0 0 0 14px rgba(201,168,76,0); }
+}
+.song-info { text-align: left; }
+.song-info-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.2rem; }
+.song-info-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; color: #fff; margin-bottom: 0.25rem; }
+.song-status { font-size: 0.78rem; color: var(--gold-light); display: flex; align-items: center; gap: 0.4rem; }
+.song-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+.song-dot.active { animation: dotpulse 1s ease-in-out infinite; }
+@keyframes dotpulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+/* ── COUNTDOWN ────────────────────────────────── */
+#countdown { background: var(--blush); text-align: center; }
+.cd-grid {
+  display: flex; justify-content: center; gap: clamp(0.75rem,3vw,2rem);
+  flex-wrap: nowrap;
+}
+.cd-box {
+  background: var(--ivory);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 0.75rem;
+  padding: clamp(1rem,3vw,1.8rem) clamp(0.8rem,3vw,2rem);
+  min-width: clamp(68px,16vw,110px);
+  box-shadow: 0 4px 20px rgba(44,36,24,0.07);
+}
+.cd-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem,8vw,4.5rem);
+  font-weight: 300;
+  color: var(--gold-dark);
+  display: block; line-height: 1;
+  transition: var(--transition);
+}
+.cd-number.flip { animation: flipNum 0.4s ease both; }
+@keyframes flipNum {
+  0%   { transform: translateY(-8px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+.cd-label {
+  font-size: clamp(0.6rem,1.5vw,0.72rem);
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); margin-top: 0.4rem; display: block; font-weight: 400;
+}
+.cd-sep {
+  font-family: var(--font-display);
+  font-size: clamp(2rem,6vw,3.5rem);
+  color: var(--gold); align-self: flex-start;
+  padding-top: clamp(0.8rem,2vw,1.3rem);
+  font-weight: 300; line-height: 1;
+}
+
+/* ── FOTO BREAK ───────────────────────────────── */
+.photo-break {
+  height: clamp(280px,45vw,500px);
+  overflow: hidden; position: relative;
+}
+.photo-break img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  transition: transform 8s ease;
+}
+.photo-break:hover img { transform: scale(1.03); }
+.photo-break-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,rgba(44,36,24,0.2) 0%,transparent 40%,rgba(44,36,24,0.2) 100%);
+}
+
+/* ── EVENTO ───────────────────────────────────── */
+#evento { background: var(--cream); text-align: center; }
+.event-card {
+  background: var(--ivory);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 1.25rem;
+  padding: clamp(1.5rem,5vw,2.8rem);
+  max-width: 560px; margin: 0 auto 2rem;
+  box-shadow: 0 8px 32px rgba(44,36,24,0.07);
+}
+.event-row {
+  display: flex; align-items: center; gap: 1.2rem;
+  padding: 1rem 0; border-bottom: 1px solid rgba(201,168,76,0.12); text-align: left;
+}
+.event-row:last-child { border-bottom: none; padding-bottom: 0; }
+.event-icon {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--dark); flex-shrink: 0;
+}
+.event-label {
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.15rem; font-weight: 400;
+}
+.event-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem,2.5vw,1.3rem); font-weight: 400;
+  color: var(--dark); line-height: 1.3;
+}
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.8rem; background: transparent;
+  border: 1px solid var(--gold); color: var(--gold-dark);
+  border-radius: 3rem; font-family: var(--font-body);
+  font-size: 0.78rem; font-weight: 400; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none; transition: var(--transition);
+}
+.btn-gold:hover {
+  background: var(--gold); color: var(--dark);
+  transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+}
+.btns-row { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+
+/* ── GALERIA ──────────────────────────────────── */
+#gallery { background: var(--dark); text-align: center; }
+#gallery .section-title { color: #fff; }
+#gallery .section-tag   { color: var(--gold-light); }
+.gallery-carousel-inner img {
+  height: clamp(240px,50vw,480px); object-fit: cover; border-radius: 0.75rem;
+}
+.carousel-control-prev, .carousel-control-next {
+  width: 48px; height: 48px; top: 50%; transform: translateY(-50%);
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  position: absolute;
+}
+.carousel-control-prev { left: -0.5rem; }
+.carousel-control-next { right: -0.5rem; }
+.carousel-indicators [data-bs-target] {
+  background-color: var(--gold); width: 6px; height: 6px;
+  border-radius: 50%; border: none; opacity: 0.4;
+}
+.carousel-indicators .active { opacity: 1; }
+.gallery-lightbox {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(20,16,10,0.95);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+.gallery-lightbox.active { opacity: 1; pointer-events: all; }
+.gallery-lightbox-img { max-width: 90vw; max-height: 88vh; border-radius: 0.5rem; }
+.gallery-lightbox-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer;
+  opacity: 0.7; transition: var(--transition);
+}
+.gallery-lightbox-close:hover { opacity: 1; transform: rotate(90deg); }
+
+/* ── REGALOS ──────────────────────────────────── */
+#gifts { background: var(--blush); text-align: center; }
+.gifts-card {
+  background: var(--ivory); border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 1.25rem; padding: clamp(1.5rem,5vw,2.8rem);
+  max-width: 420px; margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(44,36,24,0.07);
+}
+.gifts-photo {
+  width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--gold-light); margin: 0 auto 1rem;
+}
+.gifts-name { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; color: var(--dark); margin-bottom: 0.2rem; }
+.gifts-role { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.cuenta-row {
+  display: flex; align-items: center; gap: 0.9rem;
+  padding: 0.8rem 1rem; background: var(--blush);
+  border-radius: 0.6rem; margin-bottom: 0.6rem;
+}
+.cuenta-row:last-child { margin-bottom: 0; }
+.cuenta-logo {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--gold-light); display: flex; align-items: center;
+  justify-content: center; font-size: 1.1rem; color: var(--gold-dark); flex-shrink: 0;
+}
+.cuenta-banco { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.1rem; }
+.cuenta-num   { font-family: var(--font-display); font-size: 1.1rem; color: var(--dark); }
+.cuenta-copy  {
+  margin-left: auto; background: none; border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 0.4rem; padding: 0.3rem 0.6rem;
+  color: var(--gold-dark); cursor: pointer; font-size: 1rem; transition: var(--transition);
+}
+.cuenta-copy:hover { background: var(--gold); color: var(--dark); }
+
+/* ── FOOTER ───────────────────────────────────── */
+footer {
+  background: var(--dark); text-align: center;
+  padding: 3rem 1.5rem; color: rgba(255,255,255,0.35);
+  font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+}
+footer strong {
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 300;
+  color: rgba(255,255,255,0.7); letter-spacing: 0; text-transform: none;
+  display: block; margin-bottom: 0.4rem;
+}
+
+/* ── REVEAL ───────────────────────────────────── */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-names { font-size: clamp(3.5rem,18vw,5rem); }
+  .song-card  { flex-direction: column; text-align: center; padding: 1.5rem; }
+  .song-info  { text-align: center; }
+  .cd-sep     { display: none; }
+  .cd-grid    { gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Nos complace invitarle a nuestra boda</p>
+    <h1 class="hero-names">
+      Carlos<br>
+      <span class="hero-amp">&amp;</span>
+      <em>Elida</em>
+    </h1>
+    <div class="hero-divider">
+      <span></span><i class="bi bi-heart-fill"></i><span></span>
     </div>
+    <p class="hero-date">Lunes · 1 de Junio · 2026</p>
+  </div>
+  <div class="hero-scroll"><i class="bi bi-chevron-double-down"></i></div>
+</section>
 
-    <!-- ===================== 6. DETALLES DEL EVENTO ===================== -->
-    <section id="evento" class="evento-section reveal">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 col-11 text-center">
-            <p class="evento-tag">Les esperamos con amor</p>
-            <h2 class="evento-title">Detalles del Evento</h2>
-            <div class="biblia-divider mt-2 mb-5">
-              <span></span><i class="bi bi-heart-fill"></i><span></span>
-            </div>
-            <div class="evento-card">
-              <div class="evento-row">
-                <div class="evento-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                <div class="evento-info">
-                  <p class="evento-label">Lugar</p>
-                  <p class="evento-value">Finca XXX</p>
-                </div>
-              </div>
-              <div class="evento-row">
-                <div class="evento-icon"><i class="bi bi-calendar-heart"></i></div>
-                <div class="evento-info">
-                  <p class="evento-label">Fecha</p>
-                  <p class="evento-value">Lunes 1 de Junio, 2026</p>
-                </div>
-              </div>
-              <div class="evento-row">
-                <div class="evento-icon"><i class="bi bi-building"></i></div>
-                <div class="evento-info">
-                  <p class="evento-label">Ceremonia religiosa</p>
-                  <p class="evento-value">Iglesia (por confirmar)</p>
-                </div>
-              </div>
-              <div class="evento-row border-0 mb-0">
-                <div class="evento-icon"><i class="bi bi-signpost-2"></i></div>
-                <div class="evento-info">
-                  <p class="evento-label">C&oacute;mo llegar</p>
-                  <p class="evento-value">Direcci&oacute;n por confirmar</p>
-                </div>
-              </div>
-            </div>
-            <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
-              <a href="https://maps.google.com/?q=Finca+Guatemala" target="_blank" class="home-btn-agendar">
-                <i class="bi bi-map"></i> Google Maps
-              </a>
-              <a href="https://waze.com/ul?q=Finca+Guatemala" target="_blank" class="home-btn-waze">
-                <i class="bi bi-signpost"></i> Waze
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- 2. BIBLIA -->
+<section id="biblia" class="reveal">
+  <span class="section-tag">Palabra de Dios</span>
+  <div class="ornament"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+  <blockquote class="biblia-quote">
+    &ldquo;Por tanto, lo que Dios juntó,<br>no lo separe el hombre.&rdquo;
+  </blockquote>
+  <p class="biblia-ref">Marcos 10:9</p>
+</section>
 
-    <!-- ===================== 7. GALERÍA ===================== -->
-    <section id="gallery" class="gallery-section reveal">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-8 col-10 text-center">
-            <p class="evento-tag">Momentos que atesoramos</p>
-            <h2 class="evento-title">Galer&iacute;a</h2>
-            <div class="biblia-divider mt-2 mb-4">
-              <span></span><i class="bi bi-heart-fill"></i><span></span>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-10 col-12">
-            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
-              </div>
-              <div class="carousel-inner gallery-carousel-inner">
-                <div class="carousel-item active">
-                  <img src="https://picsum.photos/id/200/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 1" data-lightbox="https://picsum.photos/id/200/900/600" />
-                </div>
-                <div class="carousel-item">
-                  <img src="https://picsum.photos/id/5/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 2" data-lightbox="https://picsum.photos/id/5/900/600" />
-                </div>
-                <div class="carousel-item">
-                  <img src="https://picsum.photos/id/500/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 3" data-lightbox="https://picsum.photos/id/500/900/600" />
-                </div>
-                <div class="carousel-item">
-                  <img src="https://picsum.photos/id/900/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 4" data-lightbox="https://picsum.photos/id/900/900/600" />
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LIGHTBOX -->
-    <div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true">
-      <button class="gallery-lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
-      <img src="" alt="Foto ampliada" id="lightboxImg" class="gallery-lightbox-img" />
+<!-- 3. CANCION -->
+<section id="cancion" class="reveal">
+  <span class="section-tag">Nuestra melodía</span>
+  <h2 class="section-title">Escucha Nuestra<br><em style="font-style:italic">Canción</em></h2>
+  <div class="ornament" style="filter:invert(1) opacity(0.3)">
+    <span></span><i class="bi bi-music-note-beamed"></i><span></span>
+  </div>
+  <div class="song-card">
+    <button class="song-play-btn" id="songBtn" onclick="toggleSong()" aria-label="Reproducir/Pausar">
+      <i class="bi bi-play-fill" id="songIcon"></i>
+    </button>
+    <div class="song-info">
+      <p class="song-info-label">Nuestra canción especial</p>
+      <p class="song-info-title">La Matraca</p>
+      <p class="song-status">
+        <span class="song-dot" id="songDot"></span>
+        <span id="songStatusText">Presiona para reproducir</span>
+      </p>
     </div>
+  </div>
+  <audio id="backSong" loop>
+    <source src="audio/LaMatraca.mp3" type="audio/mp3" />
+  </audio>
+</section>
 
-    <!-- ===================== 8. REGALOS ===================== -->
-    <section id="gifts" class="gifts-section reveal">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-11 text-center">
-            <p class="evento-tag">Su presencia es nuestro mayor regalo</p>
-            <h2 class="evento-title">Regalos</h2>
-            <p class="cd-subtitle">
-              Si desean hacernos un obsequio,<br />
-              con todo el amor lo recibimos.
-            </p>
-            <div class="biblia-divider mt-2 mb-5">
-              <span></span><i class="bi bi-heart-fill"></i><span></span>
-            </div>
-            <div class="gifts-card">
-              <img src="img/carlos.jpeg" alt="Carlos" class="gifts-card-photo" />
-              <p class="gifts-card-tag">El Novio</p>
-              <h3 class="gifts-card-name">Carlos</h3>
-              <div class="gifts-card-divider">
-                <span></span><i class="bi bi-stars"></i><span></span>
-              </div>
-              <div class="mt-3">
-                <div class="cuenta-row">
-                  <div class="cuenta-banco-logo cuenta-banrural"><i class="bi bi-bank"></i></div>
-                  <div class="cuenta-info">
-                    <p class="cuenta-banco">Banrural</p>
-                    <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
-                  </div>
-                  <button class="cuenta-copy-btn" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar">
-                    <i class="bi bi-copy"></i>
-                  </button>
-                </div>
-                <div class="cuenta-row">
-                  <div class="cuenta-banco-logo cuenta-bantrab"><i class="bi bi-bank"></i></div>
-                  <div class="cuenta-info">
-                    <p class="cuenta-banco">Bantrab</p>
-                    <p class="cuenta-numero">xxxx-xxxx-xxxx</p>
-                  </div>
-                  <button class="cuenta-copy-btn" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar">
-                    <i class="bi bi-copy"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- 4. COUNTDOWN -->
+<section id="countdown" class="reveal">
+  <span class="section-tag">El tiempo corre, el amor no</span>
+  <h2 class="section-title">Nuestro Día<br><em>Se Acerca</em></h2>
+  <p class="section-sub">Cada segundo que pasa nos acerca más al momento más hermoso de nuestras vidas</p>
+  <div class="cd-grid">
+    <div class="cd-box"><span class="cd-number" id="cd-days">00</span><span class="cd-label">Días</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-number" id="cd-hours">00</span><span class="cd-label">Horas</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-number" id="cd-minutes">00</span><span class="cd-label">Minutos</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-number" id="cd-seconds">00</span><span class="cd-label">Segundos</span></div>
+  </div>
+</section>
+
+<!-- 5. FOTO BREAK -->
+<div class="photo-break">
+  <img src="img/carlos2.jpeg" alt="Carlos y Elida" loading="lazy" width="1200" height="500" />
+  <div class="photo-break-overlay"></div>
+</div>
+
+<!-- 6. EVENTO -->
+<section id="evento" class="reveal">
+  <span class="section-tag">Les esperamos con amor</span>
+  <h2 class="section-title">Detalles del<br><em>Evento</em></h2>
+  <div class="ornament"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+  <div class="event-card">
+    <div class="event-row">
+      <div class="event-icon"><i class="bi bi-geo-alt-fill"></i></div>
+      <div><p class="event-label">Lugar</p><p class="event-value">Finca XXX · Guatemala</p></div>
+    </div>
+    <div class="event-row">
+      <div class="event-icon"><i class="bi bi-calendar-heart"></i></div>
+      <div><p class="event-label">Fecha</p><p class="event-value">Lunes 1 de Junio, 2026</p></div>
+    </div>
+    <div class="event-row">
+      <div class="event-icon"><i class="bi bi-building"></i></div>
+      <div><p class="event-label">Ceremonia religiosa</p><p class="event-value">Iglesia (por confirmar)</p></div>
+    </div>
+    <div class="event-row">
+      <div class="event-icon"><i class="bi bi-signpost-2"></i></div>
+      <div><p class="event-label">Dirección</p><p class="event-value">Por confirmar</p></div>
+    </div>
+  </div>
+  <div class="btns-row">
+    <a href="https://maps.google.com/?q=Finca+Guatemala" target="_blank" rel="noopener" class="btn-gold"><i class="bi bi-map"></i> Google Maps</a>
+    <a href="https://waze.com/ul?q=Finca+Guatemala" target="_blank" rel="noopener" class="btn-gold"><i class="bi bi-signpost"></i> Waze</a>
+  </div>
+</section>
+
+<!-- 7. GALERIA -->
+<section id="gallery" class="reveal">
+  <span class="section-tag">Momentos que atesoramos</span>
+  <h2 class="section-title" style="color:#fff">Nuestra<br><em>Galería</em></h2>
+  <div class="ornament" style="filter:invert(1) opacity(0.25); margin-bottom:2.5rem">
+    <span></span><i class="bi bi-heart-fill"></i><span></span>
+  </div>
+  <div style="max-width:700px; margin:0 auto; position:relative; padding:0 2rem;">
+    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
+      </div>
+      <div class="carousel-inner gallery-carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/seed/wedding1/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 1" data-lightbox="https://picsum.photos/seed/wedding1/900/600" loading="lazy" width="900" height="600"/>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/seed/couple2/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 2" data-lightbox="https://picsum.photos/seed/couple2/900/600" loading="lazy" width="900" height="600"/>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/seed/flowers3/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 3" data-lightbox="https://picsum.photos/seed/flowers3/900/600" loading="lazy" width="900" height="600"/>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/seed/romance4/900/600" class="d-block w-100 gallery-slide-img" alt="Foto 4" data-lightbox="https://picsum.photos/seed/romance4/900/600" loading="lazy" width="900" height="600"/>
         </div>
       </div>
-    </section>
-
-    <!-- AUDIO -->
-    <div id="audio-container">
-      <audio id="backSong" loop>
-        <source src="audio/LaMatraca.mp3" type="audio/mp3" />
-      </audio>
+      <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+        <i class="bi bi-chevron-left" style="color:var(--gold);font-size:1.1rem;"></i>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+        <i class="bi bi-chevron-right" style="color:var(--gold);font-size:1.1rem;"></i>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
+  </div>
+</section>
+<div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true">
+  <button class="gallery-lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+  <img src="" alt="Foto ampliada" id="lightboxImg" class="gallery-lightbox-img" />
+</div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/main.js"></script>
-    <script>
-      // LIGHTBOX
-      const lightbox = document.getElementById("galleryLightbox");
-      const lightboxImg = document.getElementById("lightboxImg");
-      const lightboxClose = document.getElementById("lightboxClose");
-      document.querySelectorAll(".gallery-slide-img").forEach((img) => {
-        img.addEventListener("click", () => {
-          lightboxImg.src = img.dataset.lightbox;
-          lightbox.classList.add("active");
-          document.body.style.overflow = "hidden";
-        });
-      });
-      function closeLightbox() {
-        lightbox.classList.remove("active");
-        document.body.style.overflow = "";
-        setTimeout(() => { lightboxImg.src = ""; }, 300);
-      }
-      lightboxClose.addEventListener("click", closeLightbox);
-      lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+<!-- 8. REGALOS -->
+<section id="gifts" class="reveal">
+  <span class="section-tag">Su presencia es nuestro mayor regalo</span>
+  <h2 class="section-title">Un Pequeño<br><em>Obsequio</em></h2>
+  <p class="section-sub">Si desean hacernos un regalo, con todo el amor lo recibimos.</p>
+  <div class="ornament"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
+  <div class="gifts-card">
+    <img src="img/carlos.jpeg" alt="Carlos" class="gifts-photo" width="80" height="80" loading="lazy" />
+    <p class="gifts-name">Carlos</p>
+    <p class="gifts-role">El Novio</p>
+    <div class="cuenta-row">
+      <div class="cuenta-logo"><i class="bi bi-bank"></i></div>
+      <div><p class="cuenta-banco">Banrural</p><p class="cuenta-num">xxxx-xxxx-xxxx</p></div>
+      <button class="cuenta-copy" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar número"><i class="bi bi-copy"></i></button>
+    </div>
+    <div class="cuenta-row">
+      <div class="cuenta-logo"><i class="bi bi-bank"></i></div>
+      <div><p class="cuenta-banco">Bantrab</p><p class="cuenta-num">xxxx-xxxx-xxxx</p></div>
+      <button class="cuenta-copy" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar número"><i class="bi bi-copy"></i></button>
+    </div>
+  </div>
+</section>
 
-      // COPIAR CUENTA
-      function copiarCuenta(btn, numero) {
-        navigator.clipboard.writeText(numero).then(function () {
-          var icon = btn.querySelector("i");
-          icon.classList.remove("bi-copy");
-          icon.classList.add("bi-check2");
-          btn.style.color = "#6b8f71";
-          setTimeout(function () {
-            icon.classList.remove("bi-check2");
-            icon.classList.add("bi-copy");
-            btn.style.color = "";
-          }, 2000);
-        });
-      }
+<!-- FOOTER -->
+<footer>
+  <strong>Carlos &amp; Elida</strong>
+  1 de Junio · 2026 · Guatemala
+</footer>
 
-      // CANCIÓN
-      const song = document.getElementById('backSong');
-      const songBtn = document.getElementById('songBtn');
-      const songIcon = document.getElementById('songIcon');
-      const songStatus = document.getElementById('songStatus');
-      const songStatusText = document.getElementById('songStatusText');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+  crossorigin="anonymous"></script>
+<script>
+/* COUNTDOWN */
+const targetDate = new Date('2026-06-01T08:00:00');
+function setFlip(el, val) {
+  if (el.textContent !== val) {
+    el.classList.remove('flip'); void el.offsetWidth;
+    el.classList.add('flip'); el.textContent = val;
+  }
+}
+function updateCountdown() {
+  const diff = targetDate - new Date(); if (diff <= 0) return;
+  const d = Math.floor(diff / 864e5);
+  const h = Math.floor((diff % 864e5) / 36e5);
+  const m = Math.floor((diff % 36e5) / 6e4);
+  const s = Math.floor((diff % 6e4) / 1e3);
+  setFlip(document.getElementById('cd-days'),    String(d).padStart(2,'0'));
+  setFlip(document.getElementById('cd-hours'),   String(h).padStart(2,'0'));
+  setFlip(document.getElementById('cd-minutes'), String(m).padStart(2,'0'));
+  setFlip(document.getElementById('cd-seconds'), String(s).padStart(2,'0'));
+}
+updateCountdown(); setInterval(updateCountdown, 1000);
 
-      function toggleSong() {
-        if (song.paused) {
-          song.play();
-          songIcon.classList.replace('bi-play-fill', 'bi-pause-fill');
-          songBtn.classList.add('playing');
-          songStatus.classList.add('active');
-          songStatusText.textContent = 'Reproduciendo...';
-        } else {
-          song.pause();
-          songIcon.classList.replace('bi-pause-fill', 'bi-play-fill');
-          songBtn.classList.remove('playing');
-          songStatus.classList.remove('active');
-          songStatusText.textContent = 'Presiona para reproducir';
-        }
-      }
+/* SCROLL REVEAL */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-      // PARTÍCULAS HERO
-      (function () {
-        const canvas = document.getElementById("heroCanvas");
-        const ctx = canvas.getContext("2d");
-        let particles = [];
-        function resize() {
-          canvas.width = canvas.offsetWidth;
-          canvas.height = canvas.offsetHeight;
-        }
-        function createParticles() {
-          particles = [];
-          const count = Math.floor((canvas.width * canvas.height) / 12000);
-          for (let i = 0; i < count; i++) {
-            particles.push({
-              x: Math.random() * canvas.width,
-              y: Math.random() * canvas.height,
-              r: Math.random() * 1.5 + 0.3,
-              alpha: Math.random() * 0.4 + 0.08,
-              dx: (Math.random() - 0.5) * 0.3,
-              dy: (Math.random() - 0.5) * 0.3,
-            });
-          }
-        }
-        function draw() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          particles.forEach((p) => {
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(245,240,232,${p.alpha})`;
-            ctx.fill();
-            p.x += p.dx;
-            p.y += p.dy;
-            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-          });
-          requestAnimationFrame(draw);
-        }
-        resize(); createParticles(); draw();
-        window.addEventListener("resize", () => { resize(); createParticles(); });
-      })();
-    </script>
-  </body>
+/* LIGHTBOX */
+const lb=document.getElementById('galleryLightbox'), lbImg=document.getElementById('lightboxImg'), lbClose=document.getElementById('lightboxClose');
+document.querySelectorAll('.gallery-slide-img').forEach(img => {
+  img.addEventListener('click', () => { lbImg.src=img.dataset.lightbox; lb.classList.add('active'); document.body.style.overflow='hidden'; });
+});
+function closeLB(){ lb.classList.remove('active'); document.body.style.overflow=''; setTimeout(()=>lbImg.src='',300); }
+lbClose.addEventListener('click', closeLB);
+lb.addEventListener('click', e => { if(e.target===lb) closeLB(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLB(); });
+
+/* COPIAR */
+function copiarCuenta(btn, num) {
+  navigator.clipboard.writeText(num).then(() => {
+    const i=btn.querySelector('i'); i.className='bi bi-check2'; btn.style.color='var(--gold-dark)';
+    setTimeout(()=>{ i.className='bi bi-copy'; btn.style.color=''; }, 2000);
+  });
+}
+
+/* CANCION */
+const song=document.getElementById('backSong'), songBtn=document.getElementById('songBtn'),
+      songIcon=document.getElementById('songIcon'), songDot=document.getElementById('songDot'),
+      songTxt=document.getElementById('songStatusText');
+function toggleSong() {
+  if (song.paused) {
+    song.play(); songIcon.className='bi bi-pause-fill'; songBtn.classList.add('playing');
+    songDot.classList.add('active'); songTxt.textContent='Reproduciendo...';
+  } else {
+    song.pause(); songIcon.className='bi bi-play-fill'; songBtn.classList.remove('playing');
+    songDot.classList.remove('active'); songTxt.textContent='Presiona para reproducir';
+  }
+}
+</script>
+</body>
 </html>
