@@ -66,12 +66,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(61,46,30,0.38) 0%,
-    rgba(61,46,30,0.18) 40%,
-    rgba(61,46,30,0.62) 100%
-  );
+  background: linear-gradient(to bottom, rgba(61,46,30,0.38) 0%, rgba(61,46,30,0.18) 40%, rgba(61,46,30,0.62) 100%);
 }
 .hero-fade {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -90,21 +85,17 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .hero-eyebrow {
   font-family: var(--font-body); font-weight: 300;
-  font-size: 0.6rem;
-  letter-spacing: 0.35em; text-transform: uppercase;
+  font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
   color: rgba(253,245,232,0.75); margin-bottom: 1.2rem;
 }
 .hero-names {
   font-family: var(--font-display);
-  font-size: 5.2rem;
-  font-weight: 300; line-height: 0.92;
-  color: #fdf9f3;
+  font-size: 5.2rem; font-weight: 300; line-height: 0.92; color: #fdf9f3;
 }
 .hero-names em { font-style: italic; color: var(--gold-light); }
 .hero-amp {
   font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-style: italic; color: var(--gold-light);
+  font-size: 2.2rem; font-style: italic; color: var(--gold-light);
   display: block; margin: 0.3rem 0; font-weight: 300;
 }
 .hero-divider {
@@ -115,8 +106,7 @@ img { display: block; max-width: 100%; height: auto; }
 .hero-divider span:last-child { background: linear-gradient(to left, transparent, rgba(223,194,138,0.6)); }
 .hero-divider i { color: rgba(223,194,138,0.75); font-size: 0.75rem; }
 .hero-date {
-  font-size: 0.65rem;
-  letter-spacing: 0.28em; text-transform: uppercase;
+  font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase;
   color: rgba(253,245,232,0.65); margin-top: 1rem; font-weight: 300;
 }
 .hero-scroll {
@@ -139,10 +129,7 @@ img { display: block; max-width: 100%; height: auto; }
 .ornament i { color: var(--rose); font-size: 0.75rem; }
 
 /* ── SECCIONES ── */
-section {
-  padding: 3rem 1.25rem;
-  background: var(--cream);
-}
+section { padding: 3rem 1.25rem; background: var(--cream); }
 .section-tag {
   font-size: 0.6rem; letter-spacing: 0.35em;
   text-transform: uppercase; color: var(--gold);
@@ -150,8 +137,7 @@ section {
 }
 .section-title {
   font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 300; color: var(--ink); line-height: 1.05;
+  font-size: 2.6rem; font-weight: 300; color: var(--ink); line-height: 1.05;
   margin-bottom: 0.75rem;
 }
 .section-title em { font-style: italic; color: var(--gold-dark); }
@@ -169,21 +155,16 @@ section {
 #biblia { text-align: center; }
 .biblia-quote {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-style: italic; font-weight: 300; color: var(--ink);
+  font-size: 1.5rem; font-style: italic; font-weight: 300; color: var(--ink);
   line-height: 1.65; max-width: 100%; margin: 0 auto 1rem;
 }
-.biblia-ref {
-  font-size: 0.65rem; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--gold);
-}
+.biblia-ref { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 
 /* ── CANCIÓN ── */
 #cancion { text-align: center; }
 .song-card {
   display: flex; flex-direction: column; align-items: center; gap: 1.1rem;
-  background: var(--ivory);
-  border: 1px solid var(--gold-pale);
+  background: var(--ivory); border: 1px solid var(--gold-pale);
   border-radius: 1rem; padding: 1.5rem 1.25rem;
   box-shadow: 0 4px 24px rgba(122,90,40,0.08);
   max-width: 340px; margin: 0 auto;
@@ -194,7 +175,6 @@ section {
   display: flex; align-items: center; justify-content: center;
   font-size: 1.4rem; color: var(--ivory);
   transition: all 0.35s var(--ease);
-  -webkit-tap-highlight-color: transparent;
 }
 .song-play-btn:active { transform: scale(0.94); background: var(--gold-dark); }
 .song-play-btn.playing { animation: pulse 2s ease-in-out infinite; }
@@ -212,65 +192,46 @@ section {
 
 /* ── COUNTDOWN ── */
 #countdown { text-align: center; }
-.cd-grid {
-  display: flex; justify-content: center;
-  gap: 0.4rem; flex-wrap: nowrap;
-}
+.cd-grid { display: flex; justify-content: center; gap: 0.4rem; flex-wrap: nowrap; }
 .cd-box {
   background: var(--ivory); border: 1px solid var(--gold-pale);
-  border-radius: 0.75rem;
-  padding: 0.9rem 0.6rem;
+  border-radius: 0.75rem; padding: 0.9rem 0.6rem;
   flex: 1; max-width: 76px;
   box-shadow: 0 4px 14px rgba(122,90,40,0.06);
 }
 .cd-number {
   font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 300; color: var(--gold-dark); display: block; line-height: 1;
+  font-size: 2.6rem; font-weight: 300; color: var(--gold-dark); display: block; line-height: 1;
 }
 .cd-number.flip { animation: flipNum 0.4s ease both; }
 @keyframes flipNum { 0%{transform:translateY(-8px);opacity:0;} 100%{transform:translateY(0);opacity:1;} }
-.cd-label {
-  font-size: 0.55rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--muted); margin-top: 0.35rem; display: block;
-}
+.cd-label { font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 0.35rem; display: block; }
 .cd-sep {
-  font-family: var(--font-display);
-  font-size: 2rem;
+  font-family: var(--font-display); font-size: 2rem;
   color: var(--gold-light); align-self: flex-start;
   padding-top: 0.8rem; font-weight: 300;
 }
 
 /* ── FOTO BREAK ── */
-.photo-break {
-  height: 240px; overflow: hidden; position: relative;
+.photo-break { height: 240px; overflow: hidden; position: relative; }
+.photo-break img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.photo-break::before, .photo-break::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 40px; z-index: 2; pointer-events: none;
 }
-.photo-break img {
-  width: 100%; height: 100%; object-fit: cover;
-  object-position: center 30%;
-}
-.photo-break::before,
-.photo-break::after {
-  content: ''; position: absolute; left: 0; right: 0;
-  height: 40px; z-index: 2; pointer-events: none;
-}
-.photo-break::before { top: 0;    background: linear-gradient(to bottom, var(--cream), transparent); }
-.photo-break::after  { bottom: 0; background: linear-gradient(to top,    var(--cream), transparent); }
+.photo-break::before { top: 0; background: linear-gradient(to bottom, var(--cream), transparent); }
+.photo-break::after  { bottom: 0; background: linear-gradient(to top, var(--cream), transparent); }
 
 /* ── EVENTO ── */
 #evento { text-align: center; }
 .event-card {
   background: var(--ivory); border: 1px solid var(--gold-pale);
-  border-radius: 1.1rem;
-  padding: 1.25rem 1rem;
+  border-radius: 1.1rem; padding: 1.25rem 1rem;
   margin: 0 auto 1.75rem;
   box-shadow: 0 6px 28px rgba(122,90,40,0.06);
 }
 .event-row {
   display: flex; align-items: center; gap: 1rem;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(196,149,74,0.1);
-  text-align: left;
+  padding: 0.85rem 0; border-bottom: 1px solid rgba(196,149,74,0.1); text-align: left;
 }
 .event-row:last-child { border-bottom: none; padding-bottom: 0; }
 .event-icon {
@@ -288,59 +249,33 @@ section {
   border: 1px solid var(--gold); color: var(--gold-dark);
   border-radius: 3rem; font-family: var(--font-body);
   font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em;
-  text-transform: uppercase; text-decoration: none;
-  min-height: 44px;
+  text-transform: uppercase; text-decoration: none; min-height: 44px;
   transition: all 0.3s var(--ease);
-  -webkit-tap-highlight-color: transparent;
 }
 .btn-gold:active { background: var(--gold); color: var(--ivory); }
 
 /* ── CARRUSEL ── */
 #gallery { text-align: center; overflow: hidden; padding-left: 0; padding-right: 0; }
-#gallery .section-tag,
-#gallery .section-title,
-#gallery .ornament { padding: 0 1.25rem; }
-
-.carousel-wrap {
-  position: relative;
-  width: 100%;
-}
+#gallery .section-tag, #gallery .section-title, #gallery .ornament { padding: 0 1.25rem; }
+.carousel-wrap { position: relative; width: 100%; }
 .carousel-track-outer {
   overflow: hidden;
   box-shadow: 0 6px 32px rgba(122,90,40,0.12);
   transition: box-shadow 0.4s ease;
 }
-.carousel-track-outer.zoomed {
-  overflow: visible;
-}
-.carousel-track {
-  display: flex;
-  transition: transform 0.55s var(--ease);
-  will-change: transform;
-}
-.carousel-slide {
-  flex: 0 0 100%;
-  position: relative;
-  cursor: pointer;
-}
+.carousel-track-outer.zoomed { overflow: visible; }
+.carousel-track { display: flex; transition: transform 0.55s var(--ease); will-change: transform; }
+.carousel-slide { flex: 0 0 100%; position: relative; cursor: pointer; }
 .carousel-slide img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  object-position: center 25%;
-  display: block;
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center 25%; display: block;
   transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
 .carousel-slide.zoomed { z-index: 20; }
-.carousel-slide.zoomed img {
-  transform: scale(1.15);
-  box-shadow: 0 16px 50px rgba(61,46,30,0.28);
-}
+.carousel-slide.zoomed img { transform: scale(1.15); box-shadow: 0 16px 50px rgba(61,46,30,0.28); }
 .zoom-close {
   position: absolute; top: 10px; right: 10px;
   width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(253,249,243,0.9);
-  border: 1px solid var(--gold-pale);
+  background: rgba(253,249,243,0.9); border: 1px solid var(--gold-pale);
   color: var(--gold-dark); font-size: 1rem;
   display: none; align-items: center; justify-content: center;
   cursor: pointer; z-index: 30;
@@ -348,75 +283,133 @@ section {
 }
 .carousel-slide.zoomed .zoom-close { display: flex; }
 .carousel-caption {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
+  position: absolute; bottom: 0; left: 0; right: 0;
   padding: 2.2rem 1.2rem 1rem;
   background: linear-gradient(to top, rgba(61,46,30,0.68), transparent);
-  font-family: var(--font-hand);
-  font-size: 1.25rem;
-  color: #fdf9f3;
-  text-align: center;
-  pointer-events: none;
+  font-family: var(--font-hand); font-size: 1.25rem; color: #fdf9f3;
+  text-align: center; pointer-events: none;
 }
-.carousel-dots {
-  display: flex; justify-content: center; gap: 0.5rem;
-  margin-top: 1.2rem; padding: 0 1.25rem;
-}
+.carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.2rem; padding: 0 1.25rem; }
 .carousel-dot {
   width: 9px; height: 9px; border-radius: 50%;
-  background: var(--gold-pale);
-  border: 1px solid var(--gold-light);
-  cursor: pointer; min-width: 9px;
-  transition: all 0.3s ease;
+  background: var(--gold-pale); border: 1px solid var(--gold-light);
+  cursor: pointer; min-width: 9px; transition: all 0.3s ease;
 }
-.carousel-dot.active {
-  background: var(--gold);
-  border-color: var(--gold-dark);
-  transform: scale(1.3);
-}
+.carousel-dot.active { background: var(--gold); border-color: var(--gold-dark); transform: scale(1.3); }
 
-/* ── REGALOS ── */
+/* ── SECCIÓN REGALO ── */
 #gifts { text-align: center; }
-.gifts-card {
-  background: var(--ivory); border: 1px solid var(--gold-pale);
-  border-radius: 1.1rem;
-  padding: 1.75rem 1.25rem;
-  margin: 0 auto;
-  box-shadow: 0 6px 28px rgba(122,90,40,0.06);
+.gifts-text {
+  font-family: var(--font-display);
+  font-size: 1.45rem; font-style: italic; font-weight: 300;
+  color: var(--ink); line-height: 1.75;
+  max-width: 320px; margin: 0 auto 0.75rem;
 }
-.gifts-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold-light); margin: 0 auto 0.85rem; }
-.gifts-name  { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; color: var(--ink); margin-bottom: 0.12rem; }
-.gifts-role  { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
-.cuenta-row  { display: flex; align-items: center; gap: 0.85rem; padding: 0.8rem 0.9rem; background: var(--gold-pale); border-radius: 0.6rem; margin-bottom: 0.5rem; }
-.cuenta-row:last-child { margin-bottom: 0; }
-.cuenta-logo { width: 34px; height: 34px; border-radius: 50%; background: rgba(196,149,74,0.18); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: var(--gold-dark); flex-shrink: 0; }
-.cuenta-banco { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.06rem; }
-.cuenta-num   { font-family: var(--font-display); font-size: 1rem; color: var(--ink); }
-.cuenta-copy  { margin-left: auto; background: none; border: 1px solid rgba(196,149,74,0.3); border-radius: 0.4rem; padding: 0.3rem 0.55rem; color: var(--gold-dark); cursor: pointer; font-size: 1rem; min-width: 36px; min-height: 36px; display: flex; align-items: center; justify-content: center; }
-.cuenta-copy:active { background: var(--gold); color: var(--ivory); }
+.gifts-subtext {
+  font-size: 0.8rem; color: var(--muted); line-height: 1.8;
+  max-width: 280px; margin: 0 auto 2rem; font-weight: 300;
+}
+.btn-regalo {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold-dark);
+  border-radius: 3rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem; font-weight: 400;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  cursor: pointer; min-height: 48px;
+  transition: all 0.3s var(--ease);
+}
+.btn-regalo:active { background: var(--gold); color: var(--ivory); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(61,46,30,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex; align-items: flex-end; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal-sheet {
+  background: var(--ivory);
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 1.5rem 1.5rem 2.5rem;
+  width: 100%; max-width: 480px;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease);
+  box-shadow: 0 -8px 40px rgba(61,46,30,0.15);
+}
+.modal-overlay.open .modal-sheet { transform: translateY(0); }
+.modal-handle {
+  width: 40px; height: 4px; border-radius: 2px;
+  background: var(--gold-pale); margin: 0 auto 1.5rem;
+}
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem; font-weight: 300; font-style: italic;
+  color: var(--ink); text-align: center; margin-bottom: 0.3rem;
+}
+.modal-sub {
+  font-size: 0.72rem; color: var(--muted); text-align: center;
+  letter-spacing: 0.08em; margin-bottom: 1.6rem; font-weight: 300;
+}
+.modal-close {
+  position: absolute; top: 1rem; right: 1.25rem;
+  background: none; border: none; font-size: 1.3rem;
+  color: var(--faint); cursor: pointer; padding: 0.3rem;
+  min-width: 36px; min-height: 36px;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-close:active { color: var(--gold-dark); }
+.modal-sheet { position: relative; }
+
+.cuenta-row {
+  display: flex; align-items: center; gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: var(--gold-pale);
+  border-radius: 0.75rem; margin-bottom: 0.6rem;
+  border: 1px solid rgba(196,149,74,0.2);
+}
+.cuenta-row:last-of-type { margin-bottom: 0; }
+.cuenta-logo {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(196,149,74,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem; color: var(--gold-dark); flex-shrink: 0;
+}
+.cuenta-info { flex: 1; text-align: left; }
+.cuenta-banco { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.06rem; }
+.cuenta-num   { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); }
+.cuenta-copy  {
+  background: none; border: 1px solid rgba(196,149,74,0.35);
+  border-radius: 0.4rem; padding: 0.3rem 0.6rem;
+  color: var(--gold-dark); cursor: pointer; font-size: 1rem;
+  min-width: 36px; min-height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s ease;
+}
+.cuenta-copy:active { background: var(--gold); color: var(--ivory); border-color: var(--gold); }
+.modal-note {
+  font-size: 0.72rem; color: var(--faint); text-align: center;
+  margin-top: 1.4rem; line-height: 1.7; font-style: italic;
+}
 
 /* ── CIERRE ── */
-#cierre {
-  text-align: center;
-  padding: 3.5rem 1.25rem 5rem;
-  background: var(--cream);
-}
+#cierre { text-align: center; padding: 3.5rem 1.25rem 5rem; background: var(--cream); }
 .cierre-names {
   font-family: var(--font-display);
-  font-size: 3.8rem;
-  font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 0.5rem;
+  font-size: 3.8rem; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 0.5rem;
 }
 .cierre-names em { font-style: italic; color: var(--gold-dark); }
-.cierre-date {
-  font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--muted); margin-top: 1rem; font-weight: 300;
-}
+.cierre-date { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); margin-top: 1rem; font-weight: 300; }
 
 /* ── REVEAL ── */
-.reveal {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s var(--ease);
-}
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s var(--ease); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
@@ -521,35 +514,29 @@ section {
   <span class="section-tag">Momentos que atesoramos</span>
   <h2 class="section-title">Nuestra<br><em>Galería</em></h2>
   <div class="ornament" style="margin-bottom:2rem"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
-
   <div class="carousel-wrap">
     <div class="carousel-track-outer" id="carOuter">
       <div class="carousel-track" id="carouselTrack">
-
         <div class="carousel-slide">
           <img src="img/carlos.jpeg" alt="Carlos y Elida" loading="lazy" width="800" height="600" />
           <span class="carousel-caption">Carlos &amp; Elida 💛</span>
           <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
-
         <div class="carousel-slide">
           <img src="img/carlos2.jpeg" alt="Juntos" loading="lazy" width="800" height="600" />
           <span class="carousel-caption">Para siempre ✨</span>
           <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
-
         <div class="carousel-slide">
           <img src="img/carlos.jpeg" alt="Nuestro amor" loading="lazy" width="800" height="600" style="object-position:center 20%" />
           <span class="carousel-caption">Nuestro amor 🌸</span>
           <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
-
         <div class="carousel-slide">
           <img src="img/carlos2.jpeg" alt="1 Junio 2026" loading="lazy" width="800" height="600" style="object-position:center 60%" />
           <span class="carousel-caption">1 Junio 2026 💍</span>
           <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
-
       </div>
     </div>
     <div class="carousel-dots" id="carDots"></div>
@@ -558,27 +545,53 @@ section {
 
 <div class="section-sep" style="margin-top:2rem"></div>
 
+<!-- REGALO -->
 <section id="gifts" class="reveal">
-  <span class="section-tag">Su presencia es nuestro mayor regalo</span>
-  <h2 class="section-title">Un Pequeño<br><em>Obsequio</em></h2>
-  <p class="section-sub">Si desean hacernos un regalo, con todo el amor lo recibimos.</p>
+  <span class="section-tag">Con todo nuestro amor</span>
+  <h2 class="section-title">Un Gesto<br><em>del Corazón</em></h2>
   <div class="ornament"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
-  <div class="gifts-card">
-    <img src="img/carlos.jpeg" alt="Carlos" class="gifts-photo" width="80" height="80" loading="lazy" />
-    <p class="gifts-name">Carlos</p>
-    <p class="gifts-role">El Novio</p>
-    <div class="cuenta-row">
-      <div class="cuenta-logo"><i class="bi bi-bank"></i></div>
-      <div><p class="cuenta-banco">Banrural</p><p class="cuenta-num">xxxx-xxxx-xxxx</p></div>
-      <button class="cuenta-copy" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar número"><i class="bi bi-copy"></i></button>
-    </div>
-    <div class="cuenta-row">
-      <div class="cuenta-logo"><i class="bi bi-bank"></i></div>
-      <div><p class="cuenta-banco">Bantrab</p><p class="cuenta-num">xxxx-xxxx-xxxx</p></div>
-      <button class="cuenta-copy" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar número"><i class="bi bi-copy"></i></button>
-    </div>
-  </div>
+  <p class="gifts-text">
+    &ldquo;Su presencia es el regalo más hermoso que pueden darnos.&rdquo;
+  </p>
+  <p class="gifts-subtext">
+    Si desean honrarnos con un obsequio, lo recibimos con profunda gratitud y alegría.
+  </p>
+  <button class="btn-regalo" onclick="abrirModal()">
+    <i class="bi bi-gift"></i> Ver información
+  </button>
 </section>
+
+<!-- MODAL CUENTAS -->
+<div class="modal-overlay" id="modalOverlay" onclick="cerrarModalFuera(event)">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <button class="modal-close" onclick="cerrarModal()" aria-label="Cerrar">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <p class="modal-title">Un obsequio</p>
+    <p class="modal-sub">Con amor y gratitud lo recibimos</p>
+
+    <div class="cuenta-row">
+      <div class="cuenta-logo"><i class="bi bi-bank"></i></div>
+      <div class="cuenta-info">
+        <p class="cuenta-banco">Banrural</p>
+        <p class="cuenta-num">xxxx-xxxx-xxxx</p>
+      </div>
+      <button class="cuenta-copy" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar"><i class="bi bi-copy"></i></button>
+    </div>
+
+    <div class="cuenta-row">
+      <div class="cuenta-logo"><i class="bi bi-bank"></i></div>
+      <div class="cuenta-info">
+        <p class="cuenta-banco">Bantrab</p>
+        <p class="cuenta-num">xxxx-xxxx-xxxx</p>
+      </div>
+      <button class="cuenta-copy" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar"><i class="bi bi-copy"></i></button>
+    </div>
+
+    <p class="modal-note">Carlos &amp; Elida · 1 de Junio 2026</p>
+  </div>
+</div>
 
 <section id="cierre" class="reveal">
   <div class="ornament" style="margin-bottom:1.8rem"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
@@ -616,13 +629,11 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   const dotsEl  = document.getElementById('carDots');
   const slides  = Array.from(track.querySelectorAll('.carousel-slide'));
   const total   = slides.length;
-  let current   = 0;
-  let zoomedSlide = null;
-  let autoTimer;
+  let current=0, zoomedSlide=null, autoTimer;
 
   slides.forEach((_,i)=>{
-    const d = document.createElement('button');
-    d.className = 'carousel-dot' + (i===0?' active':'');
+    const d=document.createElement('button');
+    d.className='carousel-dot'+(i===0?' active':'');
     d.setAttribute('aria-label','Foto '+(i+1));
     d.addEventListener('click',()=>goTo(i));
     dotsEl.appendChild(d);
@@ -630,65 +641,56 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
   function goTo(n){
     if(zoomedSlide) closeZoom();
-    current = (n + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dotsEl.querySelectorAll('.carousel-dot').forEach((d,i)=>
-      d.classList.toggle('active', i===current));
+    current=(n+total)%total;
+    track.style.transform=`translateX(-${current*100}%)`;
+    dotsEl.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===current));
   }
-
-  function startAuto(){ autoTimer = setInterval(()=>goTo(current+1), 4500); }
+  function startAuto(){ autoTimer=setInterval(()=>goTo(current+1),4500); }
   function stopAuto() { clearInterval(autoTimer); }
   startAuto();
 
-  /* swipe táctil */
-  let startX=0, startY=0, dragging=false;
+  let startX=0,startY=0,dragging=false;
   track.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; startY=e.touches[0].clientY; dragging=true; },{passive:true});
   track.addEventListener('touchend',e=>{
-    if(!dragging) return; dragging=false;
-    const dx = e.changedTouches[0].clientX - startX;
-    const dy = e.changedTouches[0].clientY - startY;
-    if(Math.abs(dx)>Math.abs(dy) && Math.abs(dx)>35){
-      stopAuto(); goTo(dx<0?current+1:current-1); startAuto();
-    }
+    if(!dragging)return; dragging=false;
+    const dx=e.changedTouches[0].clientX-startX, dy=e.changedTouches[0].clientY-startY;
+    if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>35){ stopAuto(); goTo(dx<0?current+1:current-1); startAuto(); }
   },{passive:true});
 
-  /* zoom al tocar */
   slides.forEach(slide=>{
-    slide.addEventListener('click', e=>{
-      if(e.target.closest('.zoom-close')) return;
-      if(slide.classList.contains('zoomed')){
-        closeZoom();
-      } else {
-        if(zoomedSlide) closeZoom();
-        slide.classList.add('zoomed');
-        outer.classList.add('zoomed');
-        zoomedSlide = slide;
-        stopAuto();
-      }
+    slide.addEventListener('click',e=>{
+      if(e.target.closest('.zoom-close'))return;
+      if(slide.classList.contains('zoomed')){ closeZoom(); }
+      else { if(zoomedSlide)closeZoom(); slide.classList.add('zoomed'); outer.classList.add('zoomed'); zoomedSlide=slide; stopAuto(); }
     });
-    slide.querySelector('.zoom-close').addEventListener('click', e=>{
-      e.stopPropagation(); closeZoom();
-    });
+    slide.querySelector('.zoom-close').addEventListener('click',e=>{ e.stopPropagation(); closeZoom(); });
   });
 
   function closeZoom(){
-    if(!zoomedSlide) return;
-    zoomedSlide.classList.remove('zoomed');
-    outer.classList.remove('zoomed');
-    zoomedSlide = null;
-    startAuto();
+    if(!zoomedSlide)return;
+    zoomedSlide.classList.remove('zoomed'); outer.classList.remove('zoomed'); zoomedSlide=null; startAuto();
   }
-
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape') closeZoom();
-  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeZoom(); });
 })();
+
+/* ── Modal regalo ── */
+function abrirModal(){
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function cerrarModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function cerrarModalFuera(e){
+  if(e.target===document.getElementById('modalOverlay')) cerrarModal();
+}
 
 /* ── Copiar cuenta ── */
 function copiarCuenta(btn,num){
   navigator.clipboard.writeText(num).then(()=>{
-    const i=btn.querySelector('i');i.className='bi bi-check2';
-    setTimeout(()=>{i.className='bi bi-copy';},2000);
+    const i=btn.querySelector('i'); i.className='bi bi-check2';
+    setTimeout(()=>{ i.className='bi bi-copy'; },2000);
   });
 }
 
@@ -700,11 +702,11 @@ const song=document.getElementById('backSong'),
       songTxt=document.getElementById('songStatusText');
 function toggleSong(){
   if(song.paused){
-    song.play();songIcon.className='bi bi-pause-fill';songBtn.classList.add('playing');
-    songDot.classList.add('active');songTxt.textContent='Reproduciendo...';
+    song.play(); songIcon.className='bi bi-pause-fill'; songBtn.classList.add('playing');
+    songDot.classList.add('active'); songTxt.textContent='Reproduciendo...';
   }else{
-    song.pause();songIcon.className='bi bi-play-fill';songBtn.classList.remove('playing');
-    songDot.classList.remove('active');songTxt.textContent='Presiona para reproducir';
+    song.pause(); songIcon.className='bi bi-play-fill'; songBtn.classList.remove('playing');
+    songDot.classList.remove('active'); songTxt.textContent='Presiona para reproducir';
   }
 }
 </script>
