@@ -300,18 +300,14 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
 .cd-sep { font-family: var(--font-display); font-size: 2rem; color: var(--gold-light); align-self: flex-start; padding-top: 0.8rem; font-weight: 300; }
 
 /* ══════════════════════════════════════
-   PHOTO BREAK — BORDES RASGADOS
+   PHOTO BREAK — DEGRADADO SUAVE
 ══════════════════════════════════════ */
 .photo-break {
   position: relative;
   height: 440px;
-  /* sin overflow:hidden para que el rasgado se vea sobre el fondo */
-  overflow: visible;
+  overflow: hidden;
   margin: 0;
-  z-index: 1;
 }
-
-/* la foto ocupa toda el área + desbordamiento para parallax */
 .photo-break-img {
   position: absolute;
   top: -12%; left: 0; right: 0;
@@ -321,13 +317,9 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
   background-position: center 30%;
   will-change: transform;
   transition: transform 0.1s linear;
-  z-index: 1;
 }
-
-/* velo cálido y sutil */
 .photo-break-veil {
   position: absolute; inset: 0;
-  z-index: 2;
   background: linear-gradient(to bottom,
     rgba(61,46,30,0.15) 0%,
     rgba(61,46,30,0.04) 30%,
@@ -335,29 +327,21 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
     rgba(61,46,30,0.20) 100%);
   mix-blend-mode: multiply;
 }
-
-/* ── BORDE RASGADO SUPERIOR ── */
-.photo-break-torn-top {
-  position: absolute;
-  top: -2px; left: 0; right: 0;
-  z-index: 5;
-  line-height: 0;
-  pointer-events: none;
+/* Degradado superior: funde con el fondo crema */
+.photo-break-fade-top {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, var(--cream), transparent);
+  pointer-events: none; z-index: 3;
 }
-.photo-break-torn-top svg { display: block; width: 100%; height: 60px; }
-
-/* ── BORDE RASGADO INFERIOR ── */
-.photo-break-torn-bottom {
-  position: absolute;
-  bottom: -2px; left: 0; right: 0;
-  z-index: 5;
-  line-height: 0;
-  pointer-events: none;
-  transform: rotate(180deg);
+/* Degradado inferior: funde con el fondo crema */
+.photo-break-fade-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 90px;
+  background: linear-gradient(to top, var(--cream), transparent);
+  pointer-events: none; z-index: 3;
 }
-.photo-break-torn-bottom svg { display: block; width: 100%; height: 60px; }
-
-/* Tarjeta flotante con cita */
+/* Tarjeta flotante glassmorphism */
 .photo-break-quote {
   position: absolute; inset: 0;
   z-index: 4;
@@ -535,35 +519,12 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
   </div>
 </section>
 
-<!-- PHOTO BREAK — BORDES RASGADOS -->
+<!-- PHOTO BREAK — DEGRADADO SUAVE -->
 <div class="photo-break" id="photoBreak">
-
-  <!-- Imagen con parallax -->
   <div class="photo-break-img" id="parallaxImg"></div>
   <div class="photo-break-veil"></div>
-
-  <!--
-    BORDE RASGADO SUPERIOR
-    Path: polilínea irregular que recorta el borde superior
-    fill = color crema del fondo (#faf6ef)
-  -->
-  <div class="photo-break-torn-top">
-    <svg viewBox="0 0 400 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="
-        M0,0
-        L0,28
-        L8,22  L18,36 L28,18 L40,32 L52,14 L63,30
-        L74,10 L84,26 L96,8  L107,24 L118,6 L130,22
-        L141,4 L152,20 L163,2 L175,18 L186,0 L198,16
-        L209,2 L220,18 L232,4 L243,22 L254,6 L266,24
-        L277,8 L288,26 L300,10 L311,28 L322,12 L334,30
-        L345,14 L356,32 L368,16 L378,34 L390,12 L400,28
-        L400,0 Z
-      " fill="#faf6ef"/>
-    </svg>
-  </div>
-
-  <!-- Cita flotante glassmorphism -->
+  <div class="photo-break-fade-top"></div>
+  <div class="photo-break-fade-bottom"></div>
   <div class="photo-break-quote">
     <div class="photo-break-card">
       <i class="bi bi-heart-fill photo-break-card-icon"></i>
@@ -571,27 +532,6 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
       <p class="photo-break-card-names">Carlos &amp; Elida · 2026</p>
     </div>
   </div>
-
-  <!--
-    BORDE RASGADO INFERIOR (rotado 180° via CSS)
-    Mismo path, distinto patrón de dientes
-  -->
-  <div class="photo-break-torn-bottom">
-    <svg viewBox="0 0 400 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="
-        M0,0
-        L0,32
-        L10,20 L22,38 L33,16 L45,34 L56,12 L68,28
-        L79,8  L91,26 L102,4 L114,22 L125,8 L137,26
-        L148,6 L160,24 L171,2 L183,20 L194,6 L206,22
-        L217,4 L229,20 L240,2 L252,18 L263,0 L275,16
-        L286,2 L298,18 L309,4 L321,22 L332,8 L344,26
-        L355,10 L367,28 L378,14 L390,30 L400,16
-        L400,0 Z
-      " fill="#faf6ef"/>
-    </svg>
-  </div>
-
 </div>
 
 <section id="evento" class="reveal">
