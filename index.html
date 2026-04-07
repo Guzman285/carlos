@@ -233,7 +233,7 @@ section {
   padding-top: clamp(0.7rem,2vw,1.2rem); font-weight: 300;
 }
 
-/* FOTO BREAK — degradado reducido a 45px */
+/* FOTO BREAK */
 .photo-break {
   height: clamp(280px,42vw,480px); overflow: hidden; position: relative;
 }
@@ -246,7 +246,7 @@ section {
 .photo-break::before,
 .photo-break::after {
   content: ''; position: absolute; left: 0; right: 0;
-  height: 45px;   /* <-- reducido de 90px a 45px */
+  height: 45px;
   z-index: 2; pointer-events: none;
 }
 .photo-break::before { top: 0;    background: linear-gradient(to bottom, var(--cream), transparent); }
@@ -290,50 +290,89 @@ section {
   transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,149,74,0.22);
 }
 
+/* ── CARRUSEL ── */
 #gallery { text-align: center; overflow: hidden; }
-.polaroid-board {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  gap: clamp(1.2rem,4vw,2.5rem);
-  max-width: 860px; margin: 0 auto;
-  padding: clamp(0.5rem,2vw,1.5rem) clamp(0.5rem,2vw,1rem);
-}
-.polaroid {
-  background: var(--ivory);
-  padding: 10px 10px 44px 10px;
-  box-shadow: 0 2px 6px rgba(122,90,40,0.14), 0 10px 36px rgba(122,90,40,0.10);
-  cursor: zoom-in; position: relative; flex: 0 0 auto;
-  width: clamp(148px,38vw,205px);
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
-}
-.polaroid:nth-child(1) { transform: rotate(-3.2deg) translateY(4px); }
-.polaroid:nth-child(2) { transform: rotate(2.1deg)  translateY(-6px); }
-.polaroid:nth-child(3) { transform: rotate(-1.5deg) translateY(8px); }
-.polaroid:nth-child(4) { transform: rotate(3.4deg)  translateY(-3px); }
-.polaroid:hover {
-  transform: rotate(0deg) translateY(-12px) scale(1.05) !important;
-  box-shadow: 0 16px 40px rgba(122,90,40,0.22), 0 4px 12px rgba(122,90,40,0.1);
-  z-index: 10;
-}
-.polaroid-img {
-  width: 100%; aspect-ratio: 1/1; object-fit: cover;
-  object-position: center top; display: block;
-  filter: sepia(0.05) contrast(1.04);
-  transition: filter 0.4s ease;
-}
-.polaroid:hover .polaroid-img { filter: sepia(0) contrast(1.06) brightness(1.02); }
-.polaroid-caption {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 44px; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-hand); font-size: clamp(0.85rem,2.5vw,1rem);
-  color: var(--muted);
-}
-.polaroid::before {
-  content: ''; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-  width: 13px; height: 13px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, var(--gold-light), var(--gold-dark));
-  box-shadow: 0 2px 6px rgba(122,90,40,0.35); z-index: 2;
+
+.carousel-wrap {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
+.carousel-track-outer {
+  overflow: hidden;
+  border-radius: 1.1rem;
+  box-shadow: 0 8px 40px rgba(122,90,40,0.13);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.55s var(--ease);
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2.5rem 1.5rem 1.2rem;
+  background: linear-gradient(to top, rgba(61,46,30,0.72), transparent);
+  font-family: var(--font-hand);
+  font-size: clamp(1.1rem,3vw,1.4rem);
+  color: #fdf9f3;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* flechas */
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 10;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(253,249,243,0.88);
+  border: 1px solid var(--gold-pale);
+  color: var(--gold-dark);
+  font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(122,90,40,0.16);
+  transition: all 0.3s var(--ease);
+}
+.carousel-btn:hover { background: var(--gold); color: var(--ivory); transform: translateY(-50%) scale(1.08); }
+.carousel-btn.prev { left: -22px; }
+.carousel-btn.next { right: -22px; }
+
+/* dots */
+.carousel-dots {
+  display: flex; justify-content: center; gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+.carousel-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.carousel-dot.active {
+  background: var(--gold);
+  border-color: var(--gold-dark);
+  transform: scale(1.25);
+}
+
+/* lightbox */
 .gallery-lightbox {
   position: fixed; inset: 0; z-index: 9999;
   background: rgba(50,38,24,0.97);
@@ -345,10 +384,10 @@ section {
   max-width: 88vw; max-height: 86vh;
   background: var(--ivory); padding: 12px 12px 54px 12px;
   box-shadow: 0 24px 80px rgba(0,0,0,0.45);
-  transform: scale(0.92) rotate(-1deg);
+  transform: scale(0.92);
   transition: transform 0.45s var(--ease); object-fit: contain;
 }
-.gallery-lightbox.active .gallery-lightbox-img { transform: scale(1) rotate(0); }
+.gallery-lightbox.active .gallery-lightbox-img { transform: scale(1); }
 .gallery-lightbox-close {
   position: absolute; top: 1.5rem; right: 1.5rem;
   background: rgba(253,249,243,0.08); border: 1px solid rgba(253,249,243,0.2);
@@ -406,7 +445,8 @@ section {
   .song-info   { text-align: center; }
   .cd-sep      { display: none; }
   .cd-grid     { gap: 0.45rem; }
-  .polaroid    { width: clamp(128px,41vw,165px); }
+  .carousel-btn.prev { left: 6px; }
+  .carousel-btn.next { right: 6px; }
 }
 </style>
 </head>
@@ -506,29 +546,46 @@ section {
 
 <div class="section-sep"></div>
 
+<!-- GALERÍA CARRUSEL -->
 <section id="gallery" class="reveal">
   <span class="section-tag">Momentos que atesoramos</span>
   <h2 class="section-title">Nuestra<br><em>Galería</em></h2>
   <div class="ornament" style="margin-bottom:2.5rem"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
-  <div class="polaroid-board">
-    <div class="polaroid" data-src="img/carlos.jpeg">
-      <img class="polaroid-img" src="img/carlos.jpeg" alt="Carlos y Elida" loading="lazy" width="400" height="400" />
-      <span class="polaroid-caption">Carlos &amp; Elida 💛</span>
+
+  <div class="carousel-wrap">
+    <div class="carousel-track-outer">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="carousel-slide" data-src="img/carlos.jpeg">
+          <img src="img/carlos.jpeg" alt="Carlos y Elida" loading="lazy" width="800" height="600" />
+          <span class="carousel-caption">Carlos &amp; Elida 💛</span>
+        </div>
+
+        <div class="carousel-slide" data-src="img/carlos2.jpeg">
+          <img src="img/carlos2.jpeg" alt="Juntos" loading="lazy" width="800" height="600" />
+          <span class="carousel-caption">Para siempre ✨</span>
+        </div>
+
+        <div class="carousel-slide" data-src="img/carlos.jpeg">
+          <img src="img/carlos.jpeg" alt="Nuestro amor" loading="lazy" width="800" height="600" style="object-position:center 20%" />
+          <span class="carousel-caption">Nuestro amor 🌸</span>
+        </div>
+
+        <div class="carousel-slide" data-src="img/carlos2.jpeg">
+          <img src="img/carlos2.jpeg" alt="1 Junio 2026" loading="lazy" width="800" height="600" style="object-position:center 60%" />
+          <span class="carousel-caption">1 Junio 2026 💍</span>
+        </div>
+
+      </div>
     </div>
-    <div class="polaroid" data-src="img/carlos2.jpeg">
-      <img class="polaroid-img" src="img/carlos2.jpeg" alt="Juntos" loading="lazy" width="400" height="400" />
-      <span class="polaroid-caption">Para siempre ✨</span>
-    </div>
-    <div class="polaroid" data-src="img/carlos.jpeg">
-      <img class="polaroid-img" src="img/carlos.jpeg" alt="Foto 3" loading="lazy" width="400" height="400" style="object-position:center 20%" />
-      <span class="polaroid-caption">Nuestro amor 🌸</span>
-    </div>
-    <div class="polaroid" data-src="img/carlos2.jpeg">
-      <img class="polaroid-img" src="img/carlos2.jpeg" alt="Foto 4" loading="lazy" width="400" height="400" style="object-position:center 60%" />
-      <span class="polaroid-caption">1 Junio 2026 💍</span>
-    </div>
+
+    <button class="carousel-btn prev" id="carPrev" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+    <button class="carousel-btn next" id="carNext" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+
+    <div class="carousel-dots" id="carDots"></div>
   </div>
-  <p style="margin-top:2rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--faint);">Toca una foto para ampliarla</p>
+
+  <p style="margin-top:1.8rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--faint);">Toca una foto para ampliarla</p>
 </section>
 
 <div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true">
@@ -567,6 +624,7 @@ section {
 </section>
 
 <script>
+/* ── Countdown ── */
 const targetDate = new Date('2026-06-01T08:00:00');
 function setFlip(el,val){
   if(el.textContent!==val){el.classList.remove('flip');void el.offsetWidth;el.classList.add('flip');el.textContent=val;}
@@ -582,20 +640,67 @@ function updateCountdown(){
 }
 updateCountdown(); setInterval(updateCountdown,1000);
 
+/* ── Reveal ── */
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-const lb=document.getElementById('galleryLightbox'),lbImg=document.getElementById('lightboxImg');
-document.querySelectorAll('.polaroid').forEach(p=>{
-  p.addEventListener('click',()=>{lbImg.src=p.dataset.src;lb.classList.add('active');document.body.style.overflow='hidden';});
-});
-function closeLB(){lb.classList.remove('active');document.body.style.overflow='';setTimeout(()=>lbImg.src='',400);}
-document.getElementById('lightboxClose').addEventListener('click',closeLB);
-lb.addEventListener('click',e=>{if(e.target===lb)closeLB();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();});
+/* ── Carrusel ── */
+(function(){
+  const track   = document.getElementById('carouselTrack');
+  const slides  = Array.from(track.querySelectorAll('.carousel-slide'));
+  const dotsEl  = document.getElementById('carDots');
+  const prevBtn = document.getElementById('carPrev');
+  const nextBtn = document.getElementById('carNext');
+  let current   = 0;
+  const total   = slides.length;
 
+  /* crear dots */
+  slides.forEach((_,i)=>{
+    const d = document.createElement('button');
+    d.className = 'carousel-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Foto '+(i+1));
+    d.addEventListener('click',()=>goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n){
+    current = (n + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsEl.querySelectorAll('.carousel-dot').forEach((d,i)=>
+      d.classList.toggle('active', i===current));
+  }
+
+  prevBtn.addEventListener('click',()=>goTo(current-1));
+  nextBtn.addEventListener('click',()=>goTo(current+1));
+
+  /* swipe táctil */
+  let startX=0;
+  track.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; },{passive:true});
+  track.addEventListener('touchend',e=>{
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40) goTo(dx<0 ? current+1 : current-1);
+  },{passive:true});
+
+  /* auto-play cada 4s */
+  let timer = setInterval(()=>goTo(current+1), 4000);
+  [prevBtn,nextBtn].forEach(b=>b.addEventListener('click',()=>{ clearInterval(timer); timer=setInterval(()=>goTo(current+1),4000); }));
+
+  /* lightbox al hacer clic en slide */
+  const lb    = document.getElementById('galleryLightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  slides.forEach(s=>{
+    s.style.cursor='zoom-in';
+    s.addEventListener('click',()=>{ lbImg.src=s.dataset.src; lb.classList.add('active'); document.body.style.overflow='hidden'; });
+  });
+  function closeLB(){ lb.classList.remove('active'); document.body.style.overflow=''; setTimeout(()=>lbImg.src='',400); }
+  document.getElementById('lightboxClose').addEventListener('click',closeLB);
+  lb.addEventListener('click',e=>{ if(e.target===lb)closeLB(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeLB(); if(e.key==='ArrowLeft')goTo(current-1); if(e.key==='ArrowRight')goTo(current+1); });
+})();
+
+/* ── Cuenta bancaria copiar ── */
 function copiarCuenta(btn,num){
   navigator.clipboard.writeText(num).then(()=>{
     const i=btn.querySelector('i');i.className='bi bi-check2';
@@ -603,6 +708,7 @@ function copiarCuenta(btn,num){
   });
 }
 
+/* ── Canción ── */
 const song=document.getElementById('backSong'),
       songBtn=document.getElementById('songBtn'),
       songIcon=document.getElementById('songIcon'),
