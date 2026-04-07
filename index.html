@@ -246,8 +246,7 @@ section {
 .photo-break::before,
 .photo-break::after {
   content: ''; position: absolute; left: 0; right: 0;
-  height: 45px;
-  z-index: 2; pointer-events: none;
+  height: 45px; z-index: 2; pointer-events: none;
 }
 .photo-break::before { top: 0;    background: linear-gradient(to bottom, var(--cream), transparent); }
 .photo-break::after  { bottom: 0; background: linear-gradient(to top,    var(--cream), transparent); }
@@ -299,10 +298,16 @@ section {
   margin: 0 auto;
 }
 
+/* El outer tiene overflow:hidden normal, pero cuando hay zoom lo quitamos */
 .carousel-track-outer {
   overflow: hidden;
   border-radius: 1.1rem;
   box-shadow: 0 8px 40px rgba(122,90,40,0.13);
+  transition: box-shadow 0.4s ease;
+}
+.carousel-track-outer.zoomed {
+  overflow: visible;
+  border-radius: 1.1rem;
 }
 
 .carousel-track {
@@ -314,6 +319,7 @@ section {
 .carousel-slide {
   flex: 0 0 100%;
   position: relative;
+  cursor: zoom-in;
 }
 
 .carousel-slide img {
@@ -322,7 +328,34 @@ section {
   object-fit: cover;
   object-position: center 25%;
   display: block;
+  border-radius: 1.1rem;
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
+
+/* zoom al presionar */
+.carousel-slide.zoomed {
+  cursor: zoom-out;
+  z-index: 20;
+}
+.carousel-slide.zoomed img {
+  transform: scale(1.18);
+  box-shadow: 0 20px 60px rgba(61,46,30,0.32);
+}
+
+/* botón X para cerrar zoom */
+.zoom-close {
+  position: absolute; top: 10px; right: 10px;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(253,249,243,0.88);
+  border: 1px solid var(--gold-pale);
+  color: var(--gold-dark); font-size: 0.9rem;
+  display: none; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 30;
+  box-shadow: 0 2px 10px rgba(61,46,30,0.18);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.zoom-close:hover { background: var(--gold); color: var(--ivory); transform: rotate(90deg); }
+.carousel-slide.zoomed .zoom-close { display: flex; }
 
 .carousel-caption {
   position: absolute;
@@ -333,26 +366,9 @@ section {
   font-size: clamp(1.1rem,3vw,1.4rem);
   color: #fdf9f3;
   text-align: center;
-  letter-spacing: 0.02em;
+  border-radius: 0 0 1.1rem 1.1rem;
+  pointer-events: none;
 }
-
-/* flechas */
-.carousel-btn {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  z-index: 10;
-  width: 44px; height: 44px; border-radius: 50%;
-  background: rgba(253,249,243,0.88);
-  border: 1px solid var(--gold-pale);
-  color: var(--gold-dark);
-  font-size: 1rem;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(122,90,40,0.16);
-  transition: all 0.3s var(--ease);
-}
-.carousel-btn:hover { background: var(--gold); color: var(--ivory); transform: translateY(-50%) scale(1.08); }
-.carousel-btn.prev { left: -22px; }
-.carousel-btn.next { right: -22px; }
 
 /* dots */
 .carousel-dots {
@@ -371,32 +387,6 @@ section {
   border-color: var(--gold-dark);
   transform: scale(1.25);
 }
-
-/* lightbox */
-.gallery-lightbox {
-  position: fixed; inset: 0; z-index: 9999;
-  background: rgba(50,38,24,0.97);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-}
-.gallery-lightbox.active { opacity: 1; pointer-events: all; }
-.gallery-lightbox-img {
-  max-width: 88vw; max-height: 86vh;
-  background: var(--ivory); padding: 12px 12px 54px 12px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
-  transform: scale(0.92);
-  transition: transform 0.45s var(--ease); object-fit: contain;
-}
-.gallery-lightbox.active .gallery-lightbox-img { transform: scale(1); }
-.gallery-lightbox-close {
-  position: absolute; top: 1.5rem; right: 1.5rem;
-  background: rgba(253,249,243,0.08); border: 1px solid rgba(253,249,243,0.2);
-  border-radius: 50%; width: 46px; height: 46px;
-  color: rgba(253,249,243,0.8); font-size: 1.1rem; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.3s ease;
-}
-.gallery-lightbox-close:hover { background: rgba(253,249,243,0.18); transform: rotate(90deg); }
 
 #gifts { text-align: center; }
 .gifts-card {
@@ -445,8 +435,6 @@ section {
   .song-info   { text-align: center; }
   .cd-sep      { display: none; }
   .cd-grid     { gap: 0.45rem; }
-  .carousel-btn.prev { left: 6px; }
-  .carousel-btn.next { right: 6px; }
 }
 </style>
 </head>
@@ -553,45 +541,38 @@ section {
   <div class="ornament" style="margin-bottom:2.5rem"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
 
   <div class="carousel-wrap">
-    <div class="carousel-track-outer">
+    <div class="carousel-track-outer" id="carOuter">
       <div class="carousel-track" id="carouselTrack">
 
-        <div class="carousel-slide" data-src="img/carlos.jpeg">
+        <div class="carousel-slide">
           <img src="img/carlos.jpeg" alt="Carlos y Elida" loading="lazy" width="800" height="600" />
           <span class="carousel-caption">Carlos &amp; Elida 💛</span>
+          <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
 
-        <div class="carousel-slide" data-src="img/carlos2.jpeg">
+        <div class="carousel-slide">
           <img src="img/carlos2.jpeg" alt="Juntos" loading="lazy" width="800" height="600" />
           <span class="carousel-caption">Para siempre ✨</span>
+          <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
 
-        <div class="carousel-slide" data-src="img/carlos.jpeg">
+        <div class="carousel-slide">
           <img src="img/carlos.jpeg" alt="Nuestro amor" loading="lazy" width="800" height="600" style="object-position:center 20%" />
           <span class="carousel-caption">Nuestro amor 🌸</span>
+          <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
 
-        <div class="carousel-slide" data-src="img/carlos2.jpeg">
+        <div class="carousel-slide">
           <img src="img/carlos2.jpeg" alt="1 Junio 2026" loading="lazy" width="800" height="600" style="object-position:center 60%" />
           <span class="carousel-caption">1 Junio 2026 💍</span>
+          <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
 
       </div>
     </div>
-
-    <button class="carousel-btn prev" id="carPrev" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
-    <button class="carousel-btn next" id="carNext" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
-
     <div class="carousel-dots" id="carDots"></div>
   </div>
-
-  <p style="margin-top:1.8rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--faint);">Toca una foto para ampliarla</p>
 </section>
-
-<div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true">
-  <button class="gallery-lightbox-close" id="lightboxClose" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
-  <img src="" alt="Foto ampliada" id="lightboxImg" class="gallery-lightbox-img" />
-</div>
 
 <div class="section-sep"></div>
 
@@ -649,12 +630,13 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 /* ── Carrusel ── */
 (function(){
   const track   = document.getElementById('carouselTrack');
-  const slides  = Array.from(track.querySelectorAll('.carousel-slide'));
+  const outer   = document.getElementById('carOuter');
   const dotsEl  = document.getElementById('carDots');
-  const prevBtn = document.getElementById('carPrev');
-  const nextBtn = document.getElementById('carNext');
-  let current   = 0;
+  const slides  = Array.from(track.querySelectorAll('.carousel-slide'));
   const total   = slides.length;
+  let current   = 0;
+  let zoomedSlide = null;
+  let autoTimer;
 
   /* crear dots */
   slides.forEach((_,i)=>{
@@ -666,41 +648,63 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   });
 
   function goTo(n){
+    if(zoomedSlide) closeZoom();
     current = (n + total) % total;
     track.style.transform = `translateX(-${current * 100}%)`;
     dotsEl.querySelectorAll('.carousel-dot').forEach((d,i)=>
       d.classList.toggle('active', i===current));
   }
 
-  prevBtn.addEventListener('click',()=>goTo(current-1));
-  nextBtn.addEventListener('click',()=>goTo(current+1));
+  function startAuto(){ autoTimer = setInterval(()=>goTo(current+1), 4000); }
+  function stopAuto() { clearInterval(autoTimer); }
+  startAuto();
 
   /* swipe táctil */
-  let startX=0;
-  track.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; },{passive:true});
+  let startX=0, dragging=false;
+  track.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; dragging=true; },{passive:true});
   track.addEventListener('touchend',e=>{
+    if(!dragging) return; dragging=false;
     const dx = e.changedTouches[0].clientX - startX;
-    if(Math.abs(dx)>40) goTo(dx<0 ? current+1 : current-1);
+    if(Math.abs(dx)>40){ stopAuto(); goTo(dx<0?current+1:current-1); startAuto(); }
   },{passive:true});
 
-  /* auto-play cada 4s */
-  let timer = setInterval(()=>goTo(current+1), 4000);
-  [prevBtn,nextBtn].forEach(b=>b.addEventListener('click',()=>{ clearInterval(timer); timer=setInterval(()=>goTo(current+1),4000); }));
+  /* zoom al hacer clic en slide (no en el botón X) */
+  slides.forEach(slide=>{
+    slide.addEventListener('click', e=>{
+      if(e.target.closest('.zoom-close')) return;
+      if(slide.classList.contains('zoomed')){
+        closeZoom();
+      } else {
+        if(zoomedSlide) closeZoom();
+        slide.classList.add('zoomed');
+        outer.classList.add('zoomed');
+        zoomedSlide = slide;
+        stopAuto();
+      }
+    });
 
-  /* lightbox al hacer clic en slide */
-  const lb    = document.getElementById('galleryLightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  slides.forEach(s=>{
-    s.style.cursor='zoom-in';
-    s.addEventListener('click',()=>{ lbImg.src=s.dataset.src; lb.classList.add('active'); document.body.style.overflow='hidden'; });
+    const closeBtn = slide.querySelector('.zoom-close');
+    closeBtn.addEventListener('click', e=>{ e.stopPropagation(); closeZoom(); });
   });
-  function closeLB(){ lb.classList.remove('active'); document.body.style.overflow=''; setTimeout(()=>lbImg.src='',400); }
-  document.getElementById('lightboxClose').addEventListener('click',closeLB);
-  lb.addEventListener('click',e=>{ if(e.target===lb)closeLB(); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeLB(); if(e.key==='ArrowLeft')goTo(current-1); if(e.key==='ArrowRight')goTo(current+1); });
+
+  function closeZoom(){
+    if(!zoomedSlide) return;
+    zoomedSlide.classList.remove('zoomed');
+    outer.classList.remove('zoomed');
+    zoomedSlide = null;
+    startAuto();
+  }
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') closeZoom();
+    if(!zoomedSlide){
+      if(e.key==='ArrowLeft'){ stopAuto(); goTo(current-1); startAuto(); }
+      if(e.key==='ArrowRight'){ stopAuto(); goTo(current+1); startAuto(); }
+    }
+  });
 })();
 
-/* ── Cuenta bancaria copiar ── */
+/* ── Copiar cuenta ── */
 function copiarCuenta(btn,num){
   navigator.clipboard.writeText(num).then(()=>{
     const i=btn.querySelector('i');i.className='bi bi-check2';
