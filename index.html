@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Carlos &amp; Elida · 1 Junio 2026</title>
+  <title>Carlos &amp; Elida · 13 Junio 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
   <meta property="og:title" content="¡Carlos &amp; Elida se casan! 💍" />
-  <meta property="og:description" content="Lunes 1 de junio de 2026 · Guatemala" />
+  <meta property="og:description" content="Sábado 13 de junio de 2026 · Guatemala" />
   <meta property="og:image" content="https://guzman285.github.io/carlos/img/carlos2.jpeg" />
   <meta property="og:url" content="https://guzman285.github.io/carlos/" />
   <meta property="og:type" content="website" />
@@ -321,21 +321,21 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
 .photo-break-veil {
   position: absolute; inset: 0;
   background: linear-gradient(to bottom,
-    rgba(61,46,30,0.10) 0%,
-    transparent 20%,
-    transparent 80%,
-    rgba(61,46,30,0.10) 100%);
+    rgba(61,46,30,0.05) 0%,
+    transparent 16%,
+    transparent 84%,
+    rgba(61,46,30,0.05) 100%);
 }
 .photo-break-fade-top {
   position: absolute; top: 0; left: 0; right: 0;
-  height: 90px;
-  background: linear-gradient(to bottom, var(--cream), transparent);
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(250,246,239,0.9), transparent);
   pointer-events: none; z-index: 3;
 }
 .photo-break-fade-bottom {
   position: absolute; bottom: 0; left: 0; right: 0;
-  height: 90px;
-  background: linear-gradient(to top, var(--cream), transparent);
+  height: 40px;
+  background: linear-gradient(to top, rgba(250,246,239,0.9), transparent);
   pointer-events: none; z-index: 3;
 }
 
@@ -420,7 +420,7 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
       <em>Elida</em>
     </h1>
     <div class="hero-divider"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
-    <p class="hero-date">Lunes · 1 de Junio · 2026</p>
+    <p class="hero-date">Sábado · 13 de Junio · 2026</p>
   </div>
   <div class="hero-scroll"><i class="bi bi-chevron-double-down"></i></div>
   <div class="hero-fade"></div>
@@ -507,7 +507,7 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
     </div>
     <div class="event-row">
       <div class="event-icon"><i class="bi bi-calendar-heart"></i></div>
-      <div><p class="event-label">Fecha</p><p class="event-value">Lunes 1 de Junio, 2026</p></div>
+      <div><p class="event-label">Fecha</p><p class="event-value">Sábado 13 de Junio, 2026</p></div>
     </div>
     <div class="event-row">
       <div class="event-icon"><i class="bi bi-building"></i></div>
@@ -549,8 +549,8 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
           <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
         <div class="carousel-slide">
-          <img src="img/carlos2.jpeg" alt="1 Junio 2026" loading="lazy" width="800" height="600" style="object-position:center 60%" />
-          <span class="carousel-caption">1 Junio 2026 💍</span>
+          <img src="img/carlos2.jpeg" alt="13 Junio 2026" loading="lazy" width="800" height="600" style="object-position:center 60%" />
+          <span class="carousel-caption">13 Junio 2026 💍</span>
           <button class="zoom-close" aria-label="Cerrar zoom"><i class="bi bi-x"></i></button>
         </div>
       </div>
@@ -586,19 +586,19 @@ section { padding: 3rem 1.25rem; background: var(--cream); }
       <div class="cuenta-info"><p class="cuenta-banco">Bantrab</p><p class="cuenta-num">xxxx-xxxx-xxxx</p></div>
       <button class="cuenta-copy" onclick="copiarCuenta(this,'xxxx-xxxx-xxxx')" title="Copiar"><i class="bi bi-copy"></i></button>
     </div>
-    <p class="modal-note">Carlos &amp; Elida · 1 de Junio 2026</p>
+    <p class="modal-note">Carlos &amp; Elida · 13 de Junio 2026</p>
   </div>
 </div>
 
 <section id="cierre" class="reveal">
   <div class="ornament" style="margin-bottom:1.8rem"><span></span><i class="bi bi-heart-fill"></i><span></span></div>
   <p class="cierre-names">Carlos <em>&amp;</em> Elida</p>
-  <p class="cierre-date">1 de Junio · 2026 · Guatemala</p>
+  <p class="cierre-date">13 de Junio · 2026 · Guatemala</p>
 </section>
 
 <script>
 /* ── Countdown ── */
-const targetDate = new Date('2026-06-01T08:00:00');
+const targetDate = new Date('2026-06-13T08:00:00');
 function setFlip(el,val){
   if(el.textContent!==val){el.classList.remove('flip');void el.offsetWidth;el.classList.add('flip');el.textContent=val;}
 }
