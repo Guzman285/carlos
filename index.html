@@ -428,12 +428,13 @@ section { padding: 2rem 1.1rem; background: transparent; }
 .event-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.1rem; }
 .event-value { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink); line-height: 1.3; }
 .btns-row { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap; }
+.rsvp-wrap { margin-top: 0.9rem; display: flex; justify-content: center; }
 .btn-gold {
   display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.78rem 1.4rem;
   background: rgba(255,255,255,0.45); border: 1px solid var(--gold); color: var(--gold-dark);
   border-radius: 3rem; font-family: var(--font-body); font-size: 0.72rem; font-weight: 400;
   letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px;
-  transition: all 0.3s var(--ease);
+  transition: all 0.3s var(--ease); cursor: pointer;
 }
 .btn-gold:active { background: var(--gold); color: var(--ivory); }
 
@@ -483,7 +484,7 @@ section { padding: 2rem 1.1rem; background: transparent; }
 
 .modal-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(61,46,30,0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; align-items: flex-end; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
 .modal-overlay.open { opacity: 1; pointer-events: all; }
-.modal-sheet { background: var(--ivory); border-radius: 1.5rem 1.5rem 0 0; padding: 1.5rem 1.5rem 2.5rem; width: 100%; max-width: 480px; transform: translateY(100%); transition: transform 0.4s var(--ease); box-shadow: 0 -8px 40px rgba(61,46,30,0.15); position: relative; }
+.modal-sheet { background: var(--ivory); border-radius: 1.5rem 1.5rem 0 0; padding: 1.5rem 1.5rem 2.5rem; width: 100%; max-width: 480px; transform: translateY(100%); transition: transform 0.4s var(--ease); box-shadow: 0 -8px 40px rgba(61,46,30,0.15); position: relative; max-height: 92svh; overflow-y: auto; }
 .modal-overlay.open .modal-sheet { transform: translateY(0); }
 .modal-handle { width: 40px; height: 4px; border-radius: 2px; background: var(--gold-pale); margin: 0 auto 1.5rem; }
 .modal-title { font-family: var(--font-display); font-size: 1.9rem; font-weight: 300; font-style: italic; color: var(--ink); text-align: center; margin-bottom: 0.3rem; }
@@ -499,6 +500,33 @@ section { padding: 2rem 1.1rem; background: transparent; }
 .cuenta-copy { background: none; border: 1px solid rgba(196,149,74,0.35); border-radius: 0.4rem; padding: 0.3rem 0.6rem; color: var(--gold-dark); cursor: pointer; font-size: 1rem; min-width: 36px; min-height: 36px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
 .cuenta-copy:active { background: var(--gold); color: var(--ivory); border-color: var(--gold); }
 .modal-note { font-size: 0.72rem; color: var(--faint); text-align: center; margin-top: 1.4rem; line-height: 1.7; font-style: italic; }
+.rsvp-form { display: grid; gap: 0.9rem; }
+.rsvp-field { text-align: left; }
+.rsvp-label { display: block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.45rem; }
+.rsvp-input, .rsvp-select, .rsvp-textarea {
+  width: 100%;
+  border: 1px solid rgba(196,149,74,0.28);
+  background: rgba(255,255,255,0.72);
+  border-radius: 0.9rem;
+  padding: 0.88rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--ink);
+  outline: none;
+}
+.rsvp-input:focus, .rsvp-select:focus, .rsvp-textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(196,149,74,0.12); }
+.rsvp-textarea { min-height: 110px; resize: vertical; }
+.rsvp-submit {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  width: 100%; padding: 0.95rem 1.2rem; background: var(--gold); color: #fff;
+  border: 1px solid var(--gold); border-radius: 3rem; font-family: var(--font-body);
+  font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  cursor: pointer; min-height: 48px; transition: all 0.3s var(--ease);
+}
+.rsvp-submit:disabled { opacity: 0.6; cursor: wait; }
+.rsvp-feedback { font-size: 0.78rem; text-align: center; line-height: 1.6; min-height: 1.6em; }
+.rsvp-feedback.success { color: #2f6b2f; }
+.rsvp-feedback.error { color: #8a2f2f; }
 
 #cierre { text-align: center; padding: 2rem 1.1rem 4.4rem; background: transparent; }
 .cierre-names { font-family: var(--font-display); font-size: 3.4rem; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 0.5rem; }
@@ -653,6 +681,9 @@ section { padding: 2rem 1.1rem; background: transparent; }
         <a href="https://maps.google.com/?q=Finca+Guatemala" target="_blank" rel="noopener" class="btn-gold"><img src="img/maps.png" alt="Google Maps" class="btn-icon-img" loading="lazy" width="18" height="18" /> Google Maps</a>
         <a href="https://waze.com/ul?q=Finca+Guatemala" target="_blank" rel="noopener" class="btn-gold"><img src="img/waze.png" alt="Waze" class="btn-icon-img" loading="lazy" width="18" height="18" /> Waze</a>
       </div>
+      <div class="rsvp-wrap">
+        <button class="btn-gold" type="button" onclick="abrirRsvpModal()"><i class="bi bi-envelope-heart"></i> Confirmar asistencia</button>
+      </div>
     </div>
   </div>
 </section>
@@ -731,6 +762,39 @@ section { padding: 2rem 1.1rem; background: transparent; }
   </div>
 </div>
 
+<div class="modal-overlay" id="rsvpModal" onclick="cerrarRsvpModalFuera(event)">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <button class="modal-close" onclick="cerrarRsvpModal()" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+    <p class="modal-title">Confirmar asistencia</p>
+    <p class="modal-sub">Completa tus datos para registrar tu respuesta</p>
+    <form class="rsvp-form" id="rsvpForm">
+      <div class="rsvp-field">
+        <label class="rsvp-label" for="rsvpNombre">Nombre</label>
+        <input class="rsvp-input" id="rsvpNombre" name="nama" type="text" required placeholder="Escribe tu nombre completo" />
+      </div>
+      <div class="rsvp-field">
+        <label class="rsvp-label" for="rsvpPersonas">Número de personas</label>
+        <input class="rsvp-input" id="rsvpPersonas" name="jumlah" type="number" min="1" inputmode="numeric" required placeholder="Ej. 2" />
+      </div>
+      <div class="rsvp-field">
+        <label class="rsvp-label" for="rsvpEstado">Confirmación</label>
+        <select class="rsvp-select" id="rsvpEstado" name="status" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Asistirá">Sí, asistiré</option>
+          <option value="No Asistirá">No podré asistir</option>
+        </select>
+      </div>
+      <div class="rsvp-field">
+        <label class="rsvp-label" for="rsvpMensaje">Mensaje</label>
+        <textarea class="rsvp-textarea" id="rsvpMensaje" name="mensaje" placeholder="Déjanos un mensaje bonito"></textarea>
+      </div>
+      <button class="rsvp-submit" id="rsvpSubmit" type="submit"><i class="bi bi-send-heart"></i> Enviar confirmación</button>
+      <p class="rsvp-feedback" id="rsvpFeedback"></p>
+    </form>
+  </div>
+</div>
+
 <section id="cierre" class="reveal">
   <div class="section-shell soft">
     <div class="section-inner">
@@ -743,6 +807,7 @@ section { padding: 2rem 1.1rem; background: transparent; }
 
 <script>
 const targetDate = new Date('2026-06-13T08:00:00');
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwLO6QmRbU2CvTxuK3wDIglsfMPBR4TwaxOq0lBIIy-eEbuQa94s6nsuirZFau1gGbZ/exec';
 function setFlip(el,val){
   if(el.textContent!==val){el.classList.remove('flip');void el.offsetWidth;el.classList.add('flip');el.textContent=val;}
 }
@@ -824,12 +889,50 @@ function abrirModal(){document.getElementById('modalOverlay').classList.add('ope
 function cerrarModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}
 function cerrarModalFuera(e){if(e.target===document.getElementById('modalOverlay'))cerrarModal();}
 
+function abrirRsvpModal(){document.getElementById('rsvpModal').classList.add('open');document.body.style.overflow='hidden';}
+function cerrarRsvpModal(){document.getElementById('rsvpModal').classList.remove('open');document.body.style.overflow='';}
+function cerrarRsvpModalFuera(e){if(e.target===document.getElementById('rsvpModal'))cerrarRsvpModal();}
+
 function copiarCuenta(btn,num){
   navigator.clipboard.writeText(num).then(()=>{
     const i=btn.querySelector('i');i.className='bi bi-check2';
     setTimeout(()=>{i.className='bi bi-copy';},2000);
   });
 }
+
+const rsvpForm=document.getElementById('rsvpForm');
+const rsvpSubmit=document.getElementById('rsvpSubmit');
+const rsvpFeedback=document.getElementById('rsvpFeedback');
+rsvpForm.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  rsvpFeedback.textContent='';
+  rsvpFeedback.className='rsvp-feedback';
+  rsvpSubmit.disabled=true;
+  const originalBtn=rsvpSubmit.innerHTML;
+  rsvpSubmit.innerHTML='<i class="bi bi-hourglass-split"></i> Enviando...';
+  try {
+    const formData=new FormData(rsvpForm);
+    const params=new URLSearchParams(formData);
+    const response=await fetch(RSVP_ENDPOINT,{method:'POST',body:params,mode:'cors'});
+    const text=await response.text();
+    let ok=response.ok;
+    try {
+      const data=JSON.parse(text);
+      ok=ok && data.result==='ok';
+    } catch(_) {}
+    if(!ok) throw new Error('No fue posible registrar tu confirmación.');
+    rsvpFeedback.textContent='¡Gracias! Tu confirmación fue enviada correctamente.';
+    rsvpFeedback.classList.add('success');
+    rsvpForm.reset();
+    setTimeout(()=>cerrarRsvpModal(),1800);
+  } catch (error) {
+    rsvpFeedback.textContent='No se pudo enviar en este momento. Intenta nuevamente en unos segundos.';
+    rsvpFeedback.classList.add('error');
+  } finally {
+    rsvpSubmit.disabled=false;
+    rsvpSubmit.innerHTML=originalBtn;
+  }
+});
 
 const song=document.getElementById('backSong');
 const vinyl=document.getElementById('vinyl');
