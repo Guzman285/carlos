@@ -773,9 +773,9 @@ section { padding: 2rem 1.1rem; background: transparent; }
         <label class="rsvp-label" for="rsvpNombre">Nombre</label>
         <input class="rsvp-input" id="rsvpNombre" name="nama" type="text" required placeholder="Escribe tu nombre completo" />
       </div>
-      <div class="rsvp-field">
+      <div class="rsvp-field" id="rsvpPersonasField" style="display: none;">
         <label class="rsvp-label" for="rsvpPersonas">Número de personas</label>
-        <input class="rsvp-input" id="rsvpPersonas" name="jumlah" type="number" min="1" inputmode="numeric" required placeholder="Ej. 2" />
+        <input class="rsvp-input" id="rsvpPersonas" name="jumlah" type="number" min="1" inputmode="numeric" placeholder="Ej. 2" />
       </div>
       <div class="rsvp-field">
         <label class="rsvp-label" for="rsvpEstado">Confirmación</label>
@@ -903,6 +903,22 @@ function copiarCuenta(btn,num){
 const rsvpForm=document.getElementById('rsvpForm');
 const rsvpSubmit=document.getElementById('rsvpSubmit');
 const rsvpFeedback=document.getElementById('rsvpFeedback');
+const rsvpEstado=document.getElementById('rsvpEstado');
+const rsvpPersonasField=document.getElementById('rsvpPersonasField');
+const rsvpPersonas=document.getElementById('rsvpPersonas');
+
+function togglePersonasField(){
+  const asistira = rsvpEstado.value === 'Asistirá';
+  rsvpPersonasField.style.display = asistira ? 'block' : 'none';
+  rsvpPersonas.required = asistira;
+  if(!asistira){
+    rsvpPersonas.value = '';
+  }
+}
+
+rsvpEstado.addEventListener('change', togglePersonasField);
+togglePersonasField();
+
 rsvpForm.addEventListener('submit', async (e)=>{
   e.preventDefault();
   rsvpFeedback.textContent='';
@@ -924,6 +940,7 @@ rsvpForm.addEventListener('submit', async (e)=>{
     rsvpFeedback.textContent='¡Gracias! Tu confirmación fue enviada correctamente.';
     rsvpFeedback.classList.add('success');
     rsvpForm.reset();
+    togglePersonasField();
     setTimeout(()=>cerrarRsvpModal(),1800);
   } catch (error) {
     rsvpFeedback.textContent='No se pudo enviar en este momento. Intenta nuevamente en unos segundos.';
